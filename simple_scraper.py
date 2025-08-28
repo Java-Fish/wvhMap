@@ -100,142 +100,126 @@ class SimpleWildvogelhilfeScraper:
         return a * scale, b * scale
 
     def get_coordinates_for_plz(self, plz_code: Optional[str], country: str = "Deutschland"):
-        """Gibt deterministische Koordinaten für PLZ (DE/AT/CH) zurück."""
+        """Gibt deterministische Koordinaten für PLZ (verfeinert) zurück."""
         if not plz_code:
             return None, None
-        country = country.lower()
+        country_l = country.lower()
         base = None
-        if country == 'deutschland' and len(plz_code) == 5:
-            # Feingranulare Behandlung für ostdeutsche 0er PLZ nach zweiter Ziffer
+        if country_l == 'deutschland' and len(plz_code) == 5:
             if plz_code[0] == '0':
-                second = plz_code[1]
                 east_map = {
-                    '1': (51.05, 13.74),  # 01 Dresden
-                    '2': (51.16, 14.99),  # 02 Görlitz/Bautzen
-                    '3': (51.75, 14.33),  # 03 Cottbus
-                    '4': (51.34, 12.37),  # 04 Leipzig
-                    '5': (51.48, 11.97),  # 05 Halle (Saale)
-                    '6': (51.50, 11.00),  # 06 West Sachsen-Anhalt
-                    '7': (50.93, 11.59),  # 07 Jena / Weimar
-                    '8': (50.70, 12.50),  # 08 Zwickau / Plauen
-                    '9': (50.83, 12.92),  # 09 Chemnitz
+                    '01': (51.05, 13.74), '02': (51.16, 14.99), '03': (51.75, 14.33),
+                    '04': (51.34, 12.37), '05': (51.48, 11.97), '06': (51.50, 11.0),
+                    '07': (50.93, 11.59), '08': (50.70, 12.50), '09': (50.83, 12.92)
                 }
-                base = east_map.get(second)
+                base = east_map.get(plz_code[:2])
             if not base and plz_code[0] in self.de_plz_centroids:
                 base = self.de_plz_centroids[plz_code[0]]
-        elif country == 'österreich' and len(plz_code) == 4 and plz_code[0] in self.at_plz_centroids:
+        elif country_l == 'österreich' and len(plz_code) == 4 and plz_code[0] in self.at_plz_centroids:
             base = self.at_plz_centroids[plz_code[0]]
-        elif country == 'schweiz' and len(plz_code) == 4 and plz_code[0] in self.ch_plz_centroids:
+        elif country_l == 'schweiz' and len(plz_code) == 4 and plz_code[0] in self.ch_plz_centroids:
             base = self.ch_plz_centroids[plz_code[0]]
         else:
             return None, None
 
-        lat_off, lon_off = self._deterministic_offset(plz_code, 0.18)
-        return round(base[0] + lat_off, 4), round(base[1] + lon_off, 4)
-    
-    def save_progress(self):
-        """Speichert den aktuellen Fortschritt"""
+        # Feinere Offsets: Verwende letzte 3 Ziffern um lokales Gitter zu verteilen
+        core = plz_code[-3:]
         try:
-            os.makedirs('data', exist_ok=True)
-            with open('data/wildvogelhilfen.json', 'w', encoding='utf-8') as f:
-                json.dump(self.data, f, ensure_ascii=False, indent=2)
-            logger.info(f"💾 Fortschritt gespeichert: {len(self.data)} Einträge")
-        except Exception as e:
-            logger.error(f"❌ Fehler beim Speichern: {e}")
+            tail_int = int(core)
+        except ValueError:
+            tail_int = 0
+        # Hash-basierte Streuung plus deterministische proportionale Komponente
+        h_lat, h_lon = self._deterministic_offset(plz_code, 0.12)  # kleinere Hash-Streuung
+        frac = (tail_int / 999.0) - 0.5  # -0.5..0.5
+        lat = base[0] + h_lat + frac * 0.05  # ±0.025 zusätzlich
+        lon = base[1] + h_lon + ((tail_int % 97)/97 - 0.5) * 0.07
+        return round(lat, 5), round(lon, 5)
     
     def extract_station_info(self, station_html, region):
-        """Extrahiert Informationen aus einem Stations-HTML-Block (robuster Parser)."""
+        """Extrahiert Informationen aus einem Stations-HTML-Block basierend auf einzelnen <p>-Elementen."""
         try:
             name_elem = station_html.find('h3')
             if not name_elem:
                 return None
             name = name_elem.get_text(strip=True)
 
-            # Alle Textsegmente sammeln (Zeilen)
-            lines: List[str] = [s.strip() for s in station_html.stripped_strings if s.strip()]
-            # Entferne den Namen aus den Lines (falls doppelt)
-            if lines and lines[0] == name:
-                content_lines = lines[1:]
-            else:
-                content_lines = lines
+            paragraphs = []
+            for p in station_html.find_all('p'):
+                txt = p.get_text(" ", strip=True)
+                if txt:
+                    paragraphs.append((p, txt))
 
-            # PLZ finden (4 oder 5 Ziffern) – nimm erste plausible Zeile
-            plz_pattern = re.compile(r'\b(\d{4,5})\b')
+            specialization = None
+            address = None
+            phone = None
+            note = None
             plz = None
-            plz_line_idx = None
-            for idx, line in enumerate(content_lines):
-                m = plz_pattern.search(line)
-                if m:
-                    plz = m.group(1)
-                    plz_line_idx = idx
-                    break
+            plz_re = re.compile(r'^\s*(\d{4,5})\s+([A-Za-zÄÖÜäöüß .\-]+)$')
+            phone_re = re.compile(r'(?:(?:Tel|Telefon|Vogelnotruf|Mobil)\s*:?)\s*([+0-9][0-9 \-/()]{5,})', re.IGNORECASE)
+
+            for p, txt in paragraphs:
+                # Spezialisation via class or keywords
+                if not specialization:
+                    if p.find(class_=re.compile('stationsinfo', re.I)):
+                        specialization = txt
+                    else:
+                        low = txt.lower()
+                        if any(k in low for k in ['greifvögel', 'singvögel', 'mauersegler', 'schwalben', 'eulen', 'alle wildvogelarten', 'dohlen', 'falken']):
+                            specialization = txt
+                # Address
+                if not address:
+                    m_addr = plz_re.match(txt)
+                    if m_addr:
+                        plz = m_addr.group(1)
+                        city = m_addr.group(2).strip()
+                        address = f"{plz} {city}".strip()
+                # Phone
+                if not phone:
+                    m_phone = phone_re.search(txt)
+                    if m_phone:
+                        raw_phone = m_phone.group(1)
+                        # Abschneiden vor evtl. nachfolgendem '(' Hinweis
+                        raw_phone = raw_phone.split('(')[0].strip()
+                        phone = raw_phone
+                # Note
+                if not note and (txt.startswith('(') or 'bitte' in txt.lower()):
+                    note = txt
+
+            if not plz and address:
+                # fallback extraction
+                pm = re.search(r'\b(\d{4,5})\b', address)
+                if pm:
+                    plz = pm.group(1)
+            if not plz:
+                # try any paragraph
+                for _p, t in paragraphs:
+                    pm = re.search(r'\b(\d{4,5})\b', t)
+                    if pm:
+                        plz = pm.group(1)
+                        if not address:
+                            # attempt to reconstruct city after PLZ
+                            rest = t.split(plz, 1)[1].strip()
+                            city = rest.split()[0] if rest else ''
+                            address = f"{plz} {city}".strip()
+                        break
+
             if not plz:
                 logger.warning(f"⚠️  Keine PLZ gefunden für {name}")
                 return None
 
-            raw_plz_line = content_lines[plz_line_idx]
-            # Stadt aus PLZ-Zeile extrahieren (alles nach PLZ bis Stoppwort)
-            after = raw_plz_line.split(plz, 1)[1].strip()
-            # Stoppwörter kürzen
-            stop_tokens = ['Tel', 'Telefon', 'E-Mail', 'Email', 'Mobil', 'Notfall', 'Notruf']
-            city_tokens = []
-            for token in after.replace(',', ' ').split():
-                if any(token.startswith(st) for st in stop_tokens):
-                    break
-                city_tokens.append(token)
-            city = ' '.join(city_tokens).strip(',')
+            if not specialization:
+                specialization = 'Alle Wildvogelarten'
 
-            # Straße: Zeile unmittelbar vor PLZ-Zeile falls sie wie eine Straße aussieht
-            street = None
-            if plz_line_idx > 0:
-                candidate = content_lines[plz_line_idx - 1]
-                if re.search(r'\d+[a-zA-Z]?$', candidate):  # enthält Hausnummer am Ende
-                    street = candidate
-
-            address = f"{street + ', ' if street else ''}{plz} {city}".strip()
-
-            # Telefon suchen in allen restlichen Zeilen
-            phone = ''
-            phone_regex = re.compile(r'(?:Tel|Telefon|Mobil|Vogelnotruf)[^0-9+]*([+0-9][0-9\s\/()\-]{5,})', re.IGNORECASE)
-            for line in content_lines:
-                m = phone_regex.search(line)
-                if m:
-                    phone = re.split(r'[Ff]ax', m.group(1))[0].strip()
-                    break
-
-            # Email & Website über <a>-Tags (HTML direkt)
-            email = ''
-            email_elem = station_html.find('a', href=lambda x: x and x.lower().startswith('mailto:'))
-            if email_elem:
-                email = email_elem.get('href').split(':', 1)[1]
-            website = ''
-            # Nimm erstes http/https nicht mailto
-            web_elem = station_html.find('a', href=lambda x: x and x.startswith(('http://', 'https://')))
-            if web_elem:
-                website = web_elem.get('href')
-
-            # Spezialisierung: erste Zeile mit Indikator
-            specialization = 'Alle Wildvogelarten'
-            spec_indicators = ['spezialisiert', 'greifvögel', 'singvögel', 'mauersegler', 'schwalben', 'eulen', 'dohlen', 'falken']
-            for line in content_lines:
-                lwr = line.lower()
-                if any(ind in lwr for ind in spec_indicators) and not lwr.startswith('tel'):
-                    specialization = line.strip()
-                    break
-
-            # Land aus Region ableiten
+            # Country
             country = 'Deutschland'
             if region in ('Österreich', 'Schweiz', 'Italien'):
                 country = region
 
-            lat, lon = self.get_coordinates_for_plz(plz, country=country)
+            lat, lon = self.get_coordinates_for_plz(plz, country)
 
-            # plz_prefix: für 5-stellig erste Ziffer, für 4-stellig erste zwei für feinere Gruppierung
             if country != 'Deutschland':
-                # Für Auslandsstationen landbasierte Gruppierung verwenden
                 plz_prefix = country.lower()
             else:
-                # Deutschland: erste Ziffer genügt
                 plz_prefix = plz[0]
 
             station = {
@@ -243,8 +227,7 @@ class SimpleWildvogelhilfeScraper:
                 'specialization': specialization,
                 'address': address,
                 'phone': phone,
-                'email': email,
-                'website': website,
+                'note': note,
                 'latitude': lat,
                 'longitude': lon,
                 'plz': plz,
@@ -252,9 +235,7 @@ class SimpleWildvogelhilfeScraper:
                 'region': region,
                 'country': country
             }
-            # Leere entfernen
-            station = {k: v for k, v in station.items() if v not in (None, '', [])}
-            return station
+            return {k: v for k, v in station.items() if v}
         except Exception as e:
             logger.error(f"❌ Fehler beim Parsen der Station: {e}")
             return None
@@ -373,6 +354,14 @@ class SimpleWildvogelhilfeScraper:
         logger.info("💾 Finale Daten gespeichert in data/wildvogelhilfen.json")
         
         return len(self.data)
+
+    def save_progress(self):
+        """Speichert aktuellen Zwischenstand in JSON."""
+        try:
+            with open('data/wildvogelhilfen.json', 'w', encoding='utf-8') as f:
+                json.dump(self.data, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            logger.error(f"❌ Fehler beim Speichern: {e}")
 
 def main():
     """Hauptfunktion"""

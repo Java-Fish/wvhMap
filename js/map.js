@@ -181,6 +181,9 @@ class WildvogelhilfeMap {
             content += `<strong>E-Mail:</strong> <a href="mailto:${station.email}">${station.email}</a>`;
         }
         content += `</div>`;
+        if (station.note) {
+            content += `<div class="note" style="margin-top:6px;font-size:0.85rem;color:#444;line-height:1.2;">${station.note}</div>`;
+        }
         
         content += `</div>`;
         return content;

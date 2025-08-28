@@ -1,0 +1,398 @@
+{
+  "01689|weinböhla|deutschland": [
+    51.1618943,
+    13.5643531
+  ],
+  "07749|jena|deutschland": [
+    50.9281717,
+    11.5879359
+  ],
+  "0152|/52641076|deutschland": [
+    null,
+    null
+  ],
+  "39019|dorf|italien": [
+    46.4653657,
+    12.7087174
+  ],
+  "02826|görlitz|deutschland": [
+    51.1478374,
+    14.976633
+  ],
+  "02699|neschwitz|deutschland": [
+    51.2907251,
+    14.3250076
+  ],
+  "08645|bad|deutschland": [
+    50.2828899,
+    12.2400551
+  ],
+  "02943|weißwasser|deutschland": [
+    51.5028807,
+    14.6373221
+  ],
+  "01187|dresden|deutschland": [
+    51.0275223,
+    13.7017131
+  ],
+  "04157|leipzig|deutschland": [
+    51.3738253,
+    12.3678529
+  ],
+  "07422|bad blankenburg|deutschland": [
+    50.6757764,
+    11.2374523
+  ],
+  "16798|himmelpfort|deutschland": [
+    53.1764568,
+    13.2320892
+  ],
+  "16766|kremmen|deutschland": [
+    52.7991051,
+    13.0537353
+  ],
+  "14776|brandenburg|deutschland": [
+    52.3887099,
+    12.5609912
+  ],
+  "16515|oranienburg|deutschland": [
+    52.7711793,
+    13.2878028
+  ],
+  "26180|rastede-hankhausen|deutschland": [
+    null,
+    null
+  ],
+  "25355|bullenkuhlen|deutschland": [
+    53.7679891,
+    9.7503817
+  ],
+  "20537|hamburg|deutschland": [
+    53.5478008,
+    10.0496811
+  ],
+  "25335|raa-besenbek|deutschland": [
+    53.7556754,
+    9.6072404
+  ],
+  "26506|norden|deutschland": [
+    53.5833281,
+    7.1617306
+  ],
+  "27804|berne-glüsing|deutschland": [
+    null,
+    null
+  ],
+  "29494|trebel|deutschland": [
+    53.0049901,
+    11.289038
+  ],
+  "24623|großenaspe|deutschland": [
+    53.9802864,
+    9.9649111
+  ],
+  "25365|klein|deutschland": [
+    53.8036302,
+    9.6891509
+  ],
+  "24211|preetz|deutschland": [
+    54.2308791,
+    10.2898555
+  ],
+  "25548|mühlenbarbek|deutschland": [
+    53.9577012,
+    9.6663845
+  ],
+  "29614|soltau|deutschland": [
+    53.0041953,
+    9.8780273
+  ],
+  "21271|nindorf-hanstedt|deutschland": [
+    53.2357451,
+    10.0241414
+  ],
+  "27711|osterholz-scharmbeck|deutschland": [
+    53.2548631,
+    8.8143193
+  ],
+  "32727|detmold|deutschland": [
+    51.936284,
+    8.8791526
+  ],
+  "34431|marsberg|deutschland": [
+    51.459981,
+    8.8516119
+  ],
+  "36166|haunetal|deutschland": [
+    50.7646492,
+    9.6631471
+  ],
+  "39104|magdeburg|deutschland": [
+    52.1151882,
+    11.630882
+  ],
+  "34323|malsfeld|deutschland": [
+    51.0800572,
+    9.5062964
+  ],
+  "35410|hungen|deutschland": [
+    50.4773404,
+    8.9214413
+  ],
+  "34439|willebadessen|deutschland": [
+    51.600225,
+    9.0989711
+  ],
+  "33098|paderborn|deutschland": [
+    51.7095423,
+    8.7499976
+  ],
+  "31073|kaierde|deutschland": [
+    51.9332448,
+    9.7650394
+  ],
+  "38542|leiferde|deutschland": [
+    52.4449607,
+    10.4235316
+  ],
+  "31832|springe|deutschland": [
+    52.1968948,
+    9.6012332
+  ],
+  "34590|wabern-niedermöllrich|deutschland": [
+    null,
+    null
+  ],
+  "39279|loburg|deutschland": [
+    52.1109571,
+    12.0687778
+  ],
+  "33619|bielefeld|deutschland": [
+    52.0407668,
+    8.4576582
+  ],
+  "34549|edertal-hemfurth|deutschland": [
+    null,
+    null
+  ],
+  "34508|willingen|deutschland": [
+    51.2951226,
+    8.6652278
+  ],
+  "30982|pattensen|deutschland": [
+    52.2342184,
+    9.7362239
+  ],
+  "46487|wesel|deutschland": [
+    51.670069,
+    6.5414504
+  ],
+  "47652|weeze|deutschland": [
+    51.6192745,
+    6.1872253
+  ],
+  "41379|brüggen|deutschland": [
+    51.2675569,
+    6.1722185
+  ],
+  "45149|essen|deutschland": [
+    51.4168032,
+    6.960894
+  ],
+  "47058|duisburg duissern|deutschland": [
+    51.4412389,
+    6.7959913
+  ],
+  "48531|nordhorn|deutschland": [
+    52.4306233,
+    7.1338591
+  ],
+  "44149|dortmund|deutschland": [
+    51.5001803,
+    7.4144708
+  ],
+  "51503|rösrath|deutschland": [
+    50.9051654,
+    7.1821589
+  ],
+  "59505|bad|deutschland": [
+    51.5831615,
+    8.1794644
+  ],
+  "53783|eitorf|deutschland": [
+    50.7651331,
+    7.4452001
+  ],
+  "51147|köln|deutschland": [
+    50.873415,
+    7.1273944
+  ],
+  "53940|hellenthal|deutschland": [
+    50.4183658,
+    6.4110279
+  ],
+  "50935|köln|deutschland": [
+    50.9234984,
+    6.8939984
+  ],
+  "58509|lüdenscheid|deutschland": [
+    51.2220842,
+    7.6036047
+  ],
+  "56637|plaidt|deutschland": [
+    50.3905304,
+    7.3901323
+  ],
+  "56729|kirchwald|deutschland": [
+    50.3711018,
+    7.1531911
+  ],
+  "52525|heinsberg|deutschland": [
+    51.0593129,
+    6.0681085
+  ],
+  "55437|appenheim|deutschland": [
+    49.9130267,
+    8.0325967
+  ],
+  "67454|haßloch|deutschland": [
+    49.3512638,
+    8.2598092
+  ],
+  "64823|groß-umstadt|deutschland": [
+    49.8656846,
+    8.961699
+  ],
+  "65933|frankfurt|deutschland": [
+    50.1017339,
+    8.5967489
+  ],
+  "67240|bobenheim-roxheim|deutschland": [
+    49.5835521,
+    8.3779624
+  ],
+  "61389|schmitten|deutschland": [
+    50.2665636,
+    8.4449248
+  ],
+  "67659|kaiserslautern|deutschland": [
+    49.467421,
+    7.7496615
+  ],
+  "65201|wiesbaden-schierstein|deutschland": [
+    50.0602711,
+    8.1774141
+  ],
+  "66869|kusel|deutschland": [
+    49.5362407,
+    7.387804
+  ],
+  "66346|püttlingen|deutschland": [
+    49.2944307,
+    6.897851
+  ],
+  "69517|gorxheimertal|deutschland": [
+    49.5312708,
+    8.7459256
+  ],
+  "65329|hohenstein|deutschland": [
+    50.1916413,
+    8.098454
+  ],
+  "79843|bachheim|deutschland": [
+    null,
+    null
+  ],
+  "74177|bad friedrichshall|deutschland": [
+    49.2405574,
+    9.2071426
+  ],
+  "73095|albershausen|deutschland": [
+    48.6879993,
+    9.5558093
+  ],
+  "76689|karlsdorf-neuthard|deutschland": [
+    49.1574497,
+    8.536036
+  ],
+  "73642|eibenhof|deutschland": [
+    48.8548704,
+    9.6117274
+  ],
+  "85356|freising|deutschland": [
+    48.3901163,
+    11.762752
+  ],
+  "85764|oberschleißheim|deutschland": [
+    48.247001,
+    11.5549299
+  ],
+  "83451|piding|deutschland": [
+    47.7756285,
+    12.9162931
+  ],
+  "97080|würzburg|deutschland": [
+    49.8208343,
+    9.9125851
+  ],
+  "96479|weitramsdorf|deutschland": [
+    50.2496822,
+    10.8716435
+  ],
+  "91583|schillingsfürst|deutschland": [
+    49.2936076,
+    10.2573367
+  ],
+  "96188|stettfeld|deutschland": [
+    49.9731356,
+    10.7305896
+  ],
+  "94124|büchlberg|deutschland": [
+    48.6789328,
+    13.532502
+  ],
+  "93128|regenstauf|deutschland": [
+    49.1549008,
+    12.1696901
+  ],
+  "91484|sugenheim|deutschland": [
+    49.5999358,
+    10.4293348
+  ],
+  "6020|innsbruck|österreich": [
+    47.2990769,
+    11.3655664
+  ],
+  "2004|bruderndorf|österreich": [
+    48.4655686,
+    16.2984734
+  ],
+  "8044|graz|österreich": [
+    47.1242815,
+    15.4894276
+  ],
+  "1090|wien|österreich": [
+    48.225073,
+    16.3583976
+  ],
+  "4103|bottmingen|schweiz": [
+    47.5241985,
+    7.5733315
+  ],
+  "4313|möhlin|schweiz": [
+    47.5618626,
+    7.8428753
+  ],
+  "8415|berg|schweiz": [
+    47.5686419,
+    8.5956883
+  ],
+  "1999|silvia|schweiz": [
+    null,
+    null
+  ],
+  "3427|utzenstorf|schweiz": [
+    47.1295376,
+    7.5546861
+  ]
+}
