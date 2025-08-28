@@ -400,4 +400,142 @@ class WildvogelhilfeMap {
 // Karte initialisieren wenn DOM geladen ist
 document.addEventListener('DOMContentLoaded', () => {
     new WildvogelhilfeMap();
+    
+    // Widget-Funktionalität nur auf der Hauptseite
+    if (document.getElementById('widget-toggle-btn')) {
+        new WidgetManager();
+    }
 });
+
+// Widget-Manager Klasse
+class WidgetManager {
+    constructor() {
+        this.currentConfig = {
+            width: '800',
+            height: '600',
+            includeSearch: true
+        };
+        this.baseUrl = window.location.origin + window.location.pathname.replace('index.html', '');
+        this.init();
+    }
+
+    init() {
+        this.setupEventListeners();
+        this.updateWidgetCode();
+    }
+
+    setupEventListeners() {
+        // Toggle-Button
+        const toggleBtn = document.getElementById('widget-toggle-btn');
+        const widgetContent = document.getElementById('widget-content');
+        const toggleIcon = document.getElementById('widget-toggle-icon');
+
+        toggleBtn.addEventListener('click', () => {
+            const isVisible = widgetContent.style.display !== 'none';
+            widgetContent.style.display = isVisible ? 'none' : 'block';
+            toggleIcon.textContent = isVisible ? '▼' : '▲';
+        });
+
+        // Größen-Buttons
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Alle Buttons deaktivieren
+                document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                // Aktuellen Button aktivieren
+                e.target.classList.add('active');
+                
+                // Konfiguration aktualisieren
+                this.currentConfig.width = e.target.dataset.width;
+                this.currentConfig.height = e.target.dataset.height;
+                this.updateWidgetCode();
+            });
+        });
+
+        // Suchfunktion Checkbox
+        document.getElementById('include-search').addEventListener('change', (e) => {
+            this.currentConfig.includeSearch = e.target.checked;
+            this.updateWidgetCode();
+        });
+
+        // Code kopieren
+        document.getElementById('copy-widget-code').addEventListener('click', () => {
+            this.copyToClipboard();
+        });
+
+        // Vorschau anzeigen
+        document.getElementById('preview-widget').addEventListener('click', () => {
+            this.showPreview();
+        });
+    }
+
+    updateWidgetCode() {
+        const { width, height, includeSearch } = this.currentConfig;
+        
+        const searchParam = !includeSearch ? '?hideSearch=true' : '';
+        const widgetUrl = `${this.baseUrl}widget.html${searchParam}`;
+        
+        const code = `<!-- Wildvogelhilfe Karte Widget -->
+<iframe 
+    src="${widgetUrl}"
+    width="${width}" 
+    height="${height}"
+    frameborder="0"
+    style="border: 1px solid #ddd; border-radius: 8px; max-width: 100%;"
+    title="Wildvogelhilfe Karte"
+    loading="lazy">
+    <p>Ihr Browser unterstützt keine iframes. 
+    <a href="${widgetUrl}" target="_blank">Karte in neuem Fenster öffnen</a></p>
+</iframe>`;
+
+        document.getElementById('widget-code').value = code;
+    }
+
+    async copyToClipboard() {
+        const codeTextarea = document.getElementById('widget-code');
+        const copyBtn = document.getElementById('copy-widget-code');
+        const originalText = copyBtn.textContent;
+
+        try {
+            await navigator.clipboard.writeText(codeTextarea.value);
+            copyBtn.textContent = '✅ Kopiert!';
+            copyBtn.style.background = '#28a745';
+            
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+                copyBtn.style.background = '#4a7c59';
+            }, 2000);
+        } catch (err) {
+            // Fallback für ältere Browser
+            codeTextarea.select();
+            document.execCommand('copy');
+            copyBtn.textContent = '✅ Kopiert!';
+            
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+            }, 2000);
+        }
+    }
+
+    showPreview() {
+        const previewContainer = document.getElementById('widget-preview-container');
+        const previewFrame = document.getElementById('widget-preview');
+        const { width, height, includeSearch } = this.currentConfig;
+        
+        const searchParam = !includeSearch ? '?hideSearch=true' : '';
+        const widgetUrl = `${this.baseUrl}widget.html${searchParam}`;
+        
+        // Vorschau-Container anzeigen
+        previewContainer.style.display = 'block';
+        
+        // Preview-Frame Größe setzen
+        const previewWidth = width === '100%' ? '100%' : Math.min(parseInt(width), 800) + 'px';
+        const previewHeight = Math.min(parseInt(height), 500) + 'px';
+        
+        previewFrame.style.width = previewWidth;
+        previewFrame.style.height = previewHeight;
+        previewFrame.src = widgetUrl;
+        
+        // Scroll zur Vorschau
+        previewContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
