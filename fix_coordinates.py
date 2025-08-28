@@ -146,8 +146,23 @@ def fix_coordinates_in_json(geocode: bool = False, only_missing: bool = False, m
         if mcity:
             city = mcity.group(1).strip()
 
-        # Optional exaktes Geocoding
+        # Zuerst im Cache nach exakten Koordinaten suchen
         lat = lon = None
+        cache_key = f"{plz}|{city.lower()}|{country.lower()}"
+        
+        if cache_key in geocode_cache:
+            cached_coords = geocode_cache[cache_key]
+            if cached_coords and cached_coords[0] is not None and cached_coords[1] is not None:
+                lat, lon = cached_coords
+                station['latitude'] = round(lat, 6)
+                station['longitude'] = round(lon, 6)
+                print(f"💾 Cache-Hit {station['name'][:45]:<45} -> {lat:.6f},{lon:.6f}")
+                fixed_count += 1
+                station['plz'] = plz
+                station['plz_prefix'] = plz[0] if country.lower() == 'deutschland' and len(plz)==5 else country.lower()
+                continue
+        
+        # Optional exaktes Geocoding (nur wenn nicht im Cache gefunden)
         if geocode and city and (not only_missing or not station.get('latitude')):
             if max_geocode is None or geocoded < max_geocode:
                 lat, lon = geocode_plz_city(plz, city, country, session, geocode_cache)
