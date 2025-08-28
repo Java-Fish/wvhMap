@@ -231,11 +231,11 @@ class SimpleWildvogelhilfeScraper:
             lat, lon = self.get_coordinates_for_plz(plz, country=country)
 
             # plz_prefix: für 5-stellig erste Ziffer, für 4-stellig erste zwei für feinere Gruppierung
-            if len(plz) == 5:
-                plz_prefix = plz[0]
-            elif len(plz) == 4:
-                plz_prefix = plz[:1]
+            if country != 'Deutschland':
+                # Für Auslandsstationen landbasierte Gruppierung verwenden
+                plz_prefix = country.lower()
             else:
+                # Deutschland: erste Ziffer genügt
                 plz_prefix = plz[0]
 
             station = {

@@ -9,11 +9,17 @@ import hashlib
 from typing import Dict, Tuple, Optional
 
 def extract_plz_from_address(address: str) -> str:
-    """Extrahiert die PLZ aus der Adresse"""
-    # Suche nach 5-stelliger PLZ
-    match = re.search(r'\b(\d{5})\b', address)
-    if match:
-        return match.group(1)
+    """Extrahiert die PLZ (DE 5-stellig, AT/CH 4-stellig) aus der Adresse."""
+    if not address:
+        return None
+    # Zuerst 5-stellig versuchen
+    m5 = re.search(r'\b(\d{5})\b', address)
+    if m5:
+        return m5.group(1)
+    # Dann 4-stellig (für AT / CH)
+    m4 = re.search(r'\b(\d{4})\b', address)
+    if m4:
+        return m4.group(1)
     return None
 
 def _hash_offset(key: str, scale: float = 0.18) -> Tuple[float, float]:
@@ -100,15 +106,22 @@ def fix_coordinates_in_json():
         if plz:
             lat, lon = get_coordinates_for_plz(plz, country)
             if lat and lon:
-                if not station.get('latitude') or not station.get('longitude'):
+                force_recalc = country.lower() != 'deutschland'
+                if force_recalc or (not station.get('latitude') or not station.get('longitude')):
+                    old = (station.get('latitude'), station.get('longitude'))
                     station['latitude'] = lat
                     station['longitude'] = lon
-                    print(f"✅ Neu {station['name'][:50]:<50} PLZ {plz} -> {lat:.4f}, {lon:.4f}")
+                    action = 'Recalc' if force_recalc and old[0] and old[1] else 'Neu'
+                    print(f"✅ {action} {station['name'][:50]:<50} PLZ {plz} -> {lat:.4f}, {lon:.4f}")
                     fixed_count += 1
                 else:
                     print(f"ℹ️  Belasse bestehende Koords {station['name'][:40]} ({station['latitude']},{station['longitude']})")
                 station['plz'] = plz
-                station['plz_prefix'] = plz[0]
+                # plz_prefix: für Deutschland erste Ziffer, sonst Land
+                if country.lower() == 'deutschland' and len(plz) == 5:
+                    station['plz_prefix'] = plz[0]
+                else:
+                    station['plz_prefix'] = country.lower()
             else:
                 print(f"⚠️  Keine Basis-Koords für {country} / {plz} - {station['name'][:40]}")
                 skipped_count += 1

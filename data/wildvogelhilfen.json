@@ -1211,11 +1211,12 @@
     "specialization": "Singvögel (alle anderen Vögel sowie Kleinsäuger nach Rücksprache)Weiherweg 37a",
     "address": "Weiherweg 37a, 6020 InnsbruckTel",
     "phone": "0043/(0)512292323",
-    "latitude": 49.8377,
-    "longitude": 8.3769,
-    "plz_prefix": "60",
+    "latitude": 47.2811,
+    "longitude": 9.6219,
+    "plz_prefix": "österreich",
     "region": "Österreich",
-    "country": "Österreich"
+    "country": "Österreich",
+    "plz": "6020"
   },
   {
     "name": "Animal Help Austria",
@@ -1223,11 +1224,12 @@
     "address": "keine Schwalben.\nGreifvögel und Rabenvögel nur als NotzwischenstationVogelau 6, 2004 BruderndorfTel",
     "phone": "0043/(0)676",
     "website": "http://www.animal-help.at/",
-    "latitude": 53.6561,
-    "longitude": 9.9636,
-    "plz_prefix": "20",
+    "latitude": 48.2399,
+    "longitude": 15.7611,
+    "plz_prefix": "österreich",
     "region": "Österreich",
-    "country": "Österreich"
+    "country": "Österreich",
+    "plz": "2004"
   },
   {
     "name": "Ötzi-Dorf/Greifvogelpark",
@@ -1235,11 +1237,12 @@
     "address": "GreifvogelparkNur Greifvögel und EulenAm Tauferberg 8, 6441 Umhausen",
     "phone": "0043/(0)660/2698877",
     "website": "https://www.greifvogelpark.at/",
-    "latitude": 49.8361,
-    "longitude": 8.3761,
-    "plz_prefix": "64",
+    "latitude": 47.1678,
+    "longitude": 9.6449,
+    "plz_prefix": "österreich",
     "region": "Österreich",
-    "country": "Österreich"
+    "country": "Österreich",
+    "plz": "6441"
   },
   {
     "name": "Verein für kleine Wildtiere in grosser Not",
@@ -1248,11 +1251,12 @@
     "phone": "0043/(0)650 6452535",
     "email": "office@wildtiere-in-not.at",
     "website": "http://wildtiere-in-not.at",
-    "latitude": 48.0426,
-    "longitude": 11.6524,
-    "plz_prefix": "80",
+    "latitude": 47.1701,
+    "longitude": 15.6002,
+    "plz_prefix": "österreich",
     "region": "Österreich",
-    "country": "Österreich"
+    "country": "Österreich",
+    "plz": "8044"
   },
   {
     "name": "Wildtierhilfe Wien",
@@ -1260,11 +1264,12 @@
     "address": "R04, 1090 WienNotfalltelefon",
     "phone": "+43 676 382 1528\n(08",
     "email": "office@wildtierhilfe-wien.at",
-    "latitude": 52.488,
-    "longitude": 13.4874,
-    "plz_prefix": "10",
+    "latitude": 48.2179,
+    "longitude": 16.3301,
+    "plz_prefix": "österreich",
     "region": "Österreich",
-    "country": "Österreich"
+    "country": "Österreich",
+    "plz": "1090"
   },
   {
     "name": "Wildtierhotline der Stadt Wien",
@@ -1287,11 +1292,12 @@
     "phone": "+41 (0)79 256 12 84 (",
     "email": "danae.schwegler@gmail.com",
     "website": "https://www.vogelpflegestation.ch/",
-    "latitude": 51.5625,
-    "longitude": 7.4816,
-    "plz_prefix": "41",
+    "latitude": 47.0261,
+    "longitude": 8.3389,
+    "plz_prefix": "schweiz",
     "region": "Schweiz",
-    "country": "Schweiz"
+    "country": "Schweiz",
+    "plz": "4103"
   },
   {
     "name": "Wildvogel-Pflegestelle Amselweg",
@@ -1300,21 +1306,23 @@
     "phone": "079 370 19 94",
     "email": "pflegestelle-amselweg@bluewin.ch",
     "website": "http://www.wildvogel-pflegestelle.ch/",
-    "latitude": 51.5861,
-    "longitude": 7.5416,
-    "plz_prefix": "43",
+    "latitude": 47.0437,
+    "longitude": 8.2547,
+    "plz_prefix": "schweiz",
     "region": "Schweiz",
-    "country": "Schweiz"
+    "country": "Schweiz",
+    "plz": "4313"
   },
   {
     "name": "E. Widmer",
     "specialization": "Greifvögel und EulenFeldstrasse 6",
     "address": "8735 St",
-    "latitude": 48.0972,
-    "longitude": 11.6566,
-    "plz_prefix": "87",
+    "latitude": 45.9677,
+    "longitude": 8.9594,
+    "plz_prefix": "schweiz",
     "region": "Schweiz",
-    "country": "Schweiz"
+    "country": "Schweiz",
+    "plz": "8735"
   },
   {
     "name": "Greifvogelstation Berg am Irchel",
@@ -1322,11 +1330,12 @@
     "address": "8415 Berg am IrchelTel",
     "phone": "+41 (0)52/318 14 27",
     "website": "https://greifvogelstation.ch/",
-    "latitude": 48.11,
-    "longitude": 11.5498,
-    "plz_prefix": "84",
+    "latitude": 46.0163,
+    "longitude": 9.0288,
+    "plz_prefix": "schweiz",
     "region": "Schweiz",
-    "country": "Schweiz"
+    "country": "Schweiz",
+    "plz": "8415"
   },
   {
     "name": "Mauer- und Alpensegler Pflege- und Rehastation",
@@ -1335,11 +1344,12 @@
     "phone": "0041 (0)79 663 71 84",
     "email": "svolpi@berufskunde.com",
     "website": "http://www.apus.tv",
-    "latitude": 52.5579,
-    "longitude": 13.4759,
-    "plz_prefix": "19",
+    "latitude": 47.3566,
+    "longitude": 8.5838,
+    "plz_prefix": "schweiz",
     "region": "Schweiz",
-    "country": "Schweiz"
+    "country": "Schweiz",
+    "plz": "1999"
   },
   {
     "name": "Schweizer Wildstation",
@@ -1348,11 +1358,12 @@
     "phone": "032 665 38 93",
     "email": "info@wildstation.ch",
     "website": "https://www.wildstation.ch/de/",
-    "latitude": 52.4,
-    "longitude": 9.6255,
-    "plz_prefix": "34",
+    "latitude": 46.9192,
+    "longitude": 7.4207,
+    "plz_prefix": "schweiz",
     "region": "Schweiz",
-    "country": "Schweiz"
+    "country": "Schweiz",
+    "plz": "3427"
   },
   {
     "name": "Werner Fischer",
@@ -1360,20 +1371,21 @@
     "address": "7551 Ftan",
     "phone": "+ 41 (0)81 864 82 95",
     "email": "uhu.ftan@hotmail.com",
-    "latitude": 48.8297,
-    "longitude": 9.1596,
-    "plz_prefix": "75",
+    "latitude": 46.1884,
+    "longitude": 7.3979,
+    "plz_prefix": "schweiz",
     "region": "Schweiz",
-    "country": "Schweiz"
+    "country": "Schweiz",
+    "plz": "7551"
   },
   {
     "name": "CRAS Rimini – Wildtierauffangzentrum",
     "specialization": "Alle Wildvogelarten",
     "address": "04689 Roberta",
     "website": "https://www.facebook.com/crasrimini",
-    "latitude": 50.917,
-    "longitude": 11.23,
-    "plz_prefix": "0",
+    "latitude": 44.0012,
+    "longitude": 12.5836,
+    "plz_prefix": "italien",
     "region": "Italien",
     "country": "Italien",
     "plz": "04689"
@@ -1385,9 +1397,9 @@
     "phone": "+39 0473 22 15 00",
     "email": "gufyland@yahoo.de",
     "website": "http://www.gufyland.com/",
-    "latitude": 51.207,
-    "longitude": 9.35,
-    "plz_prefix": "3",
+    "latitude": 46.5857,
+    "longitude": 11.4105,
+    "plz_prefix": "italien",
     "region": "Italien",
     "country": "Italien",
     "plz": "39019"
