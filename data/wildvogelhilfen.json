@@ -5,55 +5,60 @@
     "address": "Greifvogelhilfe Sachsen e. V.Spezialisiert auf GreifvögelNordstraße 4, 01689 WeinböhlaTel",
     "phone": "0171/26 45 180",
     "email": "info@greifvogelhilfe-sachsen.de",
-    "latitude": 51.1497,
-    "longitude": 13.0219,
+    "latitude": 51.917,
+    "longitude": 11.83,
     "plz_prefix": "0",
     "region": "PLZ 0",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "01689"
   },
   {
     "name": "NABU Wildvogelhilfe Jena",
     "specialization": "Alle Wildvogelarten",
     "address": "07749 JenaVogelnotruf",
     "phone": "0155 10018479(",
-    "latitude": 51.2728,
-    "longitude": 12.9075,
+    "latitude": 51.097,
+    "longitude": 13.76,
     "plz_prefix": "0",
     "region": "PLZ 0",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "07749"
   },
   {
     "name": "Naturschutz-Tierpark Görlitz",
     "specialization": "Naturschutz-Tierpark GörlitzAlle VögelZittauer Straße 43",
     "address": "Naturschutz-Tierpark GörlitzAlle VögelZittauer Straße 43, 02826 GörlitzTel",
     "phone": "03581/406616",
-    "latitude": 51.2783,
-    "longitude": 12.9693,
+    "latitude": 51.728,
+    "longitude": 11.89,
     "plz_prefix": "0",
     "region": "PLZ 0",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "02826"
   },
   {
     "name": "Naturschutzstation Neschwitz",
     "specialization": "Naturschutzstation NeschwitzAlle VögelPark 1",
     "address": "Naturschutzstation NeschwitzAlle VögelPark 1, 02699 NeschwitzTel",
     "phone": "035933/30077",
-    "latitude": 51.2664,
-    "longitude": 13.0623,
+    "latitude": 51.947,
+    "longitude": 11.83,
     "plz_prefix": "0",
     "region": "PLZ 0",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "02699"
   },
   {
     "name": "Private Vogel- und Igelpflegestation Bad Elster",
     "specialization": "Private Vogel- und Igelpflegestation Bad ElsterSingvögel, Schwalben, MauerseglerCorinna Heinrich",
     "address": "MauerseglerCorinna Heinrich\nUntere Reuth 8, 08645 Bad ElsterTel",
     "phone": "037437/3925",
-    "latitude": 51.1714,
-    "longitude": 13.0693,
+    "latitude": 51.085,
+    "longitude": 13.73,
     "plz_prefix": "0",
     "region": "PLZ 0",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "08645"
   },
   {
     "name": "Tierpark Weißwasser e. V.",
@@ -62,22 +67,24 @@
     "phone": "03576/208366",
     "email": "info@tierpark-weisswasser.de",
     "website": "https://www.tierpark-weisswasser.de/",
-    "latitude": 51.1722,
-    "longitude": 12.9998,
+    "latitude": 51.779,
+    "longitude": 11.92,
     "plz_prefix": "0",
     "region": "PLZ 0",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "02943"
   },
   {
     "name": "Wildvogelhilfe Dölzschen – Rettungsstation für Dohlen",
     "specialization": "Wildvogelhilfe Dölzschen – Rettungsstation für DohlenDohlen, Informationen und Hilfe auch zu Krähen, Elstern, HähernPeter Stephan",
     "address": "HähernPeter Stephan\nAm Kirschberg 23, 01187 DresdenTel Montag bis Freitag",
     "email": "p.stephan@kabelmail.de",
-    "latitude": 51.175,
-    "longitude": 13.0053,
+    "latitude": 51.911,
+    "longitude": 11.68,
     "plz_prefix": "0",
     "region": "PLZ 0",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "01187"
   },
   {
     "name": "Wildvogelhilfe Leipzig",
@@ -85,22 +92,24 @@
     "address": "04157 LeipzigTel",
     "phone": "0341 927 62 027",
     "website": "http://www.wildvogelhilfe-leipzig.de",
-    "latitude": 51.1182,
-    "longitude": 13.0467,
+    "latitude": 50.821,
+    "longitude": 11.08,
     "plz_prefix": "0",
     "region": "PLZ 0",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "04157"
   },
   {
     "name": "Falknerei Burg Greifenstein",
     "specialization": "Falknerei Burg GreifensteinAmtlich anerkannte Auffangstation für Greifvögel, Falken und Eulen",
     "address": "07422 Bad Blankenburg E-Mail",
     "email": "Greifvogelerlebnis@web.de",
-    "latitude": 51.2303,
-    "longitude": 12.9261,
+    "latitude": 51.016,
+    "longitude": 13.67,
     "plz_prefix": "0",
     "region": "PLZ 0",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "07422"
   },
   {
     "name": "Aquila e. V.",
@@ -109,22 +118,24 @@
     "phone": "033089/439010",
     "email": "Aquilaev@web.de",
     "website": "https://www.aquila-ev.de/",
-    "latitude": 52.4011,
-    "longitude": 13.3296,
+    "latitude": 52.544,
+    "longitude": 12.56,
     "plz_prefix": "1",
     "region": "PLZ 1",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "16798"
   },
   {
     "name": "Jana Hinrich",
     "specialization": "Jana HinrichVerschiedene Wildvögel, auch MauerseglerMittelweg 12",
     "address": "auch MauerseglerMittelweg 12, 16766 Kremmen OT AmalienfeldeTel",
     "phone": "0157/57449594",
-    "latitude": 52.5341,
-    "longitude": 13.4581,
+    "latitude": 52.448,
+    "longitude": 12.56,
     "plz_prefix": "1",
     "region": "PLZ 1",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "16766"
   },
   {
     "name": "Krugpark in Brandenburg",
@@ -132,11 +143,12 @@
     "address": "14776 Brandenburg an der HavelTel",
     "phone": "03381/663135",
     "website": "http://www.krugpark-brandenburg.de/",
-    "latitude": 52.5145,
-    "longitude": 13.3746,
+    "latitude": 52.478,
+    "longitude": 12.56,
     "plz_prefix": "1",
     "region": "PLZ 1",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "14776"
   },
   {
     "name": "Wildtierrettung Berlin / Brandenburg",
@@ -144,11 +156,12 @@
     "address": "Wildtierrettung Notkleintiere e. V.\nGärtnerweg 15, 16515 Oranienburg OT WensickendorfMobil",
     "email": "info@wildtierrettung.de",
     "website": "https://wildtierrettung.de/",
-    "latitude": 52.4166,
-    "longitude": 13.3615,
+    "latitude": 52.295,
+    "longitude": 12.5,
     "plz_prefix": "1",
     "region": "PLZ 1",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "16515"
   },
   {
     "name": "Wildvogelstation des NABU Berlin",
@@ -157,11 +170,12 @@
     "phone": "030/54712892",
     "email": "wildvogelstation@nabu-berlin.de",
     "website": "https://berlin.nabu.de/stadt-und-natur/projekte-nabu-berlin/wildvogelstation/erste-hilfe/index.html",
-    "latitude": 52.5555,
-    "longitude": 13.4875,
+    "latitude": 52.626,
+    "longitude": 13.49,
     "plz_prefix": "1",
     "region": "PLZ 1",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "12892"
   },
   {
     "name": "Auffangstation Rastede-Hankhausen",
@@ -170,22 +184,24 @@
     "phone": "04402/985444",
     "email": "station@wildtierstation-rastede.de",
     "website": "https://wildtierstation-rastede.de/",
-    "latitude": 53.6721,
-    "longitude": 9.9359,
+    "latitude": 53.19,
+    "longitude": 8.68,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "26180"
   },
   {
     "name": "Forstamt Rantzau",
     "specialization": "Forstamt RantzauGreifvögel und EulenZum Forstamt 1",
     "address": "Forstamt RantzauGreifvögel und EulenZum Forstamt 1, 25355 BullenkuhlenTelefon",
     "phone": "04123/90250",
-    "latitude": 53.6053,
-    "longitude": 9.9718,
+    "latitude": 54.315,
+    "longitude": 9.74,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "25355"
   },
   {
     "name": "Hamburger Tierschutzverein v. 1841 e.V.",
@@ -205,22 +221,24 @@
     "address": "Kirstin ZollerSchwalben und kleine SingvögelDorfstraße 37, 25335 Raa-BesenbekTelefon",
     "phone": "0171/211 63 12",
     "website": "https://www.wildvogel-rettung.de/",
-    "latitude": 53.6254,
-    "longitude": 9.9752,
+    "latitude": 54.255,
+    "longitude": 9.74,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "25335"
   },
   {
     "name": "Vogelstation der Seehundstation Norddeich",
     "specialization": "Vogelstation der Seehundstation NorddeichAlle Vögel (außer Störche/Kraniche)Waloseum",
     "address": "Waloseum\nOsterlooger Weg 3, 26506 NordenTelefon",
     "phone": "04931/973330",
-    "latitude": 53.5769,
-    "longitude": 9.9921,
+    "latitude": 52.968,
+    "longitude": 8.8,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "26506"
   },
   {
     "name": "Storchenpflegestation Wesermarsch",
@@ -229,22 +247,24 @@
     "phone": "04406/1888",
     "email": "info@storchenstation.de",
     "website": "https://www.storchenstation.de/",
-    "latitude": 53.6574,
-    "longitude": 10.0337,
+    "latitude": 52.962,
+    "longitude": 8.89,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "27804"
   },
   {
     "name": "Weißstorchpflegestation Trebel",
     "specialization": "Weißstorchpflegestation TrebelStörche und EulenAußenstelle OT Pannecke",
     "address": "29494 TrebelTelefon",
     "phone": "05848/313",
-    "latitude": 53.5365,
-    "longitude": 9.9944,
+    "latitude": 53.232,
+    "longitude": 8.77,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "29494"
   },
   {
     "name": "Wildpark Eekholt",
@@ -253,11 +273,12 @@
     "phone": "04327/9923-0",
     "email": "wildpark-eekholt@t-online.de",
     "website": "https://www.wildpark-eekholt.de/",
-    "latitude": 53.5928,
-    "longitude": 9.9094,
+    "latitude": 54.219,
+    "longitude": 9.83,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "24623"
   },
   {
     "name": "Wildtier- und Artenschutzzentrum",
@@ -266,11 +287,12 @@
     "phone": "04121/4501939",
     "email": "info@wildtier-und-artenschutzzentrum.de",
     "website": "https://wildtierstation-hamburg.de/",
-    "latitude": 53.5467,
-    "longitude": 9.9768,
+    "latitude": 54.345,
+    "longitude": 9.74,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "25365"
   },
   {
     "name": "Wildtierheim der Vogelschutzgruppe Preetz",
@@ -279,11 +301,12 @@
     "phone": "04342/7991173",
     "email": "info@wildtierheim.de",
     "website": "https://wildtierheimpreetz.de/",
-    "latitude": 53.5314,
-    "longitude": 10.0391,
+    "latitude": 54.183,
+    "longitude": 9.71,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "24211"
   },
   {
     "name": "Wildtierhilfe Auenland",
@@ -292,11 +315,12 @@
     "phone": "0173/9629024\n(",
     "email": "fundtier@gmail.com",
     "website": "https://www.wildtierhilfe-auenland.de/",
-    "latitude": 53.6373,
-    "longitude": 9.9624,
+    "latitude": 54.294,
+    "longitude": 9.8,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "25548"
   },
   {
     "name": "Wildtierhilfe Lüneburger Heide e.V.",
@@ -305,44 +329,48 @@
     "phone": "05190/984 9599",
     "email": "info@wildtier-hilfe.de",
     "website": "https://www.wildtier-hilfe.de/",
-    "latitude": 53.6708,
-    "longitude": 9.9321,
+    "latitude": 52.992,
+    "longitude": 8.83,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "29614"
   },
   {
     "name": "Wildpark Lüneburger Heide Tietz GmbH & Co. KG",
     "specialization": "Wildpark Lüneburger Heide Tietz GmbH & Co. KGGreifvögel und EulenMichael Kirchner",
     "address": "Co. KGGreifvögel und EulenMichael Kirchner\nAm Wildpark 1, 21271 Nindorf-Hanstedt\nTelefon",
     "phone": "01525 8749773",
-    "latitude": 53.6789,
-    "longitude": 9.9415,
+    "latitude": 53.663,
+    "longitude": 9.91,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "21271"
   },
   {
     "name": "Wildvogelstation Teufelsmoor n. e. V.",
     "specialization": "Wildvogelstation Teufelsmoor n. e. V.Alle Arten außer Störche und Greifvögel27711 Osterholz-ScharmbeckBeratung für alle VogelartenTelefon: 0172 5421034",
     "address": "27711 Osterholz-ScharmbeckBeratung für alle VogelartenTelefon",
     "phone": "0172 5421034",
-    "latitude": 53.6502,
-    "longitude": 10.0034,
+    "latitude": 52.983,
+    "longitude": 8.86,
     "plz_prefix": "2",
     "region": "PLZ 2",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "27711"
   },
   {
     "name": "Adlerwarte Berlebeck",
     "specialization": "Adlerwarte BerlebeckGreifvögel und EulenAdlerweg 13-15",
     "address": "32727 DetmoldTel",
     "phone": "05231/47171",
-    "latitude": 52.3578,
-    "longitude": 9.7836,
+    "latitude": 52.331,
+    "longitude": 9.76,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "32727"
   },
   {
     "name": "Essenthoer Mühle",
@@ -351,11 +379,12 @@
     "phone": "02992/8684 (",
     "email": "wilfried.limpinsel@t-online.de",
     "website": "http://www.essenthoer-muehle.de/",
-    "latitude": 52.384,
-    "longitude": 9.7228,
+    "latitude": 51.443,
+    "longitude": 9.87,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "34431"
   },
   {
     "name": "Verein für Greifvogelhilfe und Umweltbildung e.V.",
@@ -364,22 +393,24 @@
     "phone": "015209776980",
     "email": "greifvogelhilfe@gmail.com",
     "website": "http://www.greifvogel-hilfe.de/",
-    "latitude": 52.2903,
-    "longitude": 9.729,
+    "latitude": 51.348,
+    "longitude": 9.38,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "36166"
   },
   {
     "name": "F. Schmidt",
     "specialization": "Alle Wildvogelarten",
     "address": "39104 MagdeburgTel",
     "phone": "0391/24207044",
-    "latitude": 52.2612,
-    "longitude": 9.7926,
+    "latitude": 51.162,
+    "longitude": 9.38,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "39104"
   },
   {
     "name": "Greifvogelauffangstation Malsfeld",
@@ -387,33 +418,36 @@
     "address": "Greifvogelauffangstation MalsfeldGreifvögelBeisegrund 2, 34323 MalsfeldTel",
     "phone": "05664/6564",
     "email": "rochelmeyerl@aol.com",
-    "latitude": 52.3379,
-    "longitude": 9.7415,
+    "latitude": 51.419,
+    "longitude": 9.84,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "34323"
   },
   {
     "name": "H. Shephard",
     "specialization": "H. ShephardGreifvögel und EulenNonnenroth",
     "address": "35410 HungenTel",
     "phone": "06402/9239",
-    "latitude": 52.3158,
-    "longitude": 9.637,
+    "latitude": 51.38,
+    "longitude": 9.87,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "35410"
   },
   {
     "name": "Kirsten Strauch",
     "specialization": "Kirsten StrauchSingvögel, Schwalben, Mauersegler, Tauben – aktuell Aufnahmestop Kohlweg 4",
     "address": "aktuell Aufnahmestop Kohlweg 4, 34439 WillebadessenTel",
     "phone": "05644/946560 (",
-    "latitude": 52.3292,
-    "longitude": 9.702,
+    "latitude": 51.467,
+    "longitude": 9.87,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "34439"
   },
   {
     "name": "Leni Plattmann",
@@ -421,11 +455,12 @@
     "address": "33098 PaderbornTel",
     "phone": "05251/6827802",
     "email": "leni@powderfan.de",
-    "latitude": 52.2455,
-    "longitude": 9.7363,
+    "latitude": 52.544,
+    "longitude": 9.55,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "33098"
   },
   {
     "name": "Mauersegler-Pflege Mäuerle e.V.",
@@ -434,44 +469,48 @@
     "phone": "05187/3030306 (",
     "email": "mail@mauersegler-pflege.de",
     "website": "https://mauersegler-pflege.de/",
-    "latitude": 52.3435,
-    "longitude": 9.614,
+    "latitude": 52.469,
+    "longitude": 9.55,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "31073"
   },
   {
     "name": "NABU Artenschutzzentrum Leiferde",
     "specialization": "NABU Artenschutzzentrum LeiferdeAlle VögelHauptstraße 20",
     "address": "NABU Artenschutzzentrum LeiferdeAlle VögelHauptstraße 20, 38542 LeiferdeTel",
     "phone": "05373/6677",
-    "latitude": 52.2381,
-    "longitude": 9.6697,
+    "latitude": 51.276,
+    "longitude": 9.5,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "38542"
   },
   {
     "name": "Ralf Dörr",
     "specialization": "Alle Wildvogelarten",
     "address": "GänseMarburger Str. 46, 35469 Allendorf",
     "phone": "0171/7413856",
-    "latitude": 52.2035,
-    "longitude": 9.6736,
+    "latitude": 51.557,
+    "longitude": 9.87,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "35469"
   },
   {
     "name": "Staatl. Forstamt/Saupark Wisentgehege",
     "specialization": "Staatl. Forstamt/Saupark WisentgehegeGreifvögel und Eulen31832 SpringeTel: 05041/5828 und 0171/4130225",
     "address": "31832 SpringeTel",
     "phone": "05041/5828",
-    "latitude": 52.2706,
-    "longitude": 9.7805,
+    "latitude": 52.346,
+    "longitude": 9.79,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "31832"
   },
   {
     "name": "Storchenauffangstation Schwalm-Eder-Kreis",
@@ -479,33 +518,36 @@
     "address": "Storchenauffangstation Schwalm-Eder-KreisStörche und andere SchreitvögelAndrea Krüger-Wiegand\nCappeler Str. 10, 34590 Wabern-NiedermöllrichTel",
     "phone": "0160/98320086 (",
     "website": "https://stoerche-wabern.bplaced.net/",
-    "latitude": 52.3484,
-    "longitude": 9.6243,
+    "latitude": 51.62,
+    "longitude": 9.9,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "34590"
   },
   {
     "name": "Storchenhof Loburg",
     "specialization": "Alle Wildvogelarten",
     "address": "Storchenhof LoburgStörcheAußenstelle der Vogelschutzwarte Steckby\nChaussee Straße 18, 39279 LoburgTel",
     "phone": "039245/2516/2274",
-    "latitude": 52.3398,
-    "longitude": 9.6843,
+    "latitude": 51.387,
+    "longitude": 9.41,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "39279"
   },
   {
     "name": "Tierpark Olderdissen",
     "specialization": "Alle Wildvogelarten",
     "address": "Tierpark OlderdissenNur Tag- und NachtgreifeDomberger Straße 151, 33619 BielefeldTel",
     "phone": "0521/512956",
-    "latitude": 52.3045,
-    "longitude": 9.7458,
+    "latitude": 52.307,
+    "longitude": 9.73,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "33619"
   },
   {
     "name": "Greifenwarte Edersee im Wildtierpark Edersee",
@@ -513,11 +555,12 @@
     "address": "Falknerin Jana Zulauf\nAm Bericher Holz 1, 34549 Edertal-HemfurthTel",
     "phone": "0151/56036876",
     "email": "janamzulaufgmail.com",
-    "latitude": 52.3186,
-    "longitude": 9.6986,
+    "latitude": 51.497,
+    "longitude": 9.9,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "34549"
   },
   {
     "name": "Marcel Prutzer",
@@ -525,11 +568,12 @@
     "address": "Ringstr.29, 34508 Willingen UsselnTel",
     "phone": "0177/3199857",
     "email": "marcelprutzer@googlemail.com",
-    "latitude": 52.3413,
-    "longitude": 9.7911,
+    "latitude": 51.374,
+    "longitude": 9.9,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "34508"
   },
   {
     "name": "Natur- und Wildtierfreunde e.V.",
@@ -537,33 +581,36 @@
     "address": "keine Greifvögel und Eulen\nLena Hausadel\nHüpeder Str. 6, 30982 PattensenTel",
     "phone": "0151 57410329",
     "email": "verein@natur-wildtierfreunde.de",
-    "latitude": 52.2819,
-    "longitude": 9.6388,
+    "latitude": 52.496,
+    "longitude": 9.82,
     "plz_prefix": "3",
     "region": "PLZ 3",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "30982"
   },
   {
     "name": "Ausgewöhnungsstation für Greifvögel und Eulen",
     "specialization": "Ausgewöhnungsstation für Greifvögel und EulenGreifvögel und EulenSchill Kaserne",
     "address": "Ausgewöhnungsstation für Greifvögel und EulenGreifvögel und EulenSchill Kaserne\nBocholter Str. 6, 46487 WeselKontakt",
     "website": "https://www.nabu-wesel.de/index_main.php?unid=1860&websiteid=nabu&PHPSESSID=b2f78441700c7fa5d318acd4f91ab95f",
-    "latitude": 51.4566,
-    "longitude": 7.5284,
+    "latitude": 52.011,
+    "longitude": 7.57,
     "plz_prefix": "4",
     "region": "PLZ 4",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "46487"
   },
   {
     "name": "Greifvogel- und Wildtierauffangstation Kleve e. V.",
     "specialization": "Greifvogel- und Wildtierauffangstation Kleve e. V.GreifvögelHerr Wilhelm Schnabel",
     "address": "Greifvogel- und Wildtierauffangstation Kleve e. V.GreifvögelHerr Wilhelm Schnabel\nHertefeld 3, 47652 WeezeTel",
     "phone": "0170/9725405",
-    "latitude": 51.4068,
-    "longitude": 7.5955,
+    "latitude": 51.906,
+    "longitude": 7.63,
     "plz_prefix": "4",
     "region": "PLZ 4",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "47652"
   },
   {
     "name": "Greifvogelhilfe Rheinland",
@@ -571,22 +618,24 @@
     "address": "41379 Brüggen",
     "email": "info@greifvogelhilfe.de",
     "website": "https://www.greifvogelhilfe.de/",
-    "latitude": 51.5313,
-    "longitude": 7.5106,
+    "latitude": 51.587,
+    "longitude": 7.14,
     "plz_prefix": "4",
     "region": "PLZ 4",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "41379"
   },
   {
     "name": "Grugapark Essen – Vogelpark und Botanischer Garten",
     "specialization": "Grugapark Essen – Vogelpark und Botanischer GartenGreifvögel und EulenKülshammerweg 32",
     "address": "Vogelpark und Botanischer GartenGreifvögel und EulenKülshammerweg 32, 45149 EssenTel",
     "phone": "0201/8883-211",
-    "latitude": 51.4668,
-    "longitude": 7.4594,
+    "latitude": 51.897,
+    "longitude": 7.48,
     "plz_prefix": "4",
     "region": "PLZ 4",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "45149"
   },
   {
     "name": "Jenny Beusing",
@@ -594,22 +643,24 @@
     "address": "47058 Duisburg DuissernTel",
     "phone": "0177/5537866",
     "email": "jenniferbeusing@icloud.com",
-    "latitude": 51.4954,
-    "longitude": 7.5082,
+    "latitude": 51.924,
+    "longitude": 7.45,
     "plz_prefix": "4",
     "region": "PLZ 4",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "47058"
   },
   {
     "name": "Marianne Engel",
     "specialization": "Marianne EngelMauerseglerDüsseldorf-MonheimTel: 02173/30363 und 0173/7719134",
     "address": "30363 und",
     "phone": "02173/30363",
-    "latitude": 52.2023,
-    "longitude": 9.6209,
+    "latitude": 52.439,
+    "longitude": 9.64,
     "plz_prefix": "3",
     "region": "PLZ 4",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "30363"
   },
   {
     "name": "Tierpark Nordhorn e.V.",
@@ -617,11 +668,12 @@
     "address": "Tierpark Nordhorn e.V.Alle VögelHeseper Weg 140, 48531 NordhornTel",
     "phone": "05921/7120022",
     "website": "https://www.tierpark-nordhorn.de/",
-    "latitude": 51.453,
-    "longitude": 7.5452,
+    "latitude": 51.743,
+    "longitude": 8.8,
     "plz_prefix": "4",
     "region": "PLZ 4",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "48531"
   },
   {
     "name": "Tierschutzzentrum Dortmund",
@@ -630,11 +682,12 @@
     "phone": "0178/9727672",
     "email": "ghartisch@online.de",
     "website": "https://www.nabu-dortmund.de/",
-    "latitude": 51.465,
-    "longitude": 7.4227,
+    "latitude": 51.497,
+    "longitude": 7.08,
     "plz_prefix": "4",
     "region": "PLZ 4",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "44149"
   },
   {
     "name": "Bergische Greifvogelhilfe",
@@ -643,22 +696,24 @@
     "phone": "02205/88798 (",
     "email": "info@bergischegreifvogelhilfe.de",
     "website": "http://www.bergischegreifvogelhilfe.de/",
-    "latitude": 50.689,
-    "longitude": 7.1495,
+    "latitude": 50.759,
+    "longitude": 6.9,
     "plz_prefix": "5",
     "region": "PLZ 5",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "51503"
   },
   {
     "name": "Biologische Station Soest/ABU",
     "specialization": "Biologische Station Soest/ABUGreifvögel und EulenTeichstraße 13",
     "address": "ABUGreifvögel und EulenTeichstraße 13, 59505 Bad SassendorfTel",
     "phone": "02921/969878-0",
-    "latitude": 50.7128,
-    "longitude": 7.0534,
+    "latitude": 49.865,
+    "longitude": 8.3,
     "plz_prefix": "5",
     "region": "PLZ 5",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "59505"
   },
   {
     "name": "Wildvogelhilfe Rheinland",
@@ -666,11 +721,12 @@
     "address": "Wildvogelhilfe RheinlandAlle Vögel außer GreifvögelUckerather Str. 10, 53783 EitorfTel",
     "phone": "02243/8473555",
     "website": "https://wildvogelhilfe-rheinland.de/",
-    "latitude": 50.622,
-    "longitude": 7.07,
+    "latitude": 50.499,
+    "longitude": 7.66,
     "plz_prefix": "5",
     "region": "PLZ 5",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "53783"
   },
   {
     "name": "Umweltbildungszentrum Leidenhausen",
@@ -679,11 +735,12 @@
     "phone": "02203 1869359 (",
     "email": "wildtierstation@gut-leidenhausen.de",
     "website": "https://www.gut-leidenhausen.de/",
-    "latitude": 50.7528,
-    "longitude": 7.0754,
+    "latitude": 50.891,
+    "longitude": 6.78,
     "plz_prefix": "5",
     "region": "PLZ 5",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "51147"
   },
   {
     "name": "Greifvogelschutzstation Köln",
@@ -692,11 +749,12 @@
     "phone": "02203/1886496",
     "email": "post@greifvogelstation-koeln.de",
     "website": "https://www.sdw-nrw-koeln.de/greifvogelstation/greifvogelschutzstation-koeln/",
-    "latitude": 50.7128,
-    "longitude": 7.0229,
+    "latitude": 50.891,
+    "longitude": 6.78,
     "plz_prefix": "5",
     "region": "PLZ 5",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "51147"
   },
   {
     "name": "Greifvogelstation & Wildfreigehege Hellenthal",
@@ -705,11 +763,12 @@
     "phone": "02482/7240",
     "email": "info@greifvogelstation-hellenthal.de",
     "website": "http://www.greifvogelstation-hellenthal.de",
-    "latitude": 50.6329,
-    "longitude": 7.0919,
+    "latitude": 50.37,
+    "longitude": 7.72,
     "plz_prefix": "5",
     "region": "PLZ 5",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "53940"
   },
   {
     "name": "Kölner Arbeitsgruppe gegen die Stadttaubenproblematik e.V.",
@@ -717,22 +776,24 @@
     "address": "50935 KölnMobil",
     "email": "stadttauben_koeln@yahoo.de",
     "website": "http://stadttaubenkoeln.wix.com/koeln-tauben",
-    "latitude": 50.7497,
-    "longitude": 7.0142,
+    "latitude": 50.855,
+    "longitude": 7.02,
     "plz_prefix": "5",
     "region": "PLZ 5",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "50935"
   },
   {
     "name": "Vogelpflegestation Märkischer Kreis",
     "specialization": "Vogelpflegestation Märkischer KreisSing- und Wasservögel sowie Greifvögel und Eulen",
     "address": "Vogelpflegestation Märkischer KreisSing- und Wasservögel sowie Greifvögel und Eulen\nÜberwiegend beratende HilfeAnke Melis\nSüdstraße 48, 58509 LüdenscheidTel",
     "phone": "02351/21743",
-    "latitude": 50.6519,
-    "longitude": 7.1674,
+    "latitude": 49.877,
+    "longitude": 8.3,
     "plz_prefix": "5",
     "region": "PLZ 5",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "58509"
   },
   {
     "name": "Wildtierpflegestation Koblenz e.V. Julia Bravetti",
@@ -740,11 +801,12 @@
     "address": "56637 PlaidtTel",
     "phone": "0171/4790204",
     "website": "https://www.wildtierpflegestation-koblenz.de/",
-    "latitude": 50.6023,
-    "longitude": 7.055,
+    "latitude": 50.361,
+    "longitude": 7.63,
     "plz_prefix": "5",
     "region": "PLZ 5",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "56637"
   },
   {
     "name": "Wildvogelpflegestation Kirchwald",
@@ -753,11 +815,12 @@
     "phone": "0160/96714064",
     "email": "info@wildvogel-pflegestation-kirchwald.org",
     "website": "https://www.wpskirchwald.de/",
-    "latitude": 50.696,
-    "longitude": 7.0408,
+    "latitude": 50.337,
+    "longitude": 7.66,
     "plz_prefix": "5",
     "region": "PLZ 5",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "56729"
   },
   {
     "name": "Willi Krings",
@@ -765,11 +828,12 @@
     "address": "52525 HeinsbergTel",
     "phone": "0151/15578416",
     "email": "naturpaedagoge@email.de",
-    "latitude": 50.7826,
-    "longitude": 7.1211,
+    "latitude": 50.825,
+    "longitude": 6.9,
     "plz_prefix": "5",
     "region": "PLZ 5",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "52525"
   },
   {
     "name": "Eulen- und Greifvogelschutz Appenheim e.V.",
@@ -777,11 +841,12 @@
     "address": "Eulen- und Greifvogelschutz Appenheim e.V.Amtlich anerkannte Artenschutz- und Auffangstation für Eulen und GreifvögelKloppgasse 15, 55437 Appenheim\nTel",
     "email": "egs@egs-rlp.de",
     "website": "http://www.egs-rlp.de/",
-    "latitude": 50.6716,
-    "longitude": 7.1657,
+    "latitude": 50.361,
+    "longitude": 7.57,
     "plz_prefix": "5",
     "region": "PLZ 5",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "55437"
   },
   {
     "name": "Ausgewöhnungsstation für Greifvögel und Eulen NABU Haßloch",
@@ -790,11 +855,12 @@
     "phone": "0171/2858257",
     "email": "greifvogelstation-hassloch@t-online.de",
     "website": "http://www.nabu-hassloch.de",
-    "latitude": 49.9628,
-    "longitude": 8.4112,
+    "latitude": 49.412,
+    "longitude": 6.97,
     "plz_prefix": "6",
     "region": "PLZ 6",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "67454"
   },
   {
     "name": "Christopher Tarnow",
@@ -802,11 +868,12 @@
     "address": "64823 Groß-UmstadtTel",
     "phone": "06078/759435",
     "email": "tarnow@eichgrund.de",
-    "latitude": 49.8592,
-    "longitude": 8.392,
+    "latitude": 49.319,
+    "longitude": 7.89,
     "plz_prefix": "6",
     "region": "PLZ 6",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "64823"
   },
   {
     "name": "Deutsche Gesellschaft für Mauersegler e.V. Mauerseglerklinik Frankfurt",
@@ -814,43 +881,47 @@
     "address": "Deutsche Gesellschaft für Mauersegler e.V. Mauerseglerklinik FrankfurtMauerseglerBuchenstraße 9, 65933 Frankfurt am MainTel",
     "phone": "069/35351504 (",
     "website": "https://www.apusapus.net/",
-    "latitude": 49.8896,
-    "longitude": 8.3511,
+    "latitude": 49.349,
+    "longitude": 7.92,
     "plz_prefix": "6",
     "region": "PLZ 6",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "65933"
   },
   {
     "name": "Ehrenamtliche Wildvogelhilfe e.V.",
     "specialization": "Ehrenamtliche Wildvogelhilfe e.V.Alle Vögel67240 Bobenheim-Roxheim",
     "address": "67240 Bobenheim-Roxheim\nAnsprechpartner",
     "website": "https://ehrenamtliche-wildvogelhilfe.de/",
-    "latitude": 49.8003,
-    "longitude": 8.4861,
+    "latitude": 49.37,
+    "longitude": 6.91,
     "plz_prefix": "6",
     "region": "PLZ 6",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "67240"
   },
   {
     "name": "Falkenhof Großer Feldberg",
     "specialization": "Falkenhof Großer FeldbergGreifvögel und Eulen61389 SchmittenTel/Fax: 06174/7545",
     "address": "61389 SchmittenTel",
-    "latitude": 49.8515,
-    "longitude": 8.3371,
+    "latitude": 50.217,
+    "longitude": 8.64,
     "plz_prefix": "6",
     "region": "PLZ 6",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "61389"
   },
   {
     "name": "Kurt Wilhelm",
     "specialization": "Kurt WilhelmGreifvögel und EulenHerrenwiesental 30a",
     "address": "Kurt WilhelmGreifvögel und EulenHerrenwiesental 30a, 67659 KaiserslauternTel",
     "phone": "0631/77225",
-    "latitude": 49.8827,
-    "longitude": 8.4327,
+    "latitude": 49.427,
+    "longitude": 7.03,
     "plz_prefix": "6",
     "region": "PLZ 6",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "67659"
   },
   {
     "name": "Storchengemeinschaft Schierstein e.V.",
@@ -858,11 +929,12 @@
     "address": "Storchengemeinschaft Schierstein e.V.Nur StörcheNeckarstr. 12, 65201 Wiesbaden-SchiersteinTel",
     "phone": "0151/27521468",
     "website": "https://schiersteinerstoerche.de/",
-    "latitude": 49.8993,
-    "longitude": 8.4654,
+    "latitude": 49.253,
+    "longitude": 7.71,
     "plz_prefix": "6",
     "region": "PLZ 6",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "65201"
   },
   {
     "name": "Tierschutzverein im Landkreis Kusel e.V.",
@@ -870,11 +942,12 @@
     "address": "66869 KuselAnsprechpartner für Wildvögel",
     "phone": "0175/4117712 (",
     "website": "https://tierschutz-kusel.de/",
-    "latitude": 49.8443,
-    "longitude": 8.432,
+    "latitude": 49.457,
+    "longitude": 7.09,
     "plz_prefix": "6",
     "region": "PLZ 6",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "66869"
   },
   {
     "name": "Zentrale Wildvogelauffangstation Saarland im Köllertal (WiVo-Saarland)",
@@ -882,11 +955,12 @@
     "address": "Pflege von WildvögelnAn der Kläranlage 1, 66346 PüttlingenTel",
     "phone": "0173/9422001",
     "website": "http://nvv-puettlingen.jimdo.com/weitere-projekte/wivo-auffangstation",
-    "latitude": 49.851,
-    "longitude": 8.3374,
+    "latitude": 49.388,
+    "longitude": 6.94,
     "plz_prefix": "6",
     "region": "PLZ 6",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "66346"
   },
   {
     "name": "Mauerseglerhilfe Apus e.V.",
@@ -895,11 +969,12 @@
     "phone": "0157/58248219",
     "email": "info@mauerseglerhilfe-apus.de",
     "website": "https://mauerseglerhilfe-apus.de/",
-    "latitude": 49.9115,
-    "longitude": 8.4304,
+    "latitude": 49.301,
+    "longitude": 7.0,
     "plz_prefix": "6",
     "region": "PLZ 6",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "69517"
   },
   {
     "name": "Falknerei Hohenstein",
@@ -908,22 +983,24 @@
     "phone": "0151/56986686",
     "email": "falknerei.hohenstein@icloud.com",
     "website": "https://falknerei-hohenstein.de",
-    "latitude": 49.9805,
-    "longitude": 8.3025,
+    "latitude": 49.337,
+    "longitude": 7.74,
     "plz_prefix": "6",
     "region": "PLZ 6",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "65329"
   },
   {
     "name": "Franz Ruchlak",
     "specialization": "Franz RuchlakGreifvögelLindackerstr. 4",
     "address": "Franz RuchlakGreifvögelLindackerstr. 4, 79843 BachheimTel",
     "phone": "07654/8497",
-    "latitude": 48.8165,
-    "longitude": 9.2235,
+    "latitude": 47.979,
+    "longitude": 7.89,
     "plz_prefix": "7",
     "region": "PLZ 7",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "79843"
   },
   {
     "name": "Greifvogelpflegestation Bad Friedrichshall",
@@ -931,11 +1008,12 @@
     "address": "74177 Bad FriedrichshallTel",
     "email": "webmaster@weber-we.de",
     "website": "https://www.nabu-badfriedrichshall.de/greifvogelpflegestation-bad-friedrichshall/",
-    "latitude": 48.8242,
-    "longitude": 9.1989,
+    "latitude": 49.081,
+    "longitude": 8.28,
     "plz_prefix": "7",
     "region": "PLZ 7",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "74177"
   },
   {
     "name": "Greifvogelzentrum Filstal",
@@ -944,44 +1022,48 @@
     "phone": "0178/111 29 54",
     "email": "info@greifvogelzentrum-filstal.de",
     "website": "https://greifvogelzentrumff.wixsite.com/greifvogelzentrum/",
-    "latitude": 48.8825,
-    "longitude": 9.2335,
+    "latitude": 49.135,
+    "longitude": 8.25,
     "plz_prefix": "7",
     "region": "PLZ 7",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "73095"
   },
   {
     "name": "Greifvogel in Not",
     "specialization": "Greifvogel in NotGreifvögel und EulenSandra Michelberger",
     "address": "Greifvogel in NotGreifvögel und EulenSandra Michelberger\nStadtwald 5a, 76689 Karlsdorf-NeuthardTel",
     "phone": "01579/2513889",
-    "latitude": 48.8125,
-    "longitude": 9.1835,
+    "latitude": 49.117,
+    "longitude": 8.43,
     "plz_prefix": "7",
     "region": "PLZ 7",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "76689"
   },
   {
     "name": "Eva Just",
     "specialization": "Eva JustGreifvögel und Eulen73642 EibenhofTel:  0171/923 0101",
     "address": "73642 EibenhofTel",
     "phone": "0171/923 0101",
-    "latitude": 48.7918,
-    "longitude": 9.2216,
+    "latitude": 48.976,
+    "longitude": 8.43,
     "plz_prefix": "7",
     "region": "PLZ 7",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "73642"
   },
   {
     "name": "Aktionsgemeinschaft Eulen und Greifvogelschutz (Ages)",
     "specialization": "Aktionsgemeinschaft Eulen und Greifvogelschutz (Ages)Greifvögel und EulenWilli Holzer",
     "address": "Greifvögel und EulenWilli Holzer\nAm Sonnenbichl 10, 85356 FreisingTel",
     "phone": "08161/68599",
-    "latitude": 48.1774,
-    "longitude": 11.6263,
+    "latitude": 48.418,
+    "longitude": 10.84,
     "plz_prefix": "8",
     "region": "PLZ 8",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "85356"
   },
   {
     "name": "Ludwig-Maximilians-Universität München",
@@ -989,11 +1071,12 @@
     "address": "Amphibien und Zierfische\nSonnenstraße 18, 85764 OberschleißheimTel",
     "phone": "089/218076070",
     "website": "https://www.vogelklinik.vetmed.uni-muenchen.de/index.html",
-    "latitude": 48.0039,
-    "longitude": 11.6932,
+    "latitude": 48.442,
+    "longitude": 10.96,
     "plz_prefix": "8",
     "region": "PLZ 8",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "85764"
   },
   {
     "name": "Mauersegler – Starthilfe e.V.",
@@ -1001,11 +1084,12 @@
     "address": "83451 PidingKeine Annahme anderer Vogelarten",
     "phone": "0178/1321868 (",
     "website": "https://www.mauerseglerstarthilfe.com/",
-    "latitude": 48.0084,
-    "longitude": 11.5614,
+    "latitude": 48.403,
+    "longitude": 10.87,
     "plz_prefix": "8",
     "region": "PLZ 8",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "83451"
   },
   {
     "name": "Auffang- und Pflegestation für verletzte Greifvögel und Eulen",
@@ -1013,22 +1097,24 @@
     "address": "Harald Dellert\nHüttenweg 10, 97080 WürzburgTel",
     "phone": "0931/9911033",
     "email": "info@falkner-dellert.de",
-    "latitude": 49.4386,
-    "longitude": 11.1025,
+    "latitude": 49.09,
+    "longitude": 11.95,
     "plz_prefix": "9",
     "region": "PLZ 9",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "97080"
   },
   {
     "name": "Bayerischer Jagdfalkenhof",
     "specialization": "Bayerischer JagdfalkenhofBayerischer Jagdfalkenhof",
     "address": "Bayerischer JagdfalkenhofBayerischer Jagdfalkenhof\nim Wildpark Schloss Tambach\nAm Wildpark 1, 96479 Weitramsdorf",
     "email": "tambach@bayerischer-jagdfalkenhof.de",
-    "latitude": 49.4077,
-    "longitude": 11.1919,
+    "latitude": 49.087,
+    "longitude": 12.07,
     "plz_prefix": "9",
     "region": "PLZ 9",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "96479"
   },
   {
     "name": "Fürstlicher Falkenhof Schloss Schillingsfürst",
@@ -1037,11 +1123,12 @@
     "phone": "+49 (0) 9868 201",
     "email": "office@schloss-schillingsfuerst.de",
     "website": "https://www.falkenhof-schillingsfuerst.de/",
-    "latitude": 49.3835,
-    "longitude": 11.0414,
+    "latitude": 49.599,
+    "longitude": 11.1,
     "plz_prefix": "9",
     "region": "PLZ 9",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "91583"
   },
   {
     "name": "Greifvogelpflegestation Stettfeld e.V.",
@@ -1050,33 +1137,36 @@
     "phone": "09522/2709948",
     "email": "info@greifvogelpflegestation-stettfeld.de",
     "website": "https://greifvogelpflegestation-stettfeld.de/",
-    "latitude": 49.3539,
-    "longitude": 11.0829,
+    "latitude": 49.114,
+    "longitude": 11.98,
     "plz_prefix": "9",
     "region": "PLZ 9",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "96188"
   },
   {
     "name": "Ingrid Roeschke",
     "specialization": "Ingrid RoeschkeKleinvögel und Mauerseglerprivate Pflegestelle",
     "address": "99817 Eisenach",
     "phone": "03691/883640",
-    "latitude": 49.42,
-    "longitude": 11.1355,
+    "latitude": 48.901,
+    "longitude": 12.19,
     "plz_prefix": "9",
     "region": "PLZ 9",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "99817"
   },
   {
     "name": "Private Pflegestelle für Vögel und Fledermäuse",
     "specialization": "Private Pflegestelle für Vögel und FledermäuseSingvögel, Schwalben, Mauersegler, SpechteGreifvögel und Eulen in Grundversorgung. In Zusammenarbeit mit dem Landesbund für Vogelschutz und dem Bund Naturschutz.Keine Tauben und WasservögelChristine Grede",
     "address": "94036 Passau",
     "phone": "0152/52641076\n94036",
-    "latitude": 49.3445,
-    "longitude": 11.1047,
+    "latitude": 49.858,
+    "longitude": 10.75,
     "plz_prefix": "9",
     "region": "PLZ 9",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "94036"
   },
   {
     "name": "Wildtierhilfe Passauer Land e.V.",
@@ -1084,11 +1174,12 @@
     "address": "94124 Büchlberg bei PassauTel",
     "phone": "0151/10609754",
     "website": "https://www.wth-pa-land.de/",
-    "latitude": 49.3507,
-    "longitude": 11.1711,
+    "latitude": 49.822,
+    "longitude": 10.78,
     "plz_prefix": "9",
     "region": "PLZ 9",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "94124"
   },
   {
     "name": "LBV Vogelauffang- und Pflegestation Regenstauf",
@@ -1096,22 +1187,24 @@
     "address": "LBV Vogelauffang- und Pflegestation RegenstaufAlle VögelMasurenweg 19, 93128 RegenstaufTelefon",
     "phone": "0171 / 4087252",
     "website": "https://oberpfalz.lbv.de/vogelnotruf/",
-    "latitude": 49.4481,
-    "longitude": 11.0016,
+    "latitude": 49.834,
+    "longitude": 10.78,
     "plz_prefix": "9",
     "region": "PLZ 9",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "93128"
   },
   {
     "name": "Greifvogelschutz Palmenhorst e.V",
     "specialization": "Greifvogelschutz Palmenhorst e.VGreifvögel und EulenKrautostheim 3",
     "address": "Greifvogelschutz Palmenhorst e.VGreifvögel und EulenKrautostheim 3, 91484 SugenheimTelefon",
     "phone": "0151 / 41818343",
-    "latitude": 49.3332,
-    "longitude": 11.1653,
+    "latitude": 49.602,
+    "longitude": 11.07,
     "plz_prefix": "9",
     "region": "PLZ 9",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "plz": "91484"
   },
   {
     "name": "Alpenzoo",
@@ -1180,11 +1273,12 @@
     "phone": "+43 1 4000-49090",
     "email": "wildtiere@ma49.wien.gv.at",
     "website": "https://www.wien.gv.at/gesellschaft/tiere/wildtiere/hilfe.html#box",
-    "latitude": 51.584,
-    "longitude": 7.5885,
+    "latitude": 51.92,
+    "longitude": 8.65,
     "plz_prefix": "4",
     "region": "Österreich",
-    "country": "Österreich"
+    "country": "Österreich",
+    "plz": "49090"
   },
   {
     "name": "Danae Schwegler",
@@ -1277,11 +1371,12 @@
     "specialization": "Alle Wildvogelarten",
     "address": "04689 Roberta",
     "website": "https://www.facebook.com/crasrimini",
-    "latitude": 51.111,
-    "longitude": 12.9946,
+    "latitude": 50.917,
+    "longitude": 11.23,
     "plz_prefix": "0",
     "region": "Italien",
-    "country": "Italien"
+    "country": "Italien",
+    "plz": "04689"
   },
   {
     "name": "Pflegezentrum für Vogelfauna Schloß Tirol",
@@ -1290,10 +1385,11 @@
     "phone": "+39 0473 22 15 00",
     "email": "gufyland@yahoo.de",
     "website": "http://www.gufyland.com/",
-    "latitude": 52.2384,
-    "longitude": 9.6771,
+    "latitude": 51.207,
+    "longitude": 9.35,
     "plz_prefix": "3",
     "region": "Italien",
-    "country": "Italien"
+    "country": "Italien",
+    "plz": "39019"
   }
 ]
