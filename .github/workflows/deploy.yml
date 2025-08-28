@@ -3,28 +3,54 @@ name: Deploy to Netlify
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch: {}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: read
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        
-    - name: Install Netlify CLI
-      run: npm install -g netlify-cli
-      
-    - name: Deploy to Netlify
-      run: |
-        netlify deploy --prod --dir . --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      env:
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate secrets
+        id: secrets-check
+        env:
+          S_AUTH: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          S_SITE: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          if [ -z "$S_AUTH" ] || [ -z "$S_SITE" ]; then
+            echo "❌ Netlify Secrets fehlen. Deployment wird übersprungen." >&2
+            echo "deploy=0" >> $GITHUB_OUTPUT
+          else
+            echo "✅ Netlify Secrets vorhanden." 
+            echo "deploy=1" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Setup Node.js
+        if: steps.secrets-check.outputs.deploy == '1'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Netlify CLI
+        if: steps.secrets-check.outputs.deploy == '1'
+        run: npm install -g netlify-cli
+
+      - name: Production Deploy
+        if: steps.secrets-check.outputs.deploy == '1'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          echo "🔧 Deploy root: $(pwd)"
+          # Optional: Liste der wichtigsten Dateien
+          ls -1 index.html css js data | sed 's/^/ - /'
+          # Deploy (root als publish directory)
+          netlify deploy --prod --dir . --message "GitHub Actions deploy $GITHUB_SHA"
+
+      - name: Skip Notice
+        if: steps.secrets-check.outputs.deploy != '1'
+        run: echo "Deployment übersprungen (fehlende Secrets)." 
