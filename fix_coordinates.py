@@ -5,7 +5,8 @@ Skript zur Korrektur der Koordinaten basierend auf PLZ
 
 import json
 import re
-from typing import Dict, Tuple
+import hashlib
+from typing import Dict, Tuple, Optional
 
 def extract_plz_from_address(address: str) -> str:
     """Extrahiert die PLZ aus der Adresse"""
@@ -15,113 +16,53 @@ def extract_plz_from_address(address: str) -> str:
         return match.group(1)
     return None
 
-def get_coordinates_for_plz(plz: str) -> Tuple[float, float]:
-    """
-    Gibt realistische Koordinaten für eine PLZ zurück
-    Basiert auf tatsächlichen Koordinaten deutscher PLZ-Gebiete
-    """
-    if not plz or len(plz) != 5:
+def _hash_offset(key: str, scale: float = 0.18) -> Tuple[float, float]:
+    h = hashlib.md5(key.encode('utf-8')).hexdigest()
+    a = int(h[:8], 16) / 0xFFFFFFFF - 0.5
+    b = int(h[8:16], 16) / 0xFFFFFFFF - 0.5
+    return a * scale, b * scale
+
+DE_CENTROIDS = {
+    '0': (51.1, 13.4), '1': (52.5, 13.3), '2': (53.6, 10.0), '3': (52.3, 9.7),
+    '4': (51.5, 7.5), '5': (50.8, 7.2), '6': (50.1, 8.7), '7': (48.8, 9.2),
+    '8': (48.1, 11.5), '9': (49.5, 11.1)
+}
+AT_CENTROIDS = {
+    '1': (48.21, 16.37), '2': (48.2, 15.7), '3': (48.3, 14.3), '4': (47.8, 13.0),
+    '5': (47.3, 11.4), '6': (47.25, 9.6), '7': (46.7, 14.2), '8': (47.2, 15.6), '9': (47.5, 16.4)
+}
+CH_CENTROIDS = {
+    '1': (47.38, 8.54), '2': (47.56, 7.59), '3': (46.95, 7.45), '4': (47.05, 8.31),
+    '5': (47.42, 9.37), '6': (46.85, 9.53), '7': (46.23, 7.36), '8': (46.0, 8.95), '9': (46.52, 6.63)
+}
+IT_CENTROIDS = {
+    # Nur grobe Zentren für Nord-Italien (PLZ 39xxx, 46xxx etc.)
+    '39': (46.5, 11.35),  # Südtirol
+    '46': (45.65, 9.7),   # Lombardei
+    '04': (44.05, 12.57)  # Rimini Umgebung (fiktiv, da 479xx real wäre)
+}
+
+def get_coordinates_for_plz(plz: str, country: str = 'Deutschland') -> Tuple[Optional[float], Optional[float]]:
+    if not plz:
         return None, None
-    
-    plz_prefix = plz[0]
-    plz_int = int(plz)
-    
-    # Realistische Koordinaten basierend auf PLZ-Bereichen
-    if plz_prefix == '0':  # Ost-Deutschland (Sachsen, Sachsen-Anhalt, Thüringen)
-        if plz_int < 3000:   # Sachsen-Anhalt (Magdeburg, Halle)
-            base_lat, base_lon = 51.8, 11.8
-        elif plz_int < 7000: # Thüringen (Erfurt, Jena)
-            base_lat, base_lon = 50.8, 11.2
-        elif plz_int < 9000: # Sachsen (Dresden)
-            base_lat, base_lon = 51.1, 13.7
-        else:                # Sachsen (Leipzig)
-            base_lat, base_lon = 51.3, 12.4
-    
-    elif plz_prefix == '1':  # Berlin, Brandenburg
-        if plz_int < 14000:  # Berlin
-            base_lat, base_lon = 52.5, 13.4
-        else:                # Brandenburg
-            base_lat, base_lon = 52.4, 12.5
-    
-    elif plz_prefix == '2':  # Hamburg, Schleswig-Holstein, Nord-Niedersachsen
-        if plz_int < 23000:  # Hamburg
-            base_lat, base_lon = 53.6, 10.0
-        elif plz_int < 26000: # Schleswig-Holstein
-            base_lat, base_lon = 54.3, 9.8
-        else:                # Nord-Niedersachsen
-            base_lat, base_lon = 53.1, 8.8
-    
-    elif plz_prefix == '3':  # Niedersachsen, Hessen-Nord
-        if plz_int < 34000:  # Niedersachsen (Hannover)
-            base_lat, base_lon = 52.4, 9.7
-        elif plz_int < 36000: # Hessen-Nord (Göttingen)
-            base_lat, base_lon = 51.5, 9.9
-        else:                # Hessen-Nord (Kassel)
-            base_lat, base_lon = 51.3, 9.5
-    
-    elif plz_prefix == '4':  # Nordrhein-Westfalen
-        if plz_int < 45000:  # Ruhrgebiet
-            base_lat, base_lon = 51.5, 7.2
-        elif plz_int < 48000: # Münsterland
-            base_lat, base_lon = 51.9, 7.6
-        else:                # Ostwestfalen
-            base_lat, base_lon = 51.8, 8.8
-    
-    elif plz_prefix == '5':  # NRW-Süd, Rheinland-Pfalz
-        if plz_int < 53000:  # Köln/Bonn
-            base_lat, base_lon = 50.9, 6.9
-        elif plz_int < 57000: # Rheinland-Pfalz (Koblenz)
-            base_lat, base_lon = 50.4, 7.6
-        else:                # Rheinland-Pfalz (Mainz)
-            base_lat, base_lon = 50.0, 8.3
-    
-    elif plz_prefix == '6':  # Hessen-Süd, Rheinland-Pfalz-Ost
-        if plz_int < 63000:  # Frankfurt
-            base_lat, base_lon = 50.1, 8.7
-        elif plz_int < 66000: # Rheinland-Pfalz (Kaiserslautern)
-            base_lat, base_lon = 49.4, 7.8
-        else:                # Saarland
-            base_lat, base_lon = 49.4, 7.0
-    
-    elif plz_prefix == '7':  # Baden-Württemberg
-        if plz_int < 73000:  # Stuttgart
-            base_lat, base_lon = 48.8, 9.2
-        elif plz_int < 77000: # Karlsruhe
-            base_lat, base_lon = 49.0, 8.4
-        else:                # Freiburg
-            base_lat, base_lon = 48.0, 7.8
-    
-    elif plz_prefix == '8':  # Bayern-Süd
-        if plz_int < 83000:  # München
-            base_lat, base_lon = 48.1, 11.6
-        elif plz_int < 87000: # Augsburg
-            base_lat, base_lon = 48.4, 10.9
-        else:                # Allgäu
-            base_lat, base_lon = 47.7, 10.3
-    
-    elif plz_prefix == '9':  # Bayern-Nord, Thüringen-Süd
-        if plz_int < 93000:  # Nürnberg
-            base_lat, base_lon = 49.5, 11.1
-        elif plz_int < 96000: # Bamberg/Coburg
-            base_lat, base_lon = 49.9, 10.9
-        else:                # Regensburg/Passau
-            base_lat, base_lon = 49.0, 12.1
-    
-    else:
+    country = country.lower()
+    base = None
+    if country == 'deutschland' and len(plz) == 5 and plz[0] in DE_CENTROIDS:
+        base = DE_CENTROIDS[plz[0]]
+    elif country == 'österreich' and len(plz) == 4 and plz[0] in AT_CENTROIDS:
+        base = AT_CENTROIDS[plz[0]]
+    elif country == 'schweiz' and len(plz) == 4 and plz[0] in CH_CENTROIDS:
+        base = CH_CENTROIDS[plz[0]]
+    elif country == 'italien':
+        # Versuche zwei Präfixlängen
+        if len(plz) >= 2 and plz[:2] in IT_CENTROIDS:
+            base = IT_CENTROIDS[plz[:2]]
+        elif len(plz) >= 3 and plz[:3] in IT_CENTROIDS:
+            base = IT_CENTROIDS[plz[:3]]
+    if not base:
         return None, None
-    
-    # Kleine Variation basierend auf den letzten Ziffern der PLZ
-    # um Stationen in derselben Region zu verteilen
-    last_digits = int(plz[2:5]) if len(plz) >= 5 else 0
-    
-    # Variation von ±0.15 Grad (ca. ±15km)
-    lat_variation = ((last_digits % 100) / 100 - 0.5) * 0.3  # -0.15 bis +0.15
-    lon_variation = (((last_digits // 100) % 10) / 10 - 0.5) * 0.3
-    
-    latitude = base_lat + lat_variation
-    longitude = base_lon + lon_variation
-    
-    return round(latitude, 4), round(longitude, 4)
+    lat_off, lon_off = _hash_offset(plz)
+    return round(base[0] + lat_off, 4), round(base[1] + lon_off, 4)
 
 def fix_coordinates_in_json():
     """Korrigiert die Koordinaten in der JSON-Datei"""
@@ -134,33 +75,45 @@ def fix_coordinates_in_json():
     
     fixed_count = 0
     skipped_count = 0
+    cleaned_count = 0
     
     for station in stations:
         # PLZ aus Adresse extrahieren
         plz = extract_plz_from_address(station.get('address', ''))
         
+        country = station.get('country', 'Deutschland')
         if plz:
-            # Neue Koordinaten basierend auf PLZ berechnen
-            lat, lon = get_coordinates_for_plz(plz)
-            
+            lat, lon = get_coordinates_for_plz(plz, country)
             if lat and lon:
-                # Koordinaten aktualisieren
-                old_lat = station.get('latitude')
-                old_lon = station.get('longitude')
-                
-                station['latitude'] = lat
-                station['longitude'] = lon
+                if not station.get('latitude') or not station.get('longitude'):
+                    station['latitude'] = lat
+                    station['longitude'] = lon
+                    print(f"✅ Neu {station['name'][:50]:<50} PLZ {plz} -> {lat:.4f}, {lon:.4f}")
+                    fixed_count += 1
+                else:
+                    print(f"ℹ️  Belasse bestehende Koords {station['name'][:40]} ({station['latitude']},{station['longitude']})")
                 station['plz'] = plz
                 station['plz_prefix'] = plz[0]
-                
-                print(f"✅ {station['name'][:50]:<50} PLZ {plz} -> {lat:.4f}, {lon:.4f}")
-                fixed_count += 1
             else:
-                print(f"⚠️  Keine Koordinaten für PLZ {plz} - {station['name'][:50]}")
+                print(f"⚠️  Keine Basis-Koords für {country} / {plz} - {station['name'][:40]}")
                 skipped_count += 1
         else:
-            print(f"❌ Keine PLZ gefunden in: {station.get('address', '')[:80]}")
+            print(f"❌ Keine PLZ in Adresse: {station.get('address', '')[:70]}")
             skipped_count += 1
+
+        # Aufräumen: Doppelungen im specialization / address entfernen
+        spec = station.get('specialization')
+        if spec and station['name'] in spec:
+            new_spec = spec.replace(station['name'], '').strip()
+            if new_spec != spec and new_spec:
+                station['specialization'] = new_spec
+                cleaned_count += 1
+        addr = station.get('address')
+        if addr and station['name'] in addr:
+            new_addr = addr.replace(station['name'], '').strip(', ') or addr
+            if new_addr != addr:
+                station['address'] = new_addr
+                cleaned_count += 1
     
     # Aktualisierte Daten speichern
     with open('data/wildvogelhilfen.json', 'w', encoding='utf-8') as f:
@@ -169,6 +122,7 @@ def fix_coordinates_in_json():
     print(f"\n📊 Zusammenfassung:")
     print(f"   ✅ Koordinaten korrigiert: {fixed_count}")
     print(f"   ⚠️  Übersprungen: {skipped_count}")
+    print(f"   🧹 Felder bereinigt: {cleaned_count}")
     print(f"   📁 Datei gespeichert: data/wildvogelhilfen.json")
 
 if __name__ == "__main__":
