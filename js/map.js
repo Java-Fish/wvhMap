@@ -4,12 +4,17 @@ class WildvogelhilfeMap {
         this.map = null;
         this.markers = [];
         this.stations = [];
+    this.filteredMarkers = [];
+    this.index = { plz: new Map(), city: new Map() };
+    this.lastQuery = '';
         this.init();
     }
 
     async init() {
         this.initMap();
         await this.loadStations();
+    this.buildIndex();
+    this.initSearchUI();
         this.addMarkersToMap();
         this.updateStats();
     }
@@ -120,6 +125,9 @@ class WildvogelhilfeMap {
     }
 
     addMarkersToMap() {
+    // Entferne vorhandene Marker (bei Re-Render nach Filter)
+    this.markers.forEach(m => this.map.removeLayer(m));
+    this.markers = [];
         this.stations.forEach(station => {
             // Icon basierend auf Spezialisierung wählen
             const icon = this.getIconForStation(station);
@@ -128,6 +136,8 @@ class WildvogelhilfeMap {
             const marker = L.marker([station.latitude, station.longitude], {
                 icon: icon
             }).addTo(this.map);
+            // Referenz für Highlighting / Suche
+            marker._station = station;
 
             // Popup-Inhalt erstellen
             const popupContent = this.createPopupContent(station);
@@ -205,6 +215,157 @@ class WildvogelhilfeMap {
             statsElement.textContent = statsText;
         }
     }
+
+    // --- Suche ---
+    buildIndex() {
+        this.stations.forEach(st => {
+            if (st.plz) {
+                this.index.plz.set(st.plz, st);
+            }
+            // Stadt aus Adresse heuristisch: alles nach PLZ
+            if (st.address) {
+                const m = st.address.match(/\b(\d{4,5})\s+([^,]+)(?:,|$)/);
+                if (m) {
+                    const city = m[2].trim().toLowerCase();
+                    if (!this.index.city.has(city)) this.index.city.set(city, []);
+                    this.index.city.get(city).push(st);
+                    st._city = city; // cache
+                }
+            }
+        });
+    }
+
+    initSearchUI() {
+        this.searchInput = document.getElementById('search-input');
+        this.searchBtn = document.getElementById('search-btn');
+        this.clearBtn = document.getElementById('clear-btn');
+        this.resultsBox = document.getElementById('search-results');
+        if (!this.searchInput) return;
+
+        const handle = () => {
+            const q = this.searchInput.value.trim();
+            this.performSearch(q);
+        };
+        this.searchBtn?.addEventListener('click', handle);
+        this.searchInput.addEventListener('input', (e) => {
+            const q = e.target.value.trim();
+            if (q.length === 0) {
+                this.clearSearch();
+            } else {
+                this.performSearch(q, true);
+            }
+        });
+        this.searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') { e.preventDefault(); handle(); }
+            if (e.key === 'Escape') { this.clearSearch(); }
+            if (['ArrowDown','ArrowUp'].includes(e.key)) { this.navigateResults(e.key); e.preventDefault(); }
+        });
+        this.clearBtn?.addEventListener('click', () => this.clearSearch());
+        document.addEventListener('click', (e) => {
+            if (!this.resultsBox.contains(e.target) && e.target !== this.searchInput) {
+                this.hideResults();
+            }
+        });
+    }
+
+    performSearch(query, live=false) {
+        this.lastQuery = query;
+        if (!query) { this.clearSearch(); return; }
+        const qLower = query.toLowerCase();
+        // Sammle Treffer
+        const exactPlz = this.index.plz.get(query);
+        let candidates = [];
+        if (exactPlz) candidates.push(exactPlz);
+        // PLZ-Prefix Match
+        if (!exactPlz && /^(\d{2,5})$/.test(query)) {
+            candidates = this.stations.filter(s => s.plz && s.plz.startsWith(query));
+        }
+        // Stadt substring
+        const cityMatches = this.stations.filter(s => s._city && s._city.includes(qLower));
+        cityMatches.forEach(st => { if (!candidates.includes(st)) candidates.push(st); });
+        // Name fallback
+        if (candidates.length === 0) {
+            // Name
+            candidates = this.stations.filter(s => s.name.toLowerCase().includes(qLower));
+        }
+        if (candidates.length === 0) {
+            // Address fallback
+            candidates = this.stations.filter(s => s.address && s.address.toLowerCase().includes(qLower));
+        }
+    console.log('🔎 Suche', query, 'Treffer:', candidates.length);
+        this.renderResults(candidates.slice(0, 25));
+        if (!live && candidates.length > 0) {
+            this.focusStations(candidates);
+        }
+    }
+
+    focusStations(stations) {
+        // Bounds über ausgewählte Stationen
+        const pts = stations.filter(s => s.latitude && s.longitude).map(s => [s.latitude, s.longitude]);
+        if (pts.length === 1) {
+            this.map.flyTo(pts[0], 11, { duration: 0.8 });
+        } else if (pts.length > 1) {
+            const group = L.featureGroup(pts.map(p => L.marker(p)));
+            this.map.fitBounds(group.getBounds().pad(0.2));
+        }
+        // Marker hervorheben
+        this.highlightMarkers(stations);
+    }
+
+    highlightMarkers(selected) {
+        const set = new Set(selected.map(s => s.name+':'+s.plz));
+        this.markers.forEach(m => {
+            const st = m._station;
+            if (st && set.has(st.name+':'+st.plz)) {
+                m.getElement()?.classList.add('marker-highlight');
+            } else {
+                m.getElement()?.classList.remove('marker-highlight');
+            }
+        });
+    }
+
+    renderResults(list) {
+        if (!this.resultsBox) return;
+        if (this.lastQuery.length === 0) { this.resultsBox.innerHTML=''; this.hideResults(); return; }
+        if (list.length === 0) {
+            this.resultsBox.innerHTML = '<div style="padding:0.6rem;">Keine Treffer</div>';
+            this.showResults();
+            return;
+        }
+        const html = '<ul>' + list.map((st,i) => {
+            const city = st._city ? st._city.charAt(0).toUpperCase()+st._city.slice(1) : '';
+            return `<li data-idx="${i}"><strong>${st.plz||''}</strong> ${city} <span class="meta">${st.name}</span></li>`;
+        }).join('') + '</ul>';
+        this.resultsBox.innerHTML = html;
+        this.showResults();
+        this.resultsBox.querySelectorAll('li').forEach((li,i) => {
+            li.addEventListener('click', () => {
+                const st = list[i];
+                this.focusStations([st]);
+                this.hideResults();
+            });
+        });
+    }
+
+    navigateResults(direction) {
+        const items = Array.from(this.resultsBox.querySelectorAll('li'));
+        if (items.length === 0) return;
+        let idx = items.findIndex(li => li.classList.contains('active'));
+        if (direction === 'ArrowDown') idx = (idx + 1) % items.length; else idx = (idx - 1 + items.length) % items.length;
+        items.forEach(li => li.classList.remove('active'));
+        items[idx].classList.add('active');
+        const clickEvt = new Event('click');
+        items[idx].dispatchEvent(clickEvt);
+    }
+
+    clearSearch() {
+        if (this.searchInput) this.searchInput.value='';
+        this.lastQuery='';
+        this.hideResults();
+        this.highlightMarkers([]);
+    }
+    hideResults(){ this.resultsBox?.classList.add('hidden'); }
+    showResults(){ this.resultsBox?.classList.remove('hidden'); }
     
     getRegionName(plzPrefix) {
         const regionMap = {

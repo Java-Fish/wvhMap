@@ -43,6 +43,75 @@ main {
     padding: 2rem 0;
 }
 
+/* Suche */
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.7rem 0.9rem;
+    border: 2px solid #4a7c59;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.search-bar input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74,124,89,0.25);
+}
+
+.search-bar button {
+    background: #4a7c59;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.search-bar button#clear-btn {
+    background: #888;
+    font-weight: bold;
+    padding: 0.7rem 0.8rem;
+}
+
+.search-bar button:hover {
+    filter: brightness(1.1);
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 0.4rem;
+    max-height: 250px;
+    overflow-y: auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    z-index: 500;
+    font-size: 0.9rem;
+}
+
+.search-results.hidden { display: none; }
+
+.search-results ul { list-style: none; padding: 0; margin: 0; }
+.search-results li { padding: 0.5rem 0.75rem; cursor: pointer; }
+.search-results li:hover, .search-results li.active { background: #f0f7f0; }
+
+.search-results .meta { color: #666; font-size: 0.75rem; display: block; margin-top: 2px; }
+
 /* Karte */
 #map {
     height: 70vh;
@@ -180,6 +249,13 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Marker Highlight */
+.leaflet-marker-icon.marker-highlight, .marker-highlight > div {
+    transform: scale(1.25);
+    box-shadow: 0 0 10px 4px rgba(255,193,7,0.7) !important;
+    z-index: 1000 !important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
@@ -217,4 +293,7 @@ footer a:hover {
     .info-panel {
         padding: 1rem;
     }
+
+    .search-bar { flex-wrap: wrap; }
+    .search-bar button { flex: 1 0 auto; }
 }

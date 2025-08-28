@@ -105,8 +105,24 @@ class SimpleWildvogelhilfeScraper:
             return None, None
         country = country.lower()
         base = None
-        if country == 'deutschland' and len(plz_code) == 5 and plz_code[0] in self.de_plz_centroids:
-            base = self.de_plz_centroids[plz_code[0]]
+        if country == 'deutschland' and len(plz_code) == 5:
+            # Feingranulare Behandlung für ostdeutsche 0er PLZ nach zweiter Ziffer
+            if plz_code[0] == '0':
+                second = plz_code[1]
+                east_map = {
+                    '1': (51.05, 13.74),  # 01 Dresden
+                    '2': (51.16, 14.99),  # 02 Görlitz/Bautzen
+                    '3': (51.75, 14.33),  # 03 Cottbus
+                    '4': (51.34, 12.37),  # 04 Leipzig
+                    '5': (51.48, 11.97),  # 05 Halle (Saale)
+                    '6': (51.50, 11.00),  # 06 West Sachsen-Anhalt
+                    '7': (50.93, 11.59),  # 07 Jena / Weimar
+                    '8': (50.70, 12.50),  # 08 Zwickau / Plauen
+                    '9': (50.83, 12.92),  # 09 Chemnitz
+                }
+                base = east_map.get(second)
+            if not base and plz_code[0] in self.de_plz_centroids:
+                base = self.de_plz_centroids[plz_code[0]]
         elif country == 'österreich' and len(plz_code) == 4 and plz_code[0] in self.at_plz_centroids:
             base = self.at_plz_centroids[plz_code[0]]
         elif country == 'schweiz' and len(plz_code) == 4 and plz_code[0] in self.ch_plz_centroids:

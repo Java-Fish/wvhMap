@@ -47,8 +47,23 @@ def get_coordinates_for_plz(plz: str, country: str = 'Deutschland') -> Tuple[Opt
         return None, None
     country = country.lower()
     base = None
-    if country == 'deutschland' and len(plz) == 5 and plz[0] in DE_CENTROIDS:
-        base = DE_CENTROIDS[plz[0]]
+    if country == 'deutschland' and len(plz) == 5:
+        if plz[0] == '0':
+            second = plz[1]
+            east_map = {
+                '1': (51.05, 13.74),  # Dresden
+                '2': (51.16, 14.99),  # Görlitz/Bautzen
+                '3': (51.75, 14.33),  # Cottbus
+                '4': (51.34, 12.37),  # Leipzig
+                '5': (51.48, 11.97),  # Halle (Saale)
+                '6': (51.50, 11.00),  # West Sachsen-Anhalt
+                '7': (50.93, 11.59),  # Jena / Weimar
+                '8': (50.70, 12.50),  # Zwickau / Plauen
+                '9': (50.83, 12.92),  # Chemnitz
+            }
+            base = east_map.get(second)
+        if not base and plz[0] in DE_CENTROIDS:
+            base = DE_CENTROIDS[plz[0]]
     elif country == 'österreich' and len(plz) == 4 and plz[0] in AT_CENTROIDS:
         base = AT_CENTROIDS[plz[0]]
     elif country == 'schweiz' and len(plz) == 4 and plz[0] in CH_CENTROIDS:
