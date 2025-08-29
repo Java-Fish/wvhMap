@@ -169,20 +169,6 @@
     "status": "aktiv"
   },
   {
-    "name": "Wildvogelstation des NABU Berlin",
-    "specialization": "Alle Wildvogelarten",
-    "address": "14163 Berlin)",
-    "phone": "030/54712892",
-    "note": "Eine direkte Aufnahme von Wildvögeln in der Station ist ohne vorherigen telefonischen Kontakt in der Wildvogelstation nicht möglich. Für eine telefonische Beratung zu wildvogelrelevanten Themen sprechen Sie bitte auf den AB – wir rufen im Rahmen unserer Möglichkeit schnellstmöglich zurück. Weiteres Entscheidungshilfen finden Sie auf unserer Internetseite (siehe unten). Eine tierärztliche Versorgung und Diagnose sind in der Wildvogelstation nicht möglich.",
-    "plz": "14163",
-    "plz_prefix": "1",
-    "region": "PLZ 1",
-    "country": "Deutschland",
-    "latitude": 52.510885,
-    "longitude": 13.398937,
-    "status": "nabu"
-  },
-  {
     "name": "Auffangstation Rastede-Hankhausen",
     "specialization": "Alle Vögel",
     "address": "26180 Rastede-Hankhausen",
@@ -1872,7 +1858,7 @@
   },
   {
     "name": "Nina Karpinski",
-    "specialization": "wildvogelhilfebrilon@gmail.com, Singvögel bis zur Amselgröße, keine Schwalben und Mauersegler",
+    "specialization": "Singvögel bis zur Amselgröße, keine Schwalben und Mauersegler",
     "address": "Am Kirchberg 10, 59929 Brilon",
     "phone": "",
     "plz": "59929",
@@ -1911,6 +1897,8 @@
     "country": "Deutschland",
     "website": "www.uzdresden.de",
     "email": "uzd@uzdresden.de",
+    "latitude": 51.0275223,
+    "longitude": 13.7017131,
     "note": "Unsere Hotline ist Montags bis Freitags von 09:00-20:00 Uhr und Samstag und Sonntag von 09:00-18:00 Uhr zu erreichen.",
     "status": "aktiv"
   },
@@ -1974,20 +1962,22 @@
     "status": "aktiv"
   },
   {
-    "name": "Hartisch/Lukschütz",
+    "name": "Auffangstation für kranke und verletzte Greifvögel und Eulen",
     "specialization": "Greifvögel und Eulen., Andere Vogelarten nur in absoluten Ausnahmesituationen und nach Rücksprache.",
-    "address": "Deilmannstr. 6, Tel: 0231-281195 (AB) oder 0163-8149636",
-    "phone": "0231-281195",
-    "plz": "0231",
-    "plz_prefix": "0",
-    "region": "Unbekannt",
+    "address": "Deilmannstr. 6, 44319 Dortmund",
+    "phone": "0231-281195 (AB) oder 0163-8149636",
+    "plz": "44319",
+    "plz_prefix": "4",
+    "region": "PLZ 4",
     "country": "Deutschland",
     "email": "ghartisch@online.de",
+    "latitude": 51.5001803,
+    "longitude": 7.4144708,
     "status": "aktiv"
   },
   {
-    "name": "Engelbach 1",
-    "specialization": "",
+    "name": "Wildtierpflegestation Saarburg e.V.",
+    "specialization": "alle Vögel und Wildtiere",
     "address": "54439 Saarburg, Engelbach 1",
     "phone": "06581.996094",
     "plz": "54439",
@@ -1999,8 +1989,8 @@
     "status": "aktiv"
   },
   {
-    "name": "Apoldarerstraße 3",
-    "specialization": "",
+    "name": "Angie Trompke ",
+    "specialization": "Wildvögel, keine Wasser- und Greifvögel",
     "address": "99518 Bad Sulza, Apoldarerstraße 3",
     "phone": "0176/429 59254",
     "plz": "99518",
@@ -2012,7 +2002,7 @@
     "status": "aktiv"
   },
   {
-    "name": "Roer Susanne, in 50733 Köln",
+    "name": "Fledermausauffangstation und Pflege",
     "specialization": "",
     "address": "Tel. 0221 9771766",
     "phone": "0221 9771766",
@@ -2021,6 +2011,9 @@
     "region": "Unbekannt",
     "country": "Deutschland",
     "email": "susanneroer@arcor.de",
+    "note": "Bitte keine nächtlichen Anrufe! Gerne zwischen 8 -22 Uhr! Bitte Nachricht hinterlassen und Telefonnummer angeben! In dringenden Fällen: 015117867470",
+    "latitude": 50.9645361,
+    "longitude": 6.9339205,
     "status": "aktiv"
   },
   {
@@ -2051,17 +2044,17 @@
     "status": "nabu"
   },
   {
-    "name": "Zum Forsthaus 7",
-    "specialization": "wildvogelstation@nabu-berlin.de, Die Station bietet eine Erstberatung für einheimische Wildvögel an. Nur selten können Jungvögel zur Aufzucht aufgenommen werden., https://berlin.nabu.de/stadt-und-natur/projekte-nabu-berlin/wildvogelstation/erste-hilfe/index.html",
-    "address": "12683 Berlin",
-    "phone": "030.54 71 28 92",
+    "name": "Wildvogelstation NABU Berlin",
+    "specialization": "Nur selten können Jungvögel zur Aufzucht aufgenommen werden.",
+    "address": "Zum Forsthaus 7, 12683 Berlin",
+    "phone": "(030) 54 71 28 92",
     "plz": "12683",
     "plz_prefix": "1",
     "region": "PLZ 1",
     "country": "Deutschland",
     "email": "wildvogelstation@nabu-berlin.de",
-    "website": "https://www.vetmed.fu-berlin.de/einrichtungen/kliniken/we20/index.html",
-    "note": "Fax: 030.54 71 28 93 | ",
+    "website": "http://berlin.nabu.de/stadt-und-natur/projekte-nabu-berlin/wildvogelstation/index.html",
+    "note": "Die Station bietet eine Erstberatung für einheimische Wildvögel an. Kernberatungszeit: Mo-Fr 8-16 Uhr Notdienstberatung: Mo-So 16-21 Uhr sowie Sa + So 9-12 Uhr ",
     "latitude": 52.510885,
     "longitude": 13.398937,
     "status": "nabu"
