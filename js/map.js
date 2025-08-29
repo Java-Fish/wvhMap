@@ -36,7 +36,7 @@ class WildvogelhilfeMap {
     }
 
     createCustomIcons() {
-        // Standard Icon für Wildvogelhilfen
+        // Standard Icon für aktive Wildvogelhilfen
         this.defaultIcon = L.divIcon({
             className: 'custom-marker',
             html: `<div style="
@@ -51,7 +51,37 @@ class WildvogelhilfeMap {
             iconAnchor: [13, 13]
         });
 
-        // Spezielles Icon für Greifvogel-Spezialisten
+        // Icon für inaktive Wildvogelhilfen
+        this.inactiveIcon = L.divIcon({
+            className: 'custom-marker-inactive',
+            html: `<div style="
+                background-color: #808080;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 3px solid white;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            "></div>`,
+            iconSize: [26, 26],
+            iconAnchor: [13, 13]
+        });
+
+        // Icon für NABU Wildvogelhilfen (RGB: 0,104,180)
+        this.nabuIcon = L.divIcon({
+            className: 'custom-marker-nabu',
+            html: `<div style="
+                background-color: rgb(0, 104, 180);
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 3px solid white;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            "></div>`,
+            iconSize: [26, 26],
+            iconAnchor: [13, 13]
+        });
+
+        // Spezielles Icon für Greifvogel-Spezialisten (falls nicht von Status überschrieben)
         this.greifvogelIcon = L.divIcon({
             className: 'custom-marker-greifvogel',
             html: `<div style="
@@ -181,17 +211,51 @@ class WildvogelhilfeMap {
     }
 
     getIconForStation(station) {
-        // Prüfen ob es sich um eine Greifvogel-Spezialisierung handelt
-        if (station.specialization && 
-            station.specialization.toLowerCase().includes('greifvogel')) {
-            return this.greifvogelIcon;
+        // Status-basierte Icon-Auswahl (hat Priorität)
+        const status = station.status ? station.status.toLowerCase() : 'aktiv';
+        
+        switch (status) {
+            case 'inaktiv':
+                return this.inactiveIcon;
+            case 'nabu':
+                return this.nabuIcon;
+            case 'aktiv':
+            default:
+                // Für aktive Stationen: Prüfen ob es sich um eine Greifvogel-Spezialisierung handelt
+                if (station.specialization && 
+                    station.specialization.toLowerCase().includes('greifvogel')) {
+                    return this.greifvogelIcon;
+                }
+                return this.defaultIcon;
         }
-        return this.defaultIcon;
     }
 
     createPopupContent(station) {
         let content = `<div class="popup-content">`;
         content += `<h4>${station.name}</h4>`;
+        
+        // Status-Anzeige hinzufügen
+        if (station.status) {
+            const status = station.status.toLowerCase();
+            let statusColor = '#4a7c59'; // Standard grün für aktiv
+            let statusText = station.status;
+            
+            switch (status) {
+                case 'inaktiv':
+                    statusColor = '#808080';
+                    statusText = '⚠️ ' + statusText;
+                    break;
+                case 'nabu':
+                    statusColor = 'rgb(0, 104, 180)';
+                    statusText = '🔵 ' + statusText;
+                    break;
+                case 'aktiv':
+                    statusText = '✅ ' + statusText;
+                    break;
+            }
+            
+            content += `<div class="status" style="background: ${statusColor}; color: white; padding: 2px 6px; border-radius: 12px; font-size: 0.8rem; display: inline-block; margin-bottom: 0.5rem;">${statusText}</div>`;
+        }
         
         if (station.specialization) {
             content += `<div class="specialization">${station.specialization}</div>`;

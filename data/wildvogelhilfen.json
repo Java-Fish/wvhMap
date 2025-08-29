@@ -9,7 +9,8 @@
     "region": "PLZ 9",
     "country": "Deutschland",
     "latitude": 51.164118,
-    "longitude": 10.509529
+    "longitude": 10.509529,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogelhilfe Sachsen e. V.",
@@ -21,7 +22,8 @@
     "region": "PLZ 0",
     "country": "Deutschland",
     "latitude": 51.161894,
-    "longitude": 13.564353
+    "longitude": 13.564353,
+    "status": "aktiv"
   },
   {
     "name": "NABU Wildvogelhilfe Jena",
@@ -34,7 +36,8 @@
     "region": "PLZ 0",
     "country": "Deutschland",
     "latitude": 50.928172,
-    "longitude": 11.587936
+    "longitude": 11.587936,
+    "status": "nabu"
   },
   {
     "name": "Naturschutz-Tierpark Görlitz",
@@ -46,7 +49,8 @@
     "region": "PLZ 0",
     "country": "Deutschland",
     "latitude": 51.147837,
-    "longitude": 14.976633
+    "longitude": 14.976633,
+    "status": "aktiv"
   },
   {
     "name": "Naturschutzstation Neschwitz",
@@ -58,7 +62,8 @@
     "region": "PLZ 0",
     "country": "Deutschland",
     "latitude": 51.290725,
-    "longitude": 14.325008
+    "longitude": 14.325008,
+    "status": "aktiv"
   },
   {
     "name": "Private Vogel- und Igelpflegestation Bad Elster",
@@ -70,7 +75,8 @@
     "region": "PLZ 0",
     "country": "Deutschland",
     "latitude": 50.28289,
-    "longitude": 12.240055
+    "longitude": 12.240055,
+    "status": "inaktiv"
   },
   {
     "name": "Tierpark Weißwasser e. V.",
@@ -82,7 +88,8 @@
     "region": "PLZ 0",
     "country": "Deutschland",
     "latitude": 51.502881,
-    "longitude": 14.637322
+    "longitude": 14.637322,
+    "status": "aktiv"
   },
   {
     "name": "Wildvogelhilfe Dölzschen – Rettungsstation für Dohlen",
@@ -93,7 +100,8 @@
     "region": "PLZ 0",
     "country": "Deutschland",
     "latitude": 51.027522,
-    "longitude": 13.701713
+    "longitude": 13.701713,
+    "status": "aktiv"
   },
   {
     "name": "Wildvogelhilfe Leipzig",
@@ -105,7 +113,8 @@
     "region": "PLZ 0",
     "country": "Deutschland",
     "latitude": 51.373825,
-    "longitude": 12.367853
+    "longitude": 12.367853,
+    "status": "aktiv"
   },
   {
     "name": "Falknerei Burg Greifenstein",
@@ -116,7 +125,8 @@
     "region": "PLZ 0",
     "country": "Deutschland",
     "latitude": 50.675776,
-    "longitude": 11.237452
+    "longitude": 11.237452,
+    "status": "aktiv"
   },
   {
     "name": "Aquila e. V.",
@@ -128,7 +138,8 @@
     "region": "PLZ 1",
     "country": "Deutschland",
     "latitude": 53.176457,
-    "longitude": 13.232089
+    "longitude": 13.232089,
+    "status": "aktiv"
   },
   {
     "name": "Jana Hinrich",
@@ -140,7 +151,8 @@
     "region": "PLZ 1",
     "country": "Deutschland",
     "latitude": 52.799105,
-    "longitude": 13.053735
+    "longitude": 13.053735,
+    "status": "aktiv"
   },
   {
     "name": "Krugpark in Brandenburg",
@@ -152,7 +164,8 @@
     "region": "PLZ 1",
     "country": "Deutschland",
     "latitude": 52.38871,
-    "longitude": 12.560991
+    "longitude": 12.560991,
+    "status": "aktiv"
   },
   {
     "name": "Wildtierrettung Berlin / Brandenburg",
@@ -165,7 +178,8 @@
     "region": "PLZ 1",
     "country": "Deutschland",
     "latitude": 52.771179,
-    "longitude": 13.287803
+    "longitude": 13.287803,
+    "status": "aktiv"
   },
   {
     "name": "Wildvogelstation des NABU Berlin",
@@ -178,7 +192,8 @@
     "region": "PLZ 1",
     "country": "Deutschland",
     "latitude": 52.510885,
-    "longitude": 13.398937
+    "longitude": 13.398937,
+    "status": "aktiv"
   },
   {
     "name": "Auffangstation Rastede-Hankhausen",
@@ -190,7 +205,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.5639,
-    "longitude": 9.922
+    "longitude": 9.922,
+    "status": "aktiv"
   },
   {
     "name": "Forstamt Rantzau",
@@ -202,7 +218,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.767989,
-    "longitude": 9.750382
+    "longitude": 9.750382,
+    "status": "aktiv"
   },
   {
     "name": "Hamburger Tierschutzverein v. 1841 e.V.",
@@ -214,7 +231,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.547801,
-    "longitude": 10.049681
+    "longitude": 10.049681,
+    "status": "aktiv"
   },
   {
     "name": "Kirstin Zoller",
@@ -226,7 +244,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.755675,
-    "longitude": 9.60724
+    "longitude": 9.60724,
+    "status": "aktiv"
   },
   {
     "name": "Vogelstation der Seehundstation Norddeich",
@@ -238,7 +257,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.583328,
-    "longitude": 7.161731
+    "longitude": 7.161731,
+    "status": "aktiv"
   },
   {
     "name": "Storchenpflegestation Wesermarsch",
@@ -250,7 +270,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.674,
-    "longitude": 10.0711
+    "longitude": 10.0711,
+    "status": "aktiv"
   },
   {
     "name": "Weißstorchpflegestation Trebel",
@@ -262,7 +283,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.00499,
-    "longitude": 11.289038
+    "longitude": 11.289038,
+    "status": "aktiv"
   },
   {
     "name": "Wildpark Eekholt",
@@ -274,7 +296,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.980286,
-    "longitude": 9.964911
+    "longitude": 9.964911,
+    "status": "aktiv"
   },
   {
     "name": "Wildtier- und Artenschutzzentrum",
@@ -286,7 +309,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.80363,
-    "longitude": 9.689151
+    "longitude": 9.689151,
+    "status": "aktiv"
   },
   {
     "name": "Wildtierheim der Vogelschutzgruppe Preetz",
@@ -298,7 +322,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 54.230879,
-    "longitude": 10.289855
+    "longitude": 10.289855,
+    "status": "aktiv"
   },
   {
     "name": "Wildtierhilfe Auenland",
@@ -310,7 +335,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.957701,
-    "longitude": 9.666384
+    "longitude": 9.666384,
+    "status": "aktiv"
   },
   {
     "name": "Wildtierhilfe Lüneburger Heide e.V.",
@@ -322,7 +348,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.004195,
-    "longitude": 9.878027
+    "longitude": 9.878027,
+    "status": "aktiv"
   },
   {
     "name": "Wildpark Lüneburger Heide Tietz GmbH & Co. KG",
@@ -334,7 +361,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.235745,
-    "longitude": 10.024141
+    "longitude": 10.024141,
+    "status": "aktiv"
   },
   {
     "name": "Wildvogelstation Teufelsmoor n. e. V.",
@@ -346,7 +374,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.254863,
-    "longitude": 8.814319
+    "longitude": 8.814319,
+    "status": "aktiv"
   },
   {
     "name": "Adlerwarte Berlebeck",
@@ -358,7 +387,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 51.936284,
-    "longitude": 8.879153
+    "longitude": 8.879153,
+    "status": "aktiv"
   },
   {
     "name": "Essenthoer Mühle",
@@ -371,7 +401,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 51.459981,
-    "longitude": 8.851612
+    "longitude": 8.851612,
+    "status": "aktiv"
   },
   {
     "name": "Verein für Greifvogelhilfe und Umweltbildung e.V.",
@@ -383,7 +414,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 50.764649,
-    "longitude": 9.663147
+    "longitude": 9.663147,
+    "status": "aktiv"
   },
   {
     "name": "F. Schmidt",
@@ -395,7 +427,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 52.115188,
-    "longitude": 11.630882
+    "longitude": 11.630882,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogelauffangstation Malsfeld",
@@ -407,7 +440,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 51.080057,
-    "longitude": 9.506296
+    "longitude": 9.506296,
+    "status": "aktiv"
   },
   {
     "name": "H. Shephard",
@@ -419,7 +453,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 50.47734,
-    "longitude": 8.921441
+    "longitude": 8.921441,
+    "status": "aktiv"
   },
   {
     "name": "Kirsten Strauch",
@@ -432,7 +467,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 51.600225,
-    "longitude": 9.098971
+    "longitude": 9.098971,
+    "status": "aktiv"
   },
   {
     "name": "Leni Plattmann",
@@ -444,7 +480,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 51.709542,
-    "longitude": 8.749998
+    "longitude": 8.749998,
+    "status": "aktiv"
   },
   {
     "name": "Mauersegler-Pflege Mäuerle e.V.",
@@ -456,7 +493,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 51.933245,
-    "longitude": 9.765039
+    "longitude": 9.765039,
+    "status": "aktiv"
   },
   {
     "name": "NABU Artenschutzzentrum Leiferde",
@@ -468,7 +506,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 52.444961,
-    "longitude": 10.423532
+    "longitude": 10.423532,
+    "status": "aktiv"
   },
   {
     "name": "Ralf Dörr",
@@ -480,7 +519,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 52.2441,
-    "longitude": 9.6222
+    "longitude": 9.6222,
+    "status": "aktiv"
   },
   {
     "name": "Staatl. Forstamt/Saupark Wisentgehege",
@@ -492,7 +532,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 52.196895,
-    "longitude": 9.601233
+    "longitude": 9.601233,
+    "status": "aktiv"
   },
   {
     "name": "Storchenauffangstation Schwalm-Eder-Kreis",
@@ -504,7 +545,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 52.2177,
-    "longitude": 9.6654
+    "longitude": 9.6654,
+    "status": "aktiv"
   },
   {
     "name": "Storchenhof Loburg",
@@ -516,7 +558,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 52.110957,
-    "longitude": 12.068778
+    "longitude": 12.068778,
+    "status": "aktiv"
   },
   {
     "name": "Tierpark Olderdissen",
@@ -528,7 +571,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 52.040767,
-    "longitude": 8.457658
+    "longitude": 8.457658,
+    "status": "aktiv"
   },
   {
     "name": "Greifenwarte Edersee im Wildtierpark Edersee",
@@ -540,7 +584,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 52.2252,
-    "longitude": 9.7693
+    "longitude": 9.7693,
+    "status": "aktiv"
   },
   {
     "name": "Marcel Prutzer",
@@ -552,7 +597,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 51.295123,
-    "longitude": 8.665228
+    "longitude": 8.665228,
+    "status": "aktiv"
   },
   {
     "name": "Natur- und Wildtierfreunde e.V.",
@@ -563,7 +609,8 @@
     "region": "PLZ 3",
     "country": "Deutschland",
     "latitude": 52.234218,
-    "longitude": 9.736224
+    "longitude": 9.736224,
+    "status": "aktiv"
   },
   {
     "name": "Ausgewöhnungsstation für Greifvögel und Eulen",
@@ -574,7 +621,8 @@
     "region": "PLZ 4",
     "country": "Deutschland",
     "latitude": 51.670069,
-    "longitude": 6.54145
+    "longitude": 6.54145,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogel- und Wildtierauffangstation Kleve e. V.",
@@ -586,7 +634,8 @@
     "region": "PLZ 4",
     "country": "Deutschland",
     "latitude": 51.619275,
-    "longitude": 6.187225
+    "longitude": 6.187225,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogelhilfe Rheinland",
@@ -597,7 +646,8 @@
     "region": "PLZ 4",
     "country": "Deutschland",
     "latitude": 51.267557,
-    "longitude": 6.172218
+    "longitude": 6.172218,
+    "status": "aktiv"
   },
   {
     "name": "Grugapark Essen – Vogelpark und Botanischer Garten",
@@ -609,7 +659,8 @@
     "region": "PLZ 4",
     "country": "Deutschland",
     "latitude": 51.416803,
-    "longitude": 6.960894
+    "longitude": 6.960894,
+    "status": "aktiv"
   },
   {
     "name": "Jenny Beusing",
@@ -621,7 +672,8 @@
     "region": "PLZ 4",
     "country": "Deutschland",
     "latitude": 51.441239,
-    "longitude": 6.795991
+    "longitude": 6.795991,
+    "status": "aktiv"
   },
   {
     "name": "Marianne Engel",
@@ -633,7 +685,8 @@
     "region": "PLZ 4",
     "country": "Deutschland",
     "latitude": 51.2236,
-    "longitude": 14.9114
+    "longitude": 14.9114,
+    "status": "aktiv"
   },
   {
     "name": "Tierpark Nordhorn e.V.",
@@ -645,7 +698,8 @@
     "region": "PLZ 4",
     "country": "Deutschland",
     "latitude": 52.430623,
-    "longitude": 7.133859
+    "longitude": 7.133859,
+    "status": "aktiv"
   },
   {
     "name": "Tierschutzzentrum Dortmund",
@@ -657,7 +711,8 @@
     "region": "PLZ 4",
     "country": "Deutschland",
     "latitude": 51.50018,
-    "longitude": 7.414471
+    "longitude": 7.414471,
+    "status": "aktiv"
   },
   {
     "name": "Bergische Greifvogelhilfe",
@@ -670,7 +725,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 50.905165,
-    "longitude": 7.182159
+    "longitude": 7.182159,
+    "status": "aktiv"
   },
   {
     "name": "Biologische Station Soest/ABU",
@@ -682,7 +738,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 51.583162,
-    "longitude": 8.179464
+    "longitude": 8.179464,
+    "status": "aktiv"
   },
   {
     "name": "Wildvogelhilfe Rheinland",
@@ -694,7 +751,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 50.765133,
-    "longitude": 7.4452
+    "longitude": 7.4452,
+    "status": "aktiv"
   },
   {
     "name": "Umweltbildungszentrum Leidenhausen",
@@ -707,7 +765,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 50.873415,
-    "longitude": 7.127394
+    "longitude": 7.127394,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogelschutzstation Köln",
@@ -719,7 +778,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 50.873415,
-    "longitude": 7.127394
+    "longitude": 7.127394,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogelstation & Wildfreigehege Hellenthal",
@@ -731,7 +791,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 50.418366,
-    "longitude": 6.411028
+    "longitude": 6.411028,
+    "status": "aktiv"
   },
   {
     "name": "Kölner Arbeitsgruppe gegen die Stadttaubenproblematik e.V.",
@@ -743,7 +804,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 50.923498,
-    "longitude": 6.893998
+    "longitude": 6.893998,
+    "status": "aktiv"
   },
   {
     "name": "Vogelpflegestation Märkischer Kreis",
@@ -755,7 +817,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 51.222084,
-    "longitude": 7.603605
+    "longitude": 7.603605,
+    "status": "aktiv"
   },
   {
     "name": "Wildtierpflegestation Koblenz e.V. Julia Bravetti",
@@ -767,7 +830,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 50.39053,
-    "longitude": 7.390132
+    "longitude": 7.390132,
+    "status": "aktiv"
   },
   {
     "name": "Wildvogelpflegestation Kirchwald",
@@ -779,7 +843,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 50.371102,
-    "longitude": 7.153191
+    "longitude": 7.153191,
+    "status": "aktiv"
   },
   {
     "name": "Willi Krings",
@@ -791,7 +856,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 51.059313,
-    "longitude": 6.068109
+    "longitude": 6.068109,
+    "status": "aktiv"
   },
   {
     "name": "Eulen- und Greifvogelschutz Appenheim e.V.",
@@ -802,7 +868,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 49.913027,
-    "longitude": 8.032597
+    "longitude": 8.032597,
+    "status": "aktiv"
   },
   {
     "name": "Ausgewöhnungsstation für Greifvögel und Eulen NABU Haßloch",
@@ -814,7 +881,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 49.351264,
-    "longitude": 8.259809
+    "longitude": 8.259809,
+    "status": "aktiv"
   },
   {
     "name": "Christopher Tarnow",
@@ -826,7 +894,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 49.865685,
-    "longitude": 8.961699
+    "longitude": 8.961699,
+    "status": "aktiv"
   },
   {
     "name": "Deutsche Gesellschaft für Mauersegler e.V. Mauerseglerklinik Frankfurt",
@@ -838,7 +907,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 50.101734,
-    "longitude": 8.596749
+    "longitude": 8.596749,
+    "status": "aktiv"
   },
   {
     "name": "Ehrenamtliche Wildvogelhilfe e.V.",
@@ -850,7 +920,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 49.583552,
-    "longitude": 8.377962
+    "longitude": 8.377962,
+    "status": "aktiv"
   },
   {
     "name": "Falkenhof Großer Feldberg",
@@ -861,7 +932,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 50.266564,
-    "longitude": 8.444925
+    "longitude": 8.444925,
+    "status": "aktiv"
   },
   {
     "name": "Kurt Wilhelm",
@@ -873,7 +945,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 49.467421,
-    "longitude": 7.749662
+    "longitude": 7.749662,
+    "status": "aktiv"
   },
   {
     "name": "Storchengemeinschaft Schierstein e.V.",
@@ -885,7 +958,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 50.060271,
-    "longitude": 8.177414
+    "longitude": 8.177414,
+    "status": "aktiv"
   },
   {
     "name": "Tierschutzverein im Landkreis Kusel e.V.",
@@ -897,7 +971,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 49.536241,
-    "longitude": 7.387804
+    "longitude": 7.387804,
+    "status": "aktiv"
   },
   {
     "name": "Zentrale Wildvogelauffangstation Saarland im Köllertal (WiVo-Saarland)",
@@ -909,7 +984,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 49.294431,
-    "longitude": 6.897851
+    "longitude": 6.897851,
+    "status": "aktiv"
   },
   {
     "name": "Mauerseglerhilfe Apus e.V.",
@@ -921,7 +997,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 49.531271,
-    "longitude": 8.745926
+    "longitude": 8.745926,
+    "status": "aktiv"
   },
   {
     "name": "Falknerei Hohenstein",
@@ -933,7 +1010,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 50.191641,
-    "longitude": 8.098454
+    "longitude": 8.098454,
+    "status": "aktiv"
   },
   {
     "name": "Franz Ruchlak",
@@ -945,7 +1023,8 @@
     "region": "PLZ 7",
     "country": "Deutschland",
     "latitude": 48.753,
-    "longitude": 9.1607
+    "longitude": 9.1607,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogelpflegestation Bad Friedrichshall",
@@ -956,7 +1035,8 @@
     "region": "PLZ 7",
     "country": "Deutschland",
     "latitude": 49.240557,
-    "longitude": 9.207143
+    "longitude": 9.207143,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogelzentrum Filstal",
@@ -968,7 +1048,8 @@
     "region": "PLZ 7",
     "country": "Deutschland",
     "latitude": 48.687999,
-    "longitude": 9.555809
+    "longitude": 9.555809,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogel in Not",
@@ -980,7 +1061,8 @@
     "region": "PLZ 7",
     "country": "Deutschland",
     "latitude": 49.15745,
-    "longitude": 8.536036
+    "longitude": 8.536036,
+    "status": "aktiv"
   },
   {
     "name": "Eva Just",
@@ -992,7 +1074,8 @@
     "region": "PLZ 7",
     "country": "Deutschland",
     "latitude": 48.85487,
-    "longitude": 9.611727
+    "longitude": 9.611727,
+    "status": "aktiv"
   },
   {
     "name": "Aktionsgemeinschaft Eulen und Greifvogelschutz (Ages)",
@@ -1004,7 +1087,8 @@
     "region": "PLZ 8",
     "country": "Deutschland",
     "latitude": 48.390116,
-    "longitude": 11.762752
+    "longitude": 11.762752,
+    "status": "aktiv"
   },
   {
     "name": "Ludwig-Maximilians-Universität München",
@@ -1016,7 +1100,8 @@
     "region": "PLZ 8",
     "country": "Deutschland",
     "latitude": 48.247001,
-    "longitude": 11.55493
+    "longitude": 11.55493,
+    "status": "aktiv"
   },
   {
     "name": "Mauersegler – Starthilfe e.V.",
@@ -1029,7 +1114,8 @@
     "region": "PLZ 8",
     "country": "Deutschland",
     "latitude": 47.775629,
-    "longitude": 12.916293
+    "longitude": 12.916293,
+    "status": "aktiv"
   },
   {
     "name": "Auffang- und Pflegestation für verletzte Greifvögel und Eulen",
@@ -1042,7 +1128,8 @@
     "region": "PLZ 9",
     "country": "Deutschland",
     "latitude": 49.820834,
-    "longitude": 9.912585
+    "longitude": 9.912585,
+    "status": "aktiv"
   },
   {
     "name": "Bayerischer Jagdfalkenhof",
@@ -1053,7 +1140,8 @@
     "region": "PLZ 9",
     "country": "Deutschland",
     "latitude": 50.249682,
-    "longitude": 10.871643
+    "longitude": 10.871643,
+    "status": "aktiv"
   },
   {
     "name": "Fürstlicher Falkenhof Schloss Schillingsfürst",
@@ -1065,7 +1153,8 @@
     "region": "PLZ 9",
     "country": "Deutschland",
     "latitude": 49.293608,
-    "longitude": 10.257337
+    "longitude": 10.257337,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogelpflegestation Stettfeld e.V.",
@@ -1077,7 +1166,8 @@
     "region": "PLZ 9",
     "country": "Deutschland",
     "latitude": 49.973136,
-    "longitude": 10.73059
+    "longitude": 10.73059,
+    "status": "aktiv"
   },
   {
     "name": "Ingrid Roeschke",
@@ -1089,7 +1179,8 @@
     "region": "PLZ 9",
     "country": "Deutschland",
     "latitude": 49.4955,
-    "longitude": 11.1614
+    "longitude": 11.1614,
+    "status": "aktiv"
   },
   {
     "name": "Private Pflegestelle für Vögel und Fledermäuse",
@@ -1099,7 +1190,8 @@
     "plz": "0152",
     "plz_prefix": "deutschland",
     "region": "PLZ 9",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "status": "aktiv"
   },
   {
     "name": "Wildtierhilfe Passauer Land e.V.",
@@ -1111,7 +1203,8 @@
     "region": "PLZ 9",
     "country": "Deutschland",
     "latitude": 48.678933,
-    "longitude": 13.532502
+    "longitude": 13.532502,
+    "status": "aktiv"
   },
   {
     "name": "LBV Vogelauffang- und Pflegestation Regenstauf",
@@ -1123,7 +1216,8 @@
     "region": "PLZ 9",
     "country": "Deutschland",
     "latitude": 49.154901,
-    "longitude": 12.16969
+    "longitude": 12.16969,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogelschutz Palmenhorst e.V",
@@ -1135,7 +1229,8 @@
     "region": "PLZ 9",
     "country": "Deutschland",
     "latitude": 49.599936,
-    "longitude": 10.429335
+    "longitude": 10.429335,
+    "status": "aktiv"
   },
   {
     "name": "Alpenzoo",
@@ -1147,7 +1242,8 @@
     "region": "Österreich",
     "country": "Österreich",
     "latitude": 47.299077,
-    "longitude": 11.365566
+    "longitude": 11.365566,
+    "status": "aktiv"
   },
   {
     "name": "Animal Help Austria",
@@ -1159,7 +1255,8 @@
     "region": "Österreich",
     "country": "Österreich",
     "latitude": 48.465569,
-    "longitude": 16.298473
+    "longitude": 16.298473,
+    "status": "aktiv"
   },
   {
     "name": "ICARA Tierrettung e.V.",
@@ -1171,7 +1268,8 @@
     "region": "Österreich",
     "country": "Österreich",
     "latitude": 47.2771,
-    "longitude": 9.644
+    "longitude": 9.644,
+    "status": "aktiv"
   },
   {
     "name": "Ötzi-Dorf/Greifvogelpark",
@@ -1183,7 +1281,8 @@
     "region": "Österreich",
     "country": "Österreich",
     "latitude": 47.1678,
-    "longitude": 9.6449
+    "longitude": 9.6449,
+    "status": "aktiv"
   },
   {
     "name": "Verein für kleine Wildtiere in grosser Not",
@@ -1195,7 +1294,8 @@
     "region": "Österreich",
     "country": "Österreich",
     "latitude": 47.124282,
-    "longitude": 15.489428
+    "longitude": 15.489428,
+    "status": "aktiv"
   },
   {
     "name": "Wildtierhilfe Wien",
@@ -1207,7 +1307,8 @@
     "region": "Österreich",
     "country": "Österreich",
     "latitude": 48.225073,
-    "longitude": 16.358398
+    "longitude": 16.358398,
+    "status": "aktiv"
   },
   {
     "name": "Wildtierhotline der Stadt Wien",
@@ -1218,7 +1319,8 @@
     "plz": "49090",
     "plz_prefix": "österreich",
     "region": "Österreich",
-    "country": "Österreich"
+    "country": "Österreich",
+    "status": "aktiv"
   },
   {
     "name": "Danae Schwegler",
@@ -1229,7 +1331,8 @@
     "region": "Schweiz",
     "country": "Schweiz",
     "latitude": 47.524198,
-    "longitude": 7.573332
+    "longitude": 7.573332,
+    "status": "aktiv"
   },
   {
     "name": "Wildvogel-Pflegestelle Amselweg",
@@ -1241,7 +1344,8 @@
     "region": "Schweiz",
     "country": "Schweiz",
     "latitude": 47.561863,
-    "longitude": 7.842875
+    "longitude": 7.842875,
+    "status": "aktiv"
   },
   {
     "name": "E. Widmer",
@@ -1252,7 +1356,8 @@
     "region": "Schweiz",
     "country": "Schweiz",
     "latitude": 45.9677,
-    "longitude": 8.9594
+    "longitude": 8.9594,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogelstation Berg am Irchel",
@@ -1264,7 +1369,8 @@
     "region": "Schweiz",
     "country": "Schweiz",
     "latitude": 47.568642,
-    "longitude": 8.595688
+    "longitude": 8.595688,
+    "status": "aktiv"
   },
   {
     "name": "Mauer- und Alpensegler Pflege- und Rehastation",
@@ -1276,7 +1382,8 @@
     "region": "Schweiz",
     "country": "Schweiz",
     "latitude": 47.3566,
-    "longitude": 8.5838
+    "longitude": 8.5838,
+    "status": "aktiv"
   },
   {
     "name": "Schweizer Wildstation",
@@ -1288,7 +1395,8 @@
     "region": "Schweiz",
     "country": "Schweiz",
     "latitude": 47.129538,
-    "longitude": 7.554686
+    "longitude": 7.554686,
+    "status": "aktiv"
   },
   {
     "name": "Werner Fischer",
@@ -1300,7 +1408,8 @@
     "region": "Schweiz",
     "country": "Schweiz",
     "latitude": 46.1884,
-    "longitude": 7.3979
+    "longitude": 7.3979,
+    "status": "aktiv"
   },
   {
     "name": "Pflegezentrum für Vogelfauna Schloß Tirol",
@@ -1312,7 +1421,8 @@
     "region": "Italien",
     "country": "Italien",
     "latitude": 46.465366,
-    "longitude": 12.708717
+    "longitude": 12.708717,
+    "status": "aktiv"
   },
   {
     "name": "Yasmin Böck",
@@ -1322,7 +1432,8 @@
     "plz": "0172",
     "plz_prefix": "deutschland",
     "region": "Unbekannt",
-    "country": "Deutschland"
+    "country": "Deutschland",
+    "status": "aktiv"
   },
   {
     "name": "Hans Weiß",
@@ -1335,7 +1446,8 @@
     "country": "Deutschland",
     "email": "Zimmerei.weiss@t-online.de",
     "latitude": 49.532539,
-    "longitude": 11.797946
+    "longitude": 11.797946,
+    "status": "aktiv"
   },
   {
     "name": "Bernd Marcordes",
@@ -1349,7 +1461,8 @@
     "email": "biologen@vogelparkwalsrode.de",
     "website": "www.vogelpark-walsrode.de",
     "latitude": 52.861874,
-    "longitude": 9.58829
+    "longitude": 9.58829,
+    "status": "aktiv"
   },
   {
     "name": "Katrin Rappers",
@@ -1362,7 +1475,8 @@
     "country": "Deutschland",
     "email": "katrin.rappers@live.de",
     "latitude": 52.960237,
-    "longitude": 8.618962
+    "longitude": 8.618962,
+    "status": "aktiv"
   },
   {
     "name": "Dalkinger Straße 31,",
@@ -1374,7 +1488,8 @@
     "region": "PLZ 7",
     "country": "Deutschland",
     "latitude": 48.884516,
-    "longitude": 10.187847
+    "longitude": 10.187847,
+    "status": "aktiv"
   },
   {
     "name": "Storchenweg 6",
@@ -1386,7 +1501,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 53.183301,
-    "longitude": 8.483321
+    "longitude": 8.483321,
+    "status": "aktiv"
   },
   {
     "name": "Wilhelmstr. 37-39",
@@ -1400,7 +1516,8 @@
     "website": "https://wp.wildvogelhilfe.org/auffangstationen/auffangstationen-plz-gebiet-4/",
     "note": "Fax: 0541.44 58 87 | ",
     "latitude": 52.27196,
-    "longitude": 8.047635
+    "longitude": 8.047635,
+    "status": "aktiv"
   },
   {
     "name": "Wildvogelhilfe Leipzig (– ehrenamtliche Initative –)",
@@ -1411,7 +1528,8 @@
     "plz_prefix": "deutschland",
     "region": "Unbekannt",
     "country": "Deutschland",
-    "website": "www.wildvogelhilfe-leipzig.de"
+    "website": "www.wildvogelhilfe-leipzig.de",
+    "status": "aktiv"
   },
   {
     "name": "Frau Ursula Wilmering",
@@ -1424,7 +1542,8 @@
     "country": "Deutschland",
     "note": "Fax: 04441.93 10 20 | ",
     "latitude": 52.731069,
-    "longitude": 8.287316
+    "longitude": 8.287316,
+    "status": "aktiv"
   },
   {
     "name": "Frau Gwildies",
@@ -1436,7 +1555,8 @@
     "region": "PLZ 7",
     "country": "Deutschland",
     "latitude": 48.7677,
-    "longitude": 9.1567
+    "longitude": 9.1567,
+    "status": "aktiv"
   },
   {
     "name": "Tierschutzverein Bielefeld und Umgebung e.V. (Wildvogelstation)",
@@ -1449,7 +1569,8 @@
     "country": "Deutschland",
     "email": "wildvogelstation@tierheim-bielefeld.de",
     "website": "https://wildvogelstation-tierheim-bielefeld.webnode.page/",
-    "note": "Fax: +49 5205 9843 - 18 | "
+    "note": "Fax: +49 5205 9843 - 18 | ",
+    "status": "aktiv"
   },
   {
     "name": "Wildvogelhilfe Koch e.V. (Nadja Koch)",
@@ -1461,7 +1582,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 49.795511,
-    "longitude": 9.157456
+    "longitude": 9.157456,
+    "status": "aktiv"
   },
   {
     "name": "Wildvogel- und Wildtierstation (spezialisiert auf Greifvögel und Eulen) (Fast alle einheimischen Wildvogel- und Wildtierarten können aufgenommen werden (soweit Kapazitäten für Unterbringung und Versorgung frei sind))",
@@ -1475,7 +1597,8 @@
     "email": "wilfried.limpinsel@t-online.de",
     "note": "Fax: . 02992/8512 | ",
     "latitude": 51.154,
-    "longitude": 14.9562
+    "longitude": 14.9562,
+    "status": "aktiv"
   },
   {
     "name": "Korinna Seybold Hase",
@@ -1486,7 +1609,8 @@
     "plz_prefix": "deutschland",
     "region": "Unbekannt",
     "country": "Deutschland",
-    "email": "info@wildtierhilfe-odenwald.de"
+    "email": "info@wildtierhilfe-odenwald.de",
+    "status": "aktiv"
   },
   {
     "name": "Manfred Heisinger",
@@ -1498,7 +1622,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 50.864689,
-    "longitude": 7.283955
+    "longitude": 7.283955,
+    "status": "aktiv"
   },
   {
     "name": "Dolgower Str. 5",
@@ -1510,7 +1635,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 52.925246,
-    "longitude": 11.118983
+    "longitude": 11.118983,
+    "status": "aktiv"
   },
   {
     "name": "Wohldweg 6",
@@ -1523,7 +1649,8 @@
     "country": "Deutschland",
     "email": "info@westkuestenpark.de",
     "website": "www.westkuestenpark.de",
-    "note": "Fax: 04863.30 47 | "
+    "note": "Fax: 04863.30 47 | ",
+    "status": "aktiv"
   },
   {
     "name": "Am Montag und Donnerstag von 16 - 18 Uhr und am Samstag von 11-13 Uhr erreichbar. Außerhalb dieser Zeiten ist leider kein Telefondienst möglich.",
@@ -1534,7 +1661,8 @@
     "plz_prefix": "",
     "region": "Unbekannt",
     "country": "Deutschland",
-    "email": "wildvogelhilfe@nabu-jena.de"
+    "email": "wildvogelhilfe@nabu-jena.de",
+    "status": "aktiv"
   },
   {
     "name": "35095 Weimar",
@@ -1548,7 +1676,8 @@
     "email": "info@wildvogelpflege.de",
     "website": "www.wildvogelpflege.de",
     "latitude": 50.97933,
-    "longitude": 11.329792
+    "longitude": 11.329792,
+    "status": "aktiv"
   },
   {
     "name": "Fiel 46",
@@ -1562,7 +1691,8 @@
     "email": "girgentana@t-online.de",
     "website": "www.dirk-fussbahn.de",
     "latitude": 54.172257,
-    "longitude": 9.179752
+    "longitude": 9.179752,
+    "status": "aktiv"
   },
   {
     "name": "An der Kläranlage 1",
@@ -1574,7 +1704,8 @@
     "region": "Unbekannt",
     "country": "Deutschland",
     "email": "wivo-koellertal@t-online.de",
-    "website": "https://nvv-puettlingen.jimdo.com/projekte/wildvogelauffangstation-saar/"
+    "website": "https://nvv-puettlingen.jimdo.com/projekte/wildvogelauffangstation-saar/",
+    "status": "aktiv"
   },
   {
     "name": "Am Wildgatter",
@@ -1587,7 +1718,8 @@
     "country": "Deutschland",
     "website": "www.wildgatter-hildesheim.de",
     "latitude": 52.152719,
-    "longitude": 9.951808
+    "longitude": 9.951808,
+    "status": "aktiv"
   },
   {
     "name": "Reiner Abert",
@@ -1599,7 +1731,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 50.1872,
-    "longitude": 8.7356
+    "longitude": 8.7356,
+    "status": "aktiv"
   },
   {
     "name": "Lilienweg 22",
@@ -1614,7 +1747,8 @@
     "website": "www.pro-igel.de",
     "note": "Fax: 04321.93 94 79 | ",
     "latitude": 54.075744,
-    "longitude": 9.981538
+    "longitude": 9.981538,
+    "status": "aktiv"
   },
   {
     "name": "Martin Pumpa",
@@ -1626,7 +1760,8 @@
     "region": "PLZ 0",
     "country": "Deutschland",
     "latitude": 51.865957,
-    "longitude": 14.366787
+    "longitude": 14.366787,
+    "status": "aktiv"
   },
   {
     "name": "Uwe Bartling",
@@ -1639,7 +1774,8 @@
     "country": "Deutschland",
     "website": "https://bff-bartling.de/Wildtierauffangstation/",
     "latitude": 50.961692,
-    "longitude": 13.938664
+    "longitude": 13.938664,
+    "status": "aktiv"
   },
   {
     "name": "Förster Heinz",
@@ -1652,7 +1788,8 @@
     "country": "Deutschland",
     "email": "ka7848-686@online.de",
     "latitude": 51.0081,
-    "longitude": 14.581859
+    "longitude": 14.581859,
+    "status": "aktiv"
   },
   {
     "name": "Yvonne Bütehorn-von Eschstruth",
@@ -1666,7 +1803,8 @@
     "email": "bio-top-ev@gmx.de",
     "note": "Fax: 07531.45 58 32 | ",
     "latitude": 47.659216,
-    "longitude": 9.175072
+    "longitude": 9.175072,
+    "status": "aktiv"
   },
   {
     "name": "Telefonische Erreichbarkeit der Wildtierauffangstation Eppelborn:",
@@ -1678,7 +1816,8 @@
     "region": "PLZ 6",
     "country": "Deutschland",
     "latitude": 50.1714,
-    "longitude": 8.7802
+    "longitude": 8.7802,
+    "status": "aktiv"
   },
   {
     "name": "Corinna Heinrich",
@@ -1692,7 +1831,8 @@
     "email": "heinrich-foerdermittelberatung@t-online.de",
     "note": "Fax: 037.437 533 88 | ",
     "latitude": 50.281166,
-    "longitude": 12.236949
+    "longitude": 12.236949,
+    "status": "aktiv"
   },
   {
     "name": "Regina Krautwurst",
@@ -1706,7 +1846,8 @@
     "email": "kitina@online.de",
     "website": "www.facebook.com/Wildtierhelfer",
     "latitude": 51.553346,
-    "longitude": 7.915556
+    "longitude": 7.915556,
+    "status": "aktiv"
   },
   {
     "name": "Bremer Str. 32",
@@ -1719,7 +1860,8 @@
     "country": "Deutschland",
     "website": "www.nabu-verden.de/greifestation.html",
     "latitude": 53.5713,
-    "longitude": 9.9746
+    "longitude": 9.9746,
+    "status": "aktiv"
   },
   {
     "name": "Wildpark 1",
@@ -1733,7 +1875,8 @@
     "website": "www.wild-park.de",
     "note": "Fax: 04184.8240 | ",
     "latitude": 53.6529,
-    "longitude": 10.0837
+    "longitude": 10.0837,
+    "status": "aktiv"
   },
   {
     "name": "Parkstr. 154",
@@ -1746,7 +1889,8 @@
     "country": "Deutschland",
     "website": "www.wildtierstation-rastede.de",
     "latitude": 53.246708,
-    "longitude": 8.201904
+    "longitude": 8.201904,
+    "status": "aktiv"
   },
   {
     "name": "Nina Karpinski",
@@ -1759,7 +1903,8 @@
     "country": "Deutschland",
     "email": "wildvogelhilfebrilon@gmail.com",
     "latitude": 51.395572,
-    "longitude": 8.567774
+    "longitude": 8.567774,
+    "status": "aktiv"
   },
   {
     "name": "Ziegelhütte 21",
@@ -1774,7 +1919,8 @@
     "website": "https://www.nabu-vogelschutzzentrum.de",
     "note": "Fax: 07473.21181 | ",
     "latitude": 48.406912,
-    "longitude": 9.060291
+    "longitude": 9.060291,
+    "status": "aktiv"
   },
   {
     "name": "Schützengasse 16-18",
@@ -1785,7 +1931,8 @@
     "plz_prefix": "deutschland",
     "region": "Unbekannt",
     "country": "Deutschland",
-    "website": "www.uzdresden.de"
+    "website": "www.uzdresden.de",
+    "status": "aktiv"
   },
   {
     "name": "Petra und Klaus Müller",
@@ -1797,7 +1944,8 @@
     "region": "PLZ 2",
     "country": "Deutschland",
     "latitude": 52.941068,
-    "longitude": 9.235472
+    "longitude": 9.235472,
+    "status": "aktiv"
   },
   {
     "name": "Im Beilsbach 16",
@@ -1810,7 +1958,8 @@
     "country": "Deutschland",
     "email": "info@tierpark-herborn.de",
     "latitude": 52.2759,
-    "longitude": 9.7353
+    "longitude": 9.7353,
+    "status": "aktiv"
   },
   {
     "name": "Dörper Weg 24",
@@ -1825,7 +1974,8 @@
     "website": "www.seehundstation-norddeich.de",
     "note": "Fax: 04931-82224 | ",
     "latitude": 51.2716,
-    "longitude": 12.3254
+    "longitude": 12.3254,
+    "status": "aktiv"
   },
   {
     "name": "Dr.Andreas Valentin",
@@ -1840,7 +1990,8 @@
     "website": "www.wildtier-pflegestation.de",
     "note": "Fax: 03337.41005 | ",
     "latitude": 51.7581,
-    "longitude": 14.2551
+    "longitude": 14.2551,
+    "status": "aktiv"
   },
   {
     "name": "Hartisch/Lukschütz",
@@ -1851,7 +2002,8 @@
     "plz_prefix": "0",
     "region": "Unbekannt",
     "country": "Deutschland",
-    "email": "ghartisch@online.de"
+    "email": "ghartisch@online.de",
+    "status": "aktiv"
   },
   {
     "name": "Engelbach 1",
@@ -1863,7 +2015,8 @@
     "region": "PLZ 5",
     "country": "Deutschland",
     "latitude": 49.608253,
-    "longitude": 6.548746
+    "longitude": 6.548746,
+    "status": "aktiv"
   },
   {
     "name": "Apoldarerstraße 3",
@@ -1875,7 +2028,8 @@
     "region": "PLZ 9",
     "country": "Deutschland",
     "latitude": 51.087938,
-    "longitude": 11.62342
+    "longitude": 11.62342,
+    "status": "aktiv"
   },
   {
     "name": "Roer Susanne, in 50733 Köln",
@@ -1886,7 +2040,8 @@
     "plz_prefix": "5",
     "region": "Unbekannt",
     "country": "Deutschland",
-    "email": "susanneroer@arcor.de"
+    "email": "susanneroer@arcor.de",
+    "status": "aktiv"
   },
   {
     "name": "Christina Alber",
@@ -1899,7 +2054,8 @@
     "country": "Deutschland",
     "email": "c.fedler@gmx.net",
     "latitude": 50.358266,
-    "longitude": 8.674701
+    "longitude": 8.674701,
+    "status": "aktiv"
   },
   {
     "name": "Steubenstr. 35",
@@ -1911,7 +2067,8 @@
     "region": "PLZ 9",
     "country": "Deutschland",
     "latitude": 50.97933,
-    "longitude": 11.329792
+    "longitude": 11.329792,
+    "status": "aktiv"
   },
   {
     "name": "Zum Forsthaus 7",
@@ -1926,7 +2083,8 @@
     "website": "https://www.vetmed.fu-berlin.de/einrichtungen/kliniken/we20/index.html",
     "note": "Fax: 030.54 71 28 93 | ",
     "latitude": 52.510885,
-    "longitude": 13.398937
+    "longitude": 13.398937,
+    "status": "aktiv"
   },
   {
     "name": "Greifvogelpflege",
@@ -1939,6 +2097,7 @@
     "country": "Deutschland",
     "website": "www.greifvogelpflege.de",
     "latitude": 49.2405574,
-    "longitude": 9.2071426
+    "longitude": 9.2071426,
+    "status": "aktiv"
   }
 ]
