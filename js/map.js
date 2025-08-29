@@ -129,24 +129,48 @@ class WildvogelhilfeMap {
     // Entferne vorhandene Marker (bei Re-Render nach Filter)
     this.markers.forEach(m => this.map.removeLayer(m));
     this.markers = [];
+    
+    let markerCount = 0;
+    let skippedCount = 0;
+    
         this.stations.forEach(station => {
+            // Koordinaten validieren
+            const lat = parseFloat(station.latitude);
+            const lng = parseFloat(station.longitude);
+            
+            // Debug: Ungültige Koordinaten protokollieren
+            if (isNaN(lat) || isNaN(lng) || lat === 0 || lng === 0) {
+                console.warn('Station ohne gültige Koordinaten:', station.name, 'lat:', station.latitude, 'lng:', station.longitude);
+                skippedCount++;
+                return;
+            }
+            
             // Icon basierend auf Spezialisierung wählen
             const icon = this.getIconForStation(station);
             
-            // Marker erstellen
-            const marker = L.marker([station.latitude, station.longitude], {
-                icon: icon
-            }).addTo(this.map);
-            // Referenz für Highlighting / Suche
-            marker._station = station;
+            try {
+                // Marker erstellen
+                const marker = L.marker([lat, lng], {
+                    icon: icon
+                }).addTo(this.map);
+                
+                // Referenz für Highlighting / Suche
+                marker._station = station;
 
-            // Popup-Inhalt erstellen
-            const popupContent = this.createPopupContent(station);
-            marker.bindPopup(popupContent);
+                // Popup-Inhalt erstellen
+                const popupContent = this.createPopupContent(station);
+                marker.bindPopup(popupContent);
 
-            // Marker zur Liste hinzufügen
-            this.markers.push(marker);
+                // Marker zur Liste hinzufügen
+                this.markers.push(marker);
+                markerCount++;
+            } catch (error) {
+                console.error('Fehler beim Erstellen des Markers für:', station.name, error);
+                skippedCount++;
+            }
         });
+
+        console.log(`Marker erstellt: ${markerCount}, Übersprungen: ${skippedCount}, Total Stationen: ${this.stations.length}`);
 
         // Karte so zoomen, dass alle Marker sichtbar sind
         if (this.markers.length > 0) {
@@ -368,7 +392,11 @@ class WildvogelhilfeMap {
 
     focusStations(stations) {
         // Bounds über ausgewählte Stationen
-        const pts = stations.filter(s => s.latitude && s.longitude).map(s => [s.latitude, s.longitude]);
+        const pts = stations.filter(s => {
+            const lat = parseFloat(s.latitude);
+            const lng = parseFloat(s.longitude);
+            return !isNaN(lat) && !isNaN(lng) && lat !== 0 && lng !== 0;
+        }).map(s => [parseFloat(s.latitude), parseFloat(s.longitude)]);
         if (pts.length === 1) {
             this.map.flyTo(pts[0], 11, { duration: 0.8 });
         } else if (pts.length > 1) {
