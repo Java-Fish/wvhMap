@@ -402,21 +402,8 @@ class WildvogelhilfeMap {
 
     // --- Suche ---
     buildIndex() {
-        this.stations.forEach(st => {
-            if (st.plz) {
-                this.index.plz.set(st.plz, st);
-            }
-            // Stadt aus Adresse heuristisch: alles nach PLZ
-            if (st.address) {
-                const m = st.address.match(/\b(\d{4,5})\s+([^,]+)(?:,|$)/);
-                if (m) {
-                    const city = m[2].trim().toLowerCase();
-                    if (!this.index.city.has(city)) this.index.city.set(city, []);
-                    this.index.city.get(city).push(st);
-                    st._city = city; // cache
-                }
-            }
-        });
+        // Index wird nicht mehr benötigt, da wir direkt in den Feldern suchen
+        // Diese Funktion bleibt für Kompatibilität, macht aber nichts mehr
     }
 
     initSearchUI() {
@@ -456,27 +443,28 @@ class WildvogelhilfeMap {
         this.lastQuery = query;
         if (!query) { this.clearSearch(); return; }
         const qLower = query.toLowerCase();
-        // Sammle Treffer
-        const exactPlz = this.index.plz.get(query);
-        let candidates = [];
-        if (exactPlz) candidates.push(exactPlz);
-        // PLZ-Prefix Match
-        if (!exactPlz && /^(\d{2,5})$/.test(query)) {
-            candidates = this.stations.filter(s => s.plz && s.plz.startsWith(query));
-        }
-        // Stadt substring
-        const cityMatches = this.stations.filter(s => s._city && s._city.includes(qLower));
-        cityMatches.forEach(st => { if (!candidates.includes(st)) candidates.push(st); });
-        // Name fallback
-        if (candidates.length === 0) {
-            // Name
-            candidates = this.stations.filter(s => s.name.toLowerCase().includes(qLower));
-        }
-        if (candidates.length === 0) {
-            // Address fallback
-            candidates = this.stations.filter(s => s.address && s.address.toLowerCase().includes(qLower));
-        }
-    console.log('🔎 Suche', query, 'Treffer:', candidates.length);
+        
+        // Suche nur in name, address und plz
+        let candidates = this.stations.filter(station => {
+            // Name durchsuchen
+            if (station.name && station.name.toLowerCase().includes(qLower)) {
+                return true;
+            }
+            
+            // Adresse durchsuchen
+            if (station.address && station.address.toLowerCase().includes(qLower)) {
+                return true;
+            }
+            
+            // PLZ durchsuchen (exakte Übereinstimmung oder Anfang)
+            if (station.plz && (station.plz === query || station.plz.startsWith(query))) {
+                return true;
+            }
+            
+            return false;
+        });
+        
+        console.log('🔎 Suche', query, 'Treffer:', candidates.length);
         this.renderResults(candidates.slice(0, 25));
         if (!live && candidates.length > 0) {
             this.focusStations(candidates);

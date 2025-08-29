@@ -1624,17 +1624,19 @@
     "status": "aktiv"
   },
   {
-    "name": "Wohldweg 6",
-    "specialization": "Leiterin Seevogelpflegestation u0026",
-    "address": "www.westkuestenpark.de (http://www.westkuestenpark.de), Igel, Dachs, Fuchs u0026 Co.",
+    "name": "Tierpark-Westküstenpark",
+    "specialization": "",
+    "address": "Wohldweg 6, 25826 St. Peter-Ording",
     "phone": "04863.30 44",
-    "plz": "",
-    "plz_prefix": "",
+    "plz": "25826",
+    "plz_prefix": "2",
     "region": "Unbekannt",
     "country": "Deutschland",
     "email": "info@westkuestenpark.de",
     "website": "www.westkuestenpark.de",
     "note": "Fax: 04863.30 47 | ",
+    "latitude": 54.3172664,
+    "longitude": 8.6254937,
     "status": "aktiv"
   },
   {
