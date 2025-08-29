@@ -19,6 +19,7 @@ class WildvogelhilfeMap {
         this.updateStats();
         this.initDownloadButton();
         this.initReportButton();
+        this.initLeafletLocateControl();
     }
 
     initMap() {
@@ -398,6 +399,121 @@ class WildvogelhilfeMap {
             reportBtn.textContent = originalText;
             reportBtn.style.background = '';
         }, 2000);
+    }
+
+    // --- Leaflet Locate Control ---
+    initLeafletLocateControl() {
+        // Leaflet's eingebaute Locate-Funktion verwenden
+        const locateControl = L.control.locate({
+            position: 'topright',
+            strings: {
+                title: "Zeige meinen Standort",
+                popup: "Du bist innerhalb von {distance} {unit} von diesem Punkt",
+                outsideMapBoundsMsg: "Du befindest dich außerhalb des sichtbaren Kartenbereichs"
+            },
+            locateOptions: {
+                maxZoom: 12,
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 300000 // 5 Minuten Cache
+            },
+            flyTo: true,
+            keepCurrentZoomLevel: false,
+            clickBehavior: {
+                inView: 'stop',
+                outOfView: 'setView'
+            },
+            showPopup: false, // Wir erstellen eigene Popups
+            circleStyle: {
+                color: '#ff4444',
+                fillColor: '#ff4444',
+                fillOpacity: 0.1,
+                weight: 2
+            },
+            markerStyle: {
+                color: '#ff4444',
+                fillColor: '#ff4444'
+            },
+            metric: true,
+            onLocationError: (err) => {
+                console.error('Standortfehler:', err);
+                alert('Standortbestimmung fehlgeschlagen: ' + err.message);
+            },
+            onLocationOutsideMapBounds: (context) => {
+                console.warn('Standort außerhalb der Kartengrenzen');
+                alert(context.options.strings.outsideMapBoundsMsg);
+            }
+        }).addTo(this.map);
+
+        // Event-Listener für erfolgreiche Standortbestimmung
+        this.map.on('locationfound', (e) => {
+            console.log(`📍 Standort gefunden: ${e.latlng.lat}, ${e.latlng.lng} (Genauigkeit: ${Math.round(e.accuracy)}m)`);
+            
+            // Nächste Wildvogelhilfen finden und anzeigen
+            this.findAndShowNearestStations(e.latlng.lat, e.latlng.lng, e.accuracy);
+        });
+    }
+
+    findAndShowNearestStations(userLat, userLng, accuracy) {
+        // Berechne Entfernungen zu allen Stationen
+        const stationsWithDistance = this.stations
+            .filter(station => {
+                const lat = parseFloat(station.latitude);
+                const lng = parseFloat(station.longitude);
+                return !isNaN(lat) && !isNaN(lng) && lat !== 0 && lng !== 0;
+            })
+            .map(station => {
+                const lat = parseFloat(station.latitude);
+                const lng = parseFloat(station.longitude);
+                const distance = this.calculateDistance(userLat, userLng, lat, lng);
+                return { ...station, distance };
+            })
+            .sort((a, b) => a.distance - b.distance)
+            .slice(0, 5); // Top 5 nächste Stationen
+
+        if (stationsWithDistance.length > 0) {
+            console.log('🔍 Nächste Wildvogelhilfen:', stationsWithDistance.map(s => `${s.name} (${s.distance.toFixed(1)}km)`));
+            
+            // Info-Panel mit nächsten Stationen erstellen
+            const nearestList = stationsWithDistance
+                .map(station => `<li><strong>${station.name}</strong><br><small>${station.address} (${station.distance.toFixed(1)}km)</small></li>`)
+                .join('');
+
+            // Popup mit nächsten Stationen anzeigen
+            const popup = L.popup()
+                .setLatLng([userLat, userLng])
+                .setContent(`
+                    <div style="max-width: 280px;">
+                        <div style="text-align: center; margin-bottom: 0.5rem;">
+                            <strong>📍 Ihr Standort</strong><br>
+                            <small>Genauigkeit: ±${Math.round(accuracy)}m</small>
+                        </div>
+                        <div>
+                            <strong>🏥 Nächste Wildvogelhilfen:</strong>
+                            <ol style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.3;">
+                                ${nearestList}
+                            </ol>
+                        </div>
+                    </div>
+                `)
+                .openOn(this.map);
+        }
+    }
+
+    calculateDistance(lat1, lng1, lat2, lng2) {
+        // Haversine-Formel für Entfernung zwischen zwei Koordinaten
+        const R = 6371; // Erdradius in km
+        const dLat = this.toRadians(lat2 - lat1);
+        const dLng = this.toRadians(lng2 - lng1);
+        const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                  Math.cos(this.toRadians(lat1)) * Math.cos(this.toRadians(lat2)) *
+                  Math.sin(dLng/2) * Math.sin(dLng/2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        return R * c;
+    }
+
+    toRadians(degrees) {
+        return degrees * (Math.PI/180);
     }
 
     // --- Suche ---
