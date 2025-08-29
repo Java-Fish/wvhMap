@@ -104,28 +104,40 @@ class NABUGoogleMapsScraper:
         text = re.sub(r'\s+', ' ', text.strip())
         # Entferne HTML-Tags falls vorhanden
         text = re.sub(r'<[^>]+>', '', text)
+        # Entferne übrig gebliebene Backslashes
+        text = re.sub(r'\\+', '', text)
         return text
         
     def extract_contact_info(self, text: str) -> dict:
         """Extrahiert Kontaktinformationen aus Text"""
         contact_info = {
             'phone': '',
+            'fax': '',
             'email': '',
             'website': ''
         }
         
-        # Telefonnummer suchen
+        # Telefonnummer suchen (mit spezifischeren Patterns)
         phone_patterns = [
-            r'(?:Tel\.?|Telefon|Phone|Mobil|Mobile)?\s*:?\s*(\+?\d{1,4}[\s\-/]?\d{1,4}[\s\-/]?\d{1,10}[\s\-/]?\d{0,10})',
-            r'(\d{2,5}[\s\-/]\d{1,10}[\s\-/]?\d{0,10})',
-            r'(\+\d{1,4}\s?\d{1,4}\s?\d{1,10})',
+            r'(?:Fon|Tel\.?|Telefon|Phone|Mobil|Mobile)\s*:?\s*(\+?[\d\s\-/\.]{6,20})',
+            r'Fon:\s*(\+?[\d\s\-/\.]{6,20})',
+            r'Tel\.?:\s*(\+?[\d\s\-/\.]{6,20})',
         ]
         
         for pattern in phone_patterns:
-            phone_match = re.search(pattern, text)
+            phone_match = re.search(pattern, text, re.IGNORECASE)
             if phone_match:
-                contact_info['phone'] = self.clean_text(phone_match.group(1))
-                break
+                phone = self.clean_phone_number(phone_match.group(1))
+                if phone and len(phone) >= 6:  # Mindestlänge für Telefonnummer
+                    contact_info['phone'] = phone
+                    break
+        
+        # Fax suchen
+        fax_match = re.search(r'Fax\s*:?\s*(\+?[\d\s\-/\.]{6,20})', text, re.IGNORECASE)
+        if fax_match:
+            fax = self.clean_phone_number(fax_match.group(1))
+            if fax and len(fax) >= 6:
+                contact_info['fax'] = fax
                 
         # E-Mail suchen
         email_match = re.search(r'([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})', text)
@@ -138,6 +150,19 @@ class NABUGoogleMapsScraper:
             contact_info['website'] = website_match.group(1)
             
         return contact_info
+        
+    def clean_phone_number(self, phone: str) -> str:
+        """Bereinigt Telefonnummern"""
+        if not phone:
+            return ""
+        # Entferne führende/nachfolgende Leerzeichen
+        phone = phone.strip()
+        # Stelle sicher, dass es nicht nur eine PLZ ist (5 oder 4 Ziffern ohne Leerzeichen/Trennzeichen)
+        if re.match(r'^\d{4,5}$', phone):
+            return ""
+        # Normalisiere Telefonnummer
+        phone = re.sub(r'[^\d\+\-\s/\.]', '', phone)
+        return phone.strip()
         
     def scrape_kml_data(self):
         """Versucht KML-Daten von der Google Maps Karte zu laden"""
@@ -202,35 +227,86 @@ class NABUGoogleMapsScraper:
         soup = BeautifulSoup(description, 'html.parser')
         clean_description = soup.get_text()
         
+        # Zeilen aufteilen und bereinigen
+        lines = [line.strip() for line in clean_description.split('\n') if line.strip()]
+        
+        if not lines:
+            return None
+        
+        # Strukturierte Datenextraktion basierend auf Google Maps Format
+        contact_person = ""
+        street_address = ""
+        city_address = ""
+        full_address = ""
+        specialization_lines = []
+        
         # Kontaktinformationen extrahieren
         contact_info = self.extract_contact_info(clean_description)
         
-        # Adresse suchen
-        address = ""
-        lines = [line.strip() for line in clean_description.split('\n') if line.strip()]
-        
-        for line in lines:
-            if re.search(r'\d{4,5}', line):  # Zeile mit PLZ
-                address = self.clean_text(line)
-                break
+        # Analysiere Zeilen
+        for i, line in enumerate(lines):
+            line_clean = line.strip()
+            
+            # Erste Zeile nach dem Namen ist oft die Kontaktperson
+            if i == 0 and not re.search(r'\d{4,5}', line_clean) and '@' not in line_clean:
+                contact_person = line_clean
+                continue
                 
-        # Spezialisierung suchen
-        specialization = ""
-        spec_keywords = ['spezialisiert', 'aufnahme', 'pflege', 'arten', 'vögel', 'greif', 'eule', 'sing', 'schwalben', 'mauersegler']
-        
-        for line in lines:
-            line_lower = line.lower()
-            if any(keyword in line_lower for keyword in spec_keywords):
-                specialization = self.clean_text(line)
-                break
+            # Suche nach Straßenadresse (keine PLZ, keine E-Mail, keine Telefon)
+            if (not re.search(r'\d{4,5}', line_clean) and 
+                '@' not in line_clean and 
+                not re.search(r'(?:Fon|Tel|Fax):', line_clean, re.IGNORECASE) and
+                not any(keyword in line_clean.lower() for keyword in ['beratung', 'aufnahme', 'station', 'pflege', 'wildvogel'])):
+                if not street_address and len(line_clean) > 5:
+                    street_address = line_clean
+                    continue
+                    
+            # Suche nach Stadt mit PLZ
+            plz_match = re.search(r'(\d{4,5})\s+(.+)', line_clean)
+            if plz_match:
+                city_address = line_clean
+                full_address = f"{street_address}, {city_address}".strip(', ')
+                continue
                 
+            # Spezialisierung sammeln (längere Zeilen mit relevanten Keywords)
+            if (len(line_clean) > 10 and 
+                any(keyword in line_clean.lower() for keyword in 
+                    ['beratung', 'aufnahme', 'station', 'pflege', 'wildvogel', 'greifvogel', 
+                     'singvogel', 'wasservogel', 'eule', 'schwalbe', 'mauersegler', 'vogel'])):
+                specialization_lines.append(line_clean)
+        
+        # Zusammengesetzte Adresse falls nicht vollständig
+        if not full_address:
+            address_parts = []
+            if street_address:
+                address_parts.append(street_address)
+            if city_address:
+                address_parts.append(city_address)
+            elif any(re.search(r'\d{4,5}', line) for line in lines):
+                # Finde Zeile mit PLZ
+                for line in lines:
+                    if re.search(r'\d{4,5}', line):
+                        address_parts.append(line)
+                        break
+            full_address = ", ".join(address_parts)
+        
+        # Spezialisierung zusammenfassen
+        specialization = ", ".join(specialization_lines) if specialization_lines else ""
+        if specialization.endswith(','):
+            specialization = specialization[:-1]
+        
         # PLZ-Informationen extrahieren
-        plz, plz_prefix, region, country = self.extract_plz_info(address or clean_description)
+        plz, plz_prefix, region, country = self.extract_plz_info(full_address or clean_description)
+        
+        # Name aufbereiten (falls Kontaktperson vorhanden)
+        display_name = name
+        if contact_person and contact_person != name:
+            display_name = f"{name} ({contact_person})"
         
         entry = {
-            'name': self.clean_text(name),
+            'name': self.clean_text(display_name),
             'specialization': specialization,
-            'address': address or self.clean_text(lines[0] if lines else ""),
+            'address': full_address or self.clean_text(lines[0] if lines else ""),
             'phone': contact_info['phone'],
             'plz': plz,
             'plz_prefix': plz_prefix,
@@ -244,9 +320,17 @@ class NABUGoogleMapsScraper:
         if contact_info['website']:
             entry['website'] = contact_info['website']
             
-        # Note für zusätzliche Informationen
-        if len(clean_description) > 200:
-            entry['note'] = clean_description[:200] + "..."
+        # Note für Fax und zusätzliche Informationen
+        note_parts = []
+        if contact_info['fax']:
+            note_parts.append(f"Fax: {contact_info['fax']}")
+        if contact_person and contact_person != name:
+            note_parts.append(f"Kontakt: {contact_person}")
+            
+        if note_parts:
+            entry['note'] = " | ".join(note_parts) + " | "
+            
+        return entry
             
         return entry
         
@@ -305,8 +389,10 @@ class NABUGoogleMapsScraper:
                 logger.info(f"Zusätzlich gefunden: {len(wildvogel_matches)} Wildvogel-bezogene Strings")
             
             for match in unique_matches:
-                # Escape-Sequenzen auflösen
+                # Escape-Sequenzen richtig auflösen
                 description = match.replace('\\n', '\n').replace('\\"', '"').replace('\\\\', '\\')
+                # Entferne verbliebene einzelne Backslashes
+                description = re.sub(r'\\(?![n"\\])', '', description)
                 
                 if len(description) > 30:  # Mindestlänge für sinnvolle Einträge
                     entry = self.parse_description_text(description)
@@ -333,62 +419,104 @@ class NABUGoogleMapsScraper:
         
         if len(lines) < 2:
             return None
-            
-        # Erster Ansatz: Name ist die erste Zeile oder aus der ersten Zeile extrahierbar
-        name = self.clean_text(lines[0])
         
-        # Falls erste Zeile zu lang ist, versuche Organisation zu finden
-        if len(name) > 100:
-            # Suche nach Organisationsnamen in den ersten Zeilen
-            for line in lines[:3]:
-                if any(keyword in line.lower() for keyword in ['e.v.', 'verein', 'station', 'hilfe', 'nabu', 'tierschutz']):
-                    name = self.clean_text(line)
-                    break
+        # Verwende die gleiche strukturierte Logik wie parse_kml_description
+        # aber ohne Name-Parameter (Name wird aus dem Text extrahiert)
+        
+        # Strukturierte Datenextraktion
+        name = ""
+        contact_person = ""
+        street_address = ""
+        city_address = ""
+        full_address = ""
+        specialization_lines = []
         
         # Kontaktinformationen extrahieren
         contact_info = self.extract_contact_info(description)
         
-        # Adresse suchen - meist zweite oder dritte Zeile
-        address = ""
-        for line in lines[1:4]:
-            if re.search(r'\d{4,5}', line):  # PLZ gefunden
-                address = self.clean_text(line)
-                break
-                
-        if not address and len(lines) > 1:
-            address = self.clean_text(lines[1])
+        # Analysiere Zeilen
+        for i, line in enumerate(lines):
+            line_clean = line.strip()
             
-        # Spezialisierung suchen
-        specialization = ""
-        spec_keywords = ['spezialisiert', 'aufnahme', 'pflege', 'arten', 'vögel', 'greif', 'eule', 'sing', 'schwalben', 'mauersegler', 'alle']
-        
-        for line in lines:
-            line_lower = line.lower()
-            if any(keyword in line_lower for keyword in spec_keywords) and len(line) > 10:
-                specialization = self.clean_text(line)
-                break
+            # Erste Zeile: Organisation oder Name
+            if i == 0:
+                if any(keyword in line_clean.lower() for keyword in ['e.v.', 'verein', 'station', 'hilfe', 'nabu', 'tierschutz', 'bio-top']):
+                    name = line_clean
+                elif not re.search(r'\d{4,5}', line_clean) and '@' not in line_clean:
+                    contact_person = line_clean
+                continue
                 
-        # PLZ-Informationen extrahieren
-        plz, plz_prefix, region, country = self.extract_plz_info(address or description)
+            # Zweite Zeile: Kontaktperson falls erste Zeile Organisation war
+            if i == 1 and name and not contact_person:
+                if (not re.search(r'\d{4,5}', line_clean) and 
+                    '@' not in line_clean and 
+                    not re.search(r'(?:Fon|Tel|Fax):', line_clean, re.IGNORECASE)):
+                    contact_person = line_clean
+                    continue
+                    
+            # Suche nach Straßenadresse
+            if (not re.search(r'\d{4,5}', line_clean) and 
+                '@' not in line_clean and 
+                not re.search(r'(?:Fon|Tel|Fax):', line_clean, re.IGNORECASE) and
+                not any(keyword in line_clean.lower() for keyword in ['beratung', 'aufnahme', 'station', 'pflege', 'wildvogel'])):
+                if not street_address and len(line_clean) > 5:
+                    street_address = line_clean
+                    continue
+                    
+            # Suche nach Stadt mit PLZ
+            plz_match = re.search(r'(\d{4,5})\s+(.+)', line_clean)
+            if plz_match:
+                city_address = line_clean
+                full_address = f"{street_address}, {city_address}".strip(', ')
+                continue
+                
+            # Spezialisierung sammeln
+            if (len(line_clean) > 10 and 
+                any(keyword in line_clean.lower() for keyword in 
+                    ['beratung', 'aufnahme', 'station', 'pflege', 'wildvogel', 'greifvogel', 
+                     'singvogel', 'wasservogel', 'eule', 'schwalbe', 'mauersegler', 'vogel'])):
+                specialization_lines.append(line_clean)
         
-        # Zusätzliche Informationen als Note
-        note = ""
-        if len(description) > 300:
-            # Kürze sehr lange Beschreibungen
-            note = description[:300] + "..."
-        elif len(lines) > 5:
-            # Sammle zusätzliche Informationen
-            additional_info = []
-            for line in lines[3:]:
-                if line and not any(info in line for info in [contact_info['phone'], contact_info['email']]):
-                    additional_info.append(line)
-            if additional_info:
-                note = " | ".join(additional_info[:3])
+        # Name setzen falls nicht gefunden
+        if not name:
+            if contact_person:
+                name = contact_person
+                contact_person = ""
+            else:
+                name = lines[0] if lines else "Unbekannt"
+        
+        # Zusammengesetzte Adresse falls nicht vollständig
+        if not full_address:
+            address_parts = []
+            if street_address:
+                address_parts.append(street_address)
+            if city_address:
+                address_parts.append(city_address)
+            elif any(re.search(r'\d{4,5}', line) for line in lines):
+                # Finde Zeile mit PLZ
+                for line in lines:
+                    if re.search(r'\d{4,5}', line):
+                        address_parts.append(line)
+                        break
+            full_address = ", ".join(address_parts)
+        
+        # Spezialisierung zusammenfassen
+        specialization = ", ".join(specialization_lines) if specialization_lines else ""
+        if specialization.endswith(','):
+            specialization = specialization[:-1]
+        
+        # PLZ-Informationen extrahieren
+        plz, plz_prefix, region, country = self.extract_plz_info(full_address or description)
+        
+        # Name aufbereiten (falls Kontaktperson vorhanden)
+        display_name = name
+        if contact_person and contact_person != name:
+            display_name = f"{name} ({contact_person})"
         
         entry = {
-            'name': name,
+            'name': self.clean_text(display_name),
             'specialization': specialization,
-            'address': address,
+            'address': full_address or self.clean_text(lines[0] if lines else ""),
             'phone': contact_info['phone'],
             'plz': plz,
             'plz_prefix': plz_prefix,
@@ -401,8 +529,16 @@ class NABUGoogleMapsScraper:
             entry['email'] = contact_info['email']
         if contact_info['website']:
             entry['website'] = contact_info['website']
-        if note:
-            entry['note'] = note
+            
+        # Note für Fax und zusätzliche Informationen
+        note_parts = []
+        if contact_info.get('fax'):
+            note_parts.append(f"Fax: {contact_info['fax']}")
+        if contact_person and contact_person != name and not any(contact_person in name for name in [name, display_name]):
+            note_parts.append(f"Kontakt: {contact_person}")
+            
+        if note_parts:
+            entry['note'] = " | ".join(note_parts) + " | "
             
         return entry
             
