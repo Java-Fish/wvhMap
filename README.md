@@ -125,6 +125,35 @@ python3 manual_update.py
 3. Geocodiert neue Einträge
 4. Zeigt Zusammenfassung der Änderungen
 
+### 5. Manuelle JSON-Bearbeitung
+
+Bei **direkten Änderungen** an der `data/wildvogelhilfen.json` Datei:
+
+#### Lokale Entwicklung:
+```bash
+# 1. JSON-Datei bearbeiten
+nano data/wildvogelhilfen.json
+
+# 2. Browser-Cache leeren (F5 oder Strg+Shift+R)
+# 3. Webseite neu laden
+```
+
+#### Produktionsumgebung:
+```bash
+# 1. JSON-Datei bearbeiten und hochladen
+git add data/wildvogelhilfen.json
+git commit -m "Update wildvogelhilfen data"
+git push
+
+# 2. Cache-Invalidierung abwarten (bis zu 1 Stunde)
+# ODER: Hard-Refresh im Browser (Strg+Shift+R)
+```
+
+**⚠️ Wichtig**: 
+- JSON-Syntax validieren vor dem Speichern
+- Bei fehlenden Koordinaten `fix_coordinates.py --geocode` ausführen
+- Cache-Header definieren 1-Stunden-Verzögerung bei Updates
+
 ## 📊 Datenstruktur
 
 Die Wildvogelhilfe-Daten befinden sich in `data/wildvogelhilfen.json` mit **157+ aktiven Einträgen**.
