@@ -30,7 +30,7 @@
     "specialization": "Alle Wildvogelarten",
     "address": "07749 Jena",
     "phone": "0155 10018479",
-    "note": "(Bitte ausschließlich aus einem Umkreis von 150km anrufen, wir können keine deutschlandweite Beratung und Aufnahme leisten)",
+    "note": "Bitte SMS oder WhatsApp schreiben, wenn per Telefon niemand erreichbar ist. (Bitte ausschließlich aus einem Umkreis von 150km anrufen, wir können keine deutschlandweite Beratung und Aufnahme leisten)",
     "plz": "07749",
     "plz_prefix": "0",
     "region": "PLZ 0",
@@ -193,7 +193,7 @@
     "country": "Deutschland",
     "latitude": 52.510885,
     "longitude": 13.398937,
-    "status": "aktiv"
+    "status": "nabu"
   },
   {
     "name": "Auffangstation Rastede-Hankhausen",
@@ -507,7 +507,7 @@
     "country": "Deutschland",
     "latitude": 52.444961,
     "longitude": 10.423532,
-    "status": "aktiv"
+    "status": "nabu"
   },
   {
     "name": "Ralf Dörr",
@@ -882,7 +882,7 @@
     "country": "Deutschland",
     "latitude": 49.351264,
     "longitude": 8.259809,
-    "status": "aktiv"
+    "status": "nabu"
   },
   {
     "name": "Christopher Tarnow",
@@ -1653,18 +1653,6 @@
     "status": "aktiv"
   },
   {
-    "name": "Am Montag und Donnerstag von 16 - 18 Uhr und am Samstag von 11-13 Uhr erreichbar. Außerhalb dieser Zeiten ist leider kein Telefondienst möglich.",
-    "specialization": "Allgemeiner Kontakt: wildvogelhilfe@nabu-jena.de",
-    "address": "Notfallnummer: +49 155 100 18 479",
-    "phone": "",
-    "plz": "",
-    "plz_prefix": "",
-    "region": "Unbekannt",
-    "country": "Deutschland",
-    "email": "wildvogelhilfe@nabu-jena.de",
-    "status": "aktiv"
-  },
-  {
     "name": "35095 Weimar",
     "specialization": "info@wildvogelpflege.de, www.wildvogelpflege.de (http://www.wildvogelpflege.de/)",
     "address": "- Singvögel, Rabenvögel, Greifvögel, Eulen, Kraniche und Störche, Wasservögel, Säugetiere, 35095 Weimar",
@@ -1732,7 +1720,7 @@
     "country": "Deutschland",
     "latitude": 50.1872,
     "longitude": 8.7356,
-    "status": "aktiv"
+    "status": "nabu"
   },
   {
     "name": "Lilienweg 22",
@@ -1861,7 +1849,7 @@
     "website": "www.nabu-verden.de/greifestation.html",
     "latitude": 53.5713,
     "longitude": 9.9746,
-    "status": "aktiv"
+    "status": "nabu"
   },
   {
     "name": "Wildpark 1",
@@ -1920,7 +1908,7 @@
     "note": "Fax: 07473.21181 | ",
     "latitude": 48.406912,
     "longitude": 9.060291,
-    "status": "aktiv"
+    "status": "nabu"
   },
   {
     "name": "Schützengasse 16-18",
@@ -2084,7 +2072,7 @@
     "note": "Fax: 030.54 71 28 93 | ",
     "latitude": 52.510885,
     "longitude": 13.398937,
-    "status": "aktiv"
+    "status": "nabu"
   },
   {
     "name": "Greifvogelpflege",
