@@ -7,9 +7,9 @@
     50.9281717,
     11.5879359
   ],
-  "0152|/52641076|deutschland": [
-    null,
-    null
+  "99998|mühlhausen|deutschland": [
+    51.1641184,
+    10.5095289
   ],
   "39019|dorf|italien": [
     46.4653657,
@@ -394,5 +394,205 @@
   "3427|utzenstorf|schweiz": [
     47.1295376,
     7.5546861
+  ],
+  "0152|/52641076|deutschland": [
+    null,
+    null
+  ],
+  "0341|927 62 027|deutschland": [
+    null,
+    null
+  ],
+  "0221|9771766|deutschland": [
+    null,
+    null
+  ],
+  "14163|berlin)|deutschland": [
+    52.510885,
+    13.3989367
+  ],
+  "35469|allendorf/lda-winnen|deutschland": [
+    null,
+    null
+  ],
+  "02173|/30363|deutschland": [
+    null,
+    null
+  ],
+  "99817|eisenach/thüringen|deutschland": [
+    null,
+    null
+  ],
+  "6376|2344|österreich": [
+    null,
+    null
+  ],
+  "6441|umhausen/ötztal|österreich": [
+    null,
+    null
+  ],
+  "8735|st.|schweiz": [
+    null,
+    null
+  ],
+  "7551|ftan/engadin|schweiz": [
+    null,
+    null
+  ],
+  "01796|pirna|deutschland": [
+    50.9616923,
+    13.9386643
+  ],
+  "27804|berne|deutschland": [
+    53.1833014,
+    8.4833214
+  ],
+  "99518|bad sulza|deutschland": [
+    51.0879382,
+    11.6234198
+  ],
+  "49377|vechta|deutschland": [
+    52.7310691,
+    8.2873162
+  ],
+  "27243|groß ippener|deutschland": [
+    52.9602368,
+    8.6189621
+  ],
+  "27299|langwedel-etelsen|deutschland": [
+    null,
+    null
+  ],
+  "35745|herborn-uckersdorf|deutschland": [
+    null,
+    null
+  ],
+  "99423|weimar|deutschland": [
+    50.9793301,
+    11.3297921
+  ],
+  "44319|dortmund|deutschland": [
+    51.5142273,
+    7.4652789
+  ],
+  "79238|ehrenkirchen-scherzingen|deutschland": [
+    null,
+    null
+  ],
+  "78462|konstanz|deutschland": [
+    47.659216,
+    9.1750718
+  ],
+  "26180|rastede|deutschland": [
+    53.2467081,
+    8.201904
+  ],
+  "16230|melchow|deutschland": [
+    52.7787071,
+    13.7044522
+  ],
+  "31139|hildesheim|deutschland": [
+    52.1527188,
+    9.9518083
+  ],
+  "92256|hahnbach|deutschland": [
+    49.5325392,
+    11.797946
+  ],
+  "29462|wustrow|deutschland": [
+    52.9252462,
+    11.1189834
+  ],
+  "12683|berlin|deutschland": [
+    52.510885,
+    13.3989367
+  ],
+  "27283|verden|deutschland": [
+    52.9410676,
+    9.2354716
+  ],
+  "25826|st. peter-ording|deutschland": [
+    54.3172664,
+    8.6254937
+  ],
+  "24536|neumünster|deutschland": [
+    54.0757442,
+    9.9815377
+  ],
+  "02730|ebersbach/sachsen|deutschland": [
+    51.0080999,
+    14.5818587
+  ],
+  "08645|bad elster|deutschland": [
+    50.2811665,
+    12.236949
+  ],
+  "59929|brilon|deutschland": [
+    51.3955721,
+    8.5677743
+  ],
+  "72116|mössingen|deutschland": [
+    48.4069119,
+    9.0602912
+  ],
+  "99991|seebach|deutschland": [
+    51.1648006,
+    10.5134951
+  ],
+  "33659|bielefeld|deutschland": [
+    52.0191005,
+    8.531007
+  ],
+  "29664|walsrode|deutschland": [
+    52.8618736,
+    9.5882905
+  ],
+  "21271|hanstedt-nindorf|deutschland": [
+    null,
+    null
+  ],
+  "63939|wörth am main|deutschland": [
+    49.7955109,
+    9.1574558
+  ],
+  "03185|drehnow|deutschland": [
+    51.8659565,
+    14.3667867
+  ],
+  "54439|saarburg|deutschland": [
+    49.6082527,
+    6.548746
+  ],
+  "61239|ober-mörlen|deutschland": [
+    50.3582661,
+    8.6747014
+  ],
+  "01067|dresden |deutschland": [
+    51.0493286,
+    13.7381437
+  ],
+  "49078|osnabrück|deutschland": [
+    52.2719595,
+    8.047635
+  ],
+  "25785|nordhastedt|deutschland": [
+    54.1722571,
+    9.1797518
+  ],
+  "64689|wahlen|deutschland": [
+    50.8646892,
+    7.2839545
+  ],
+  "64720|michelstadt / odenwald|deutschland": [
+    null,
+    null
+  ],
+  "59457|werl|deutschland": [
+    51.5533457,
+    7.9155558
+  ],
+  "73463|westhausen|deutschland": [
+    48.8845159,
+    10.1878466
   ]
 }
