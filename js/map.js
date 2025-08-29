@@ -219,27 +219,8 @@ class WildvogelhilfeMap {
         const statsElement = document.getElementById('station-count');
         if (statsElement) {
             const totalStations = this.stations.length;
-            const regions = {};
-            
-            // Regionen zählen
-            this.stations.forEach(station => {
-                const region = this.getRegionName(station.plz_prefix);
-                regions[region] = (regions[region] || 0) + 1;
-            });
             
             let statsText = `${totalStations} Wildvogelhilfen gefunden`;
-            
-            // Top-Regionen anzeigen
-            const sortedRegions = Object.entries(regions)
-                .sort(([,a], [,b]) => b - a)
-                .slice(0, 3);
-            
-            if (sortedRegions.length > 0) {
-                const regionText = sortedRegions
-                    .map(([region, count]) => `${region}: ${count}`)
-                    .join(', ');
-                statsText += ` | ${regionText}`;
-            }
             
             statsElement.textContent = statsText;
         }
@@ -356,17 +337,20 @@ class WildvogelhilfeMap {
         // GitHub Issue URL erstellen
         const githubUrl = `https://github.com/Java-Fish/wvhMap/issues/new?title=${title}&body=${body}&labels=${labels}`;
         
+        // Button-Referenz holen
+        const reportBtn = document.getElementById('report-btn');
+        
         // Feedback für den Benutzer
         const originalText = reportBtn.textContent;
-        document.getElementById('report-btn').textContent = '📝 GitHub öffnet...';
-        document.getElementById('report-btn').style.background = 'linear-gradient(135deg, #6f42c1, #5a2d8c)';
+        reportBtn.textContent = '📝 GitHub öffnet...';
+        reportBtn.style.background = 'linear-gradient(135deg, #6f42c1, #5a2d8c)';
         
         // Issue in neuem Tab öffnen
         window.open(githubUrl, '_blank');
         
         setTimeout(() => {
-            document.getElementById('report-btn').textContent = originalText;
-            document.getElementById('report-btn').style.background = '';
+            reportBtn.textContent = originalText;
+            reportBtn.style.background = '';
         }, 2000);
     }
 
