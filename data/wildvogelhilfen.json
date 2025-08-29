@@ -1511,11 +1511,14 @@
     "specialization": "Vogelrettung und Wildvogelstation, Schwerpunkt: Mauersegler, Schwalben, Singvögel (keine Greifvögel und Rabenvögel)",
     "address": "",
     "phone": "0341 927 62 027",
-    "plz": "0341",
+    "plz": "04157",
     "plz_prefix": "0",
-    "region": "Unbekannt",
+    "region": "PLZ 0",
     "country": "Deutschland",
     "website": "www.wildvogelhilfe-leipzig.de",
+    "email": "info@nabu-leipzig.de",
+    "latitude": 51.3738253,
+    "longitude": 12.3678529,
     "status": "nabu"
   },
   {
