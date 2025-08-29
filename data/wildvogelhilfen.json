@@ -1885,9 +1885,9 @@
     "status": "aktiv"
   },
   {
-    "name": "Ziegelhütte 21",
+    "name": "NABU Vogelschutzzentrum Mössingen",
     "specialization": "info@nabu-vogelschutzzentrum.de",
-    "address": "72116 Mössingen",
+    "address": "Ziegelhütte 21, 72116 Mössingen",
     "phone": "07473.1022",
     "plz": "72116",
     "plz_prefix": "7",
@@ -1895,7 +1895,7 @@
     "country": "Deutschland",
     "email": "info@nabu-vogelschutzzentrum.de",
     "website": "https://www.nabu-vogelschutzzentrum.de",
-    "note": "Fax: 07473.21181 | ",
+    "note": " Unsere Telefonzeiten: Montag - Freitag 9 - 12 Uhr und 13 - 17 Uhr | Reguläre Aufnahmezeiten sind: Montag - Freitag 9 - 12 Uhr und 13 - 17 Uhr ",
     "latitude": 48.406912,
     "longitude": 9.060291,
     "status": "nabu"
