@@ -234,27 +234,9 @@ class WildvogelhilfeMap {
         let content = `<div class="popup-content">`;
         content += `<h4>${station.name}</h4>`;
         
-        // Status-Anzeige hinzufügen
-        if (station.status) {
-            const status = station.status.toLowerCase();
-            let statusColor = '#4a7c59'; // Standard grün für aktiv
-            let statusText = station.status;
-            
-            switch (status) {
-                case 'inaktiv':
-                    statusColor = '#808080';
-                    statusText = '⚠️ ' + statusText;
-                    break;
-                case 'nabu':
-                    statusColor = 'rgb(0, 104, 180)';
-                    statusText = '🔵 ' + statusText;
-                    break;
-                case 'aktiv':
-                    statusText = '✅ ' + statusText;
-                    break;
-            }
-            
-            content += `<div class="status" style="background: ${statusColor}; color: white; padding: 2px 6px; border-radius: 12px; font-size: 0.8rem; display: inline-block; margin-bottom: 0.5rem;">${statusText}</div>`;
+        // Status-Anzeige nur für inaktive Stationen
+        if (station.status && station.status.toLowerCase() === 'inaktiv') {
+            content += `<div class="status" style="background: #808080; color: white; padding: 2px 6px; border-radius: 12px; font-size: 0.8rem; display: inline-block; margin-bottom: 0.5rem;">⚠️ inaktiv</div>`;
         }
         
         if (station.specialization) {
