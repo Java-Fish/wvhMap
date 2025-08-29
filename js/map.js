@@ -250,7 +250,10 @@ class WildvogelhilfeMap {
             content += `<strong>Tel:</strong> <a href="tel:${station.phone.replace(/\s/g, '')}">${station.phone}</a><br>`;
         }
         if (station.email) {
-            content += `<strong>E-Mail:</strong> <a href="mailto:${station.email}">${station.email}</a>`;
+            content += `<strong>E-Mail:</strong> <a href="mailto:${station.email}">${station.email}</a><br>`;
+        }
+        if (station.website) {
+            content += `<strong>Website:</strong> <a href="${station.website}" target="_blank" rel="noopener noreferrer">${station.website}</a>`;
         }
         content += `</div>`;
         if (station.note) {
