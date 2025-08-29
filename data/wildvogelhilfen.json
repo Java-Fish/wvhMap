@@ -104,19 +104,6 @@
     "status": "aktiv"
   },
   {
-    "name": "Wildvogelhilfe Leipzig",
-    "specialization": "-ehrenamtliche Initative- Vogelrettung und Vogelpflege, Schwerpunkt: Mauersegler, Schwalben, kleine Singvögel",
-    "address": "04157 Leipzig",
-    "phone": "0341 927 62 027",
-    "plz": "04157",
-    "plz_prefix": "0",
-    "region": "PLZ 0",
-    "country": "Deutschland",
-    "latitude": 51.373825,
-    "longitude": 12.367853,
-    "status": "aktiv"
-  },
-  {
     "name": "Falknerei Burg Greifenstein",
     "specialization": "Amtlich anerkannte Auffangstation für Greifvögel, Falken und Eulen",
     "address": "07422 Bad Blankenburg",
@@ -1520,16 +1507,16 @@
     "status": "aktiv"
   },
   {
-    "name": "Wildvogelhilfe Leipzig (– ehrenamtliche Initative –)",
-    "specialization": "www.wildvogelhilfe-leipzig.de, Vogelrettung und Wildvogelstation, Schwerpunkt: Mauersegler, Schwalben, Singvögel (keine Greifvögel und Rabenvögel)",
-    "address": "Telefon: 0341 927 62 027",
+    "name": "Wildvogelhilfe Leipzig",
+    "specialization": "Vogelrettung und Wildvogelstation, Schwerpunkt: Mauersegler, Schwalben, Singvögel (keine Greifvögel und Rabenvögel)",
+    "address": "",
     "phone": "0341 927 62 027",
     "plz": "0341",
-    "plz_prefix": "deutschland",
+    "plz_prefix": "0",
     "region": "Unbekannt",
     "country": "Deutschland",
     "website": "www.wildvogelhilfe-leipzig.de",
-    "status": "aktiv"
+    "status": "nabu"
   },
   {
     "name": "Frau Ursula Wilmering",
@@ -2046,9 +2033,9 @@
     "status": "aktiv"
   },
   {
-    "name": "Steubenstr. 35",
-    "specialization": "",
-    "address": "99423 Weimar",
+    "name": "Frau Dr. Brunnemann",
+    "specialization": "Hilfe für Gebäudebrüter und Igel",
+    "address": "Steubenstr. 35, 99423 Weimar",
     "phone": "03643.20 25 62",
     "plz": "99423",
     "plz_prefix": "9",
@@ -2056,7 +2043,7 @@
     "country": "Deutschland",
     "latitude": 50.97933,
     "longitude": 11.329792,
-    "status": "aktiv"
+    "status": "nabu"
   },
   {
     "name": "Zum Forsthaus 7",
