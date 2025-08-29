@@ -181,6 +181,44 @@ main {
     color: #2c5530;
 }
 
+/* Download Section */
+.download-section {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.download-button {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+}
+
+.download-button:hover {
+    background: linear-gradient(135deg, #218838, #1ea885);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.download-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(40, 167, 69, 0.2);
+}
+
+.download-section p {
+    margin: 0.5rem 0 0 0;
+    color: #666;
+}
+
 /* Footer */
 footer {
     background: #2c5530;

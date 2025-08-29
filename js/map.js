@@ -17,6 +17,7 @@ class WildvogelhilfeMap {
     this.initSearchUI();
         this.addMarkersToMap();
         this.updateStats();
+        this.initDownloadButton();
     }
 
     initMap() {
@@ -216,6 +217,69 @@ class WildvogelhilfeMap {
             }
             
             statsElement.textContent = statsText;
+        }
+    }
+
+    initDownloadButton() {
+        const downloadBtn = document.getElementById('download-btn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', () => {
+                this.downloadJsonData();
+            });
+        }
+    }
+
+    downloadJsonData() {
+        try {
+            // JSON-Daten vorbereiten
+            const jsonData = JSON.stringify(this.stations, null, 2);
+            
+            // Blob erstellen
+            const blob = new Blob([jsonData], { type: 'application/json' });
+            
+            // Download-URL erstellen
+            const url = window.URL.createObjectURL(blob);
+            
+            // Temporären Download-Link erstellen
+            const downloadLink = document.createElement('a');
+            downloadLink.href = url;
+            downloadLink.download = `wildvogelhilfen-${new Date().toISOString().split('T')[0]}.json`;
+            downloadLink.style.display = 'none';
+            
+            // Link zum DOM hinzufügen, klicken und wieder entfernen
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            
+            // URL wieder freigeben
+            window.URL.revokeObjectURL(url);
+            
+            // Feedback für den Benutzer
+            const originalText = document.getElementById('download-btn').textContent;
+            document.getElementById('download-btn').textContent = '✅ Download gestartet!';
+            document.getElementById('download-btn').style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+            
+            setTimeout(() => {
+                document.getElementById('download-btn').textContent = originalText;
+                document.getElementById('download-btn').style.background = '';
+            }, 2000);
+            
+        } catch (error) {
+            console.error('Fehler beim Download:', error);
+            
+            // Fallback: Daten in neuem Tab anzeigen
+            const jsonData = JSON.stringify(this.stations, null, 2);
+            const newWindow = window.open();
+            newWindow.document.write('<pre>' + jsonData + '</pre>');
+            newWindow.document.title = 'Wildvogelhilfen JSON-Daten';
+            
+            // Feedback für den Benutzer
+            const originalText = document.getElementById('download-btn').textContent;
+            document.getElementById('download-btn').textContent = '📋 In neuem Tab geöffnet';
+            
+            setTimeout(() => {
+                document.getElementById('download-btn').textContent = originalText;
+            }, 3000);
         }
     }
 
