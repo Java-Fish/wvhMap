@@ -18,6 +18,7 @@ class WildvogelhilfeMap {
         this.addMarkersToMap();
         this.updateStats();
         this.initDownloadButton();
+        this.initReportButton();
     }
 
     initMap() {
@@ -305,6 +306,68 @@ class WildvogelhilfeMap {
                 document.getElementById('download-btn').textContent = originalText;
             }, 3000);
         }
+    }
+
+    initReportButton() {
+        const reportBtn = document.getElementById('report-btn');
+        if (reportBtn) {
+            reportBtn.addEventListener('click', () => {
+                this.openGitHubIssue();
+            });
+        }
+    }
+
+    openGitHubIssue() {
+        // GitHub Issue Template erstellen
+        const title = encodeURIComponent('Fehlerhafter Wildvogelhilfe-Eintrag melden');
+        
+        const body = encodeURIComponent(`## 🐛 Problem Description / Problembeschreibung
+
+**Betroffene Wildvogelhilfe:**
+- Name: [Name der Einrichtung]
+- Ort/PLZ: [Ort oder Postleitzahl]
+
+**Art des Problems:**
+- [ ] Falsche Telefonnummer
+- [ ] Falsche Adresse
+- [ ] Einrichtung existiert nicht mehr
+- [ ] Falsche Spezialisierung
+- [ ] Fehlende Kontaktdaten
+- [ ] Sonstiges: [Beschreibung]
+
+**Korrekte Informationen:**
+[Bitte hier die korrekten Daten angeben]
+
+**Zusätzliche Informationen:**
+[Weitere Details, Quelle der korrekten Information, etc.]
+
+---
+
+**📝 Hinweise:**
+- Bitte füllen Sie mindestens Name/Ort und Art des Problems aus
+- Bei falschen Kontaktdaten geben Sie bitte die korrekten Daten an
+- Falls die Einrichtung nicht mehr existiert, geben Sie bitte eine Quelle an
+
+**🔍 Datenquelle:** Diese Daten stammen aus den Scrapern von wildvogelhilfe.org und NABU Google Maps
+**📊 Aktuelle Statistik:** ${this.stations.length} Wildvogelhilfen in der Datenbank`);
+
+        const labels = encodeURIComponent('bug,data-correction');
+        
+        // GitHub Issue URL erstellen
+        const githubUrl = `https://github.com/Java-Fish/wvhMap/issues/new?title=${title}&body=${body}&labels=${labels}`;
+        
+        // Feedback für den Benutzer
+        const originalText = reportBtn.textContent;
+        document.getElementById('report-btn').textContent = '📝 GitHub öffnet...';
+        document.getElementById('report-btn').style.background = 'linear-gradient(135deg, #6f42c1, #5a2d8c)';
+        
+        // Issue in neuem Tab öffnen
+        window.open(githubUrl, '_blank');
+        
+        setTimeout(() => {
+            document.getElementById('report-btn').textContent = originalText;
+            document.getElementById('report-btn').style.background = '';
+        }, 2000);
     }
 
     // --- Suche ---

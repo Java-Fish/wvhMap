@@ -1941,16 +1941,16 @@
     "longitude": 13.398937
   },
   {
-    "name": "Kressbacherstr. 2",
-    "specialization": "www.greifvogelpflege.de",
-    "address": "Fon: 07136 - 3160, -1356 oder 91 24 14",
-    "phone": "07136 - 3160",
-    "plz": "07136",
-    "plz_prefix": "0",
-    "region": "PLZ 0",
+    "name": "Greifvogelpflege",
+    "specialization": "Greifvögel und Eulen",
+    "address": "Kreßbacher Str. 2, 74177 Bad Friedrichshall",
+    "phone": "07136 - 3160, -1356 oder 91 24 14",
+    "plz": "74177",
+    "plz_prefix": "7",
+    "region": "PLZ 7",
     "country": "Deutschland",
     "website": "www.greifvogelpflege.de",
-    "latitude": 50.8791,
-    "longitude": 11.6588
+    "latitude": 49.2405574,
+    "longitude": 9.2071426
   }
 ]
