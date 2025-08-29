@@ -1,5 +1,17 @@
 [
   {
+    "name": "Staatliche Vogelschutzwarte Seebach",
+    "specialization": "",
+    "address": "Lindenhof 3, 99998 Mühlhausen",
+    "phone": "0361/573 918 01",
+    "plz": "99998",
+    "plz_prefix": "9",
+    "region": "PLZ 9",
+    "country": "Deutschland",
+    "latitude": 51.1641184,
+    "longitude": 10.5095289
+  },
+  {
     "name": "Greifvogelhilfe Sachsen e. V.",
     "specialization": "Spezialisiert auf Greifvögel",
     "address": "01689 Weinböhla",
