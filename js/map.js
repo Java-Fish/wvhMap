@@ -36,11 +36,21 @@ class WildvogelhilfeMap {
     }
 
     createCustomIcons() {
-        // Standard Icon für aktive Wildvogelhilfen
+        // CSS-Variablen aus dem DOM lesen
+        const getStatusColor = (statusVar) => {
+            return getComputedStyle(document.documentElement)
+                .getPropertyValue(statusVar).trim();
+        };
+        
+        const activeColor = getStatusColor('--status-active');
+        const inactiveColor = getStatusColor('--status-inactive');
+        const nabuColor = getStatusColor('--status-nabu');
+        
+        // Icon für aktive Wildvogelhilfen
         this.defaultIcon = L.divIcon({
             className: 'custom-marker',
             html: `<div style="
-                background-color: #4a7c59;
+                background-color: ${activeColor};
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
@@ -55,7 +65,7 @@ class WildvogelhilfeMap {
         this.inactiveIcon = L.divIcon({
             className: 'custom-marker-inactive',
             html: `<div style="
-                background-color: #808080;
+                background-color: ${inactiveColor};
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
@@ -66,26 +76,11 @@ class WildvogelhilfeMap {
             iconAnchor: [13, 13]
         });
 
-        // Icon für NABU Wildvogelhilfen (RGB: 0,104,180)
+        // Icon für NABU Wildvogelhilfen
         this.nabuIcon = L.divIcon({
             className: 'custom-marker-nabu',
             html: `<div style="
-                background-color: rgb(0, 104, 180);
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                border: 3px solid white;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            "></div>`,
-            iconSize: [26, 26],
-            iconAnchor: [13, 13]
-        });
-
-        // Spezielles Icon für Greifvogel-Spezialisten (falls nicht von Status überschrieben)
-        this.greifvogelIcon = L.divIcon({
-            className: 'custom-marker-greifvogel',
-            html: `<div style="
-                background-color: #8B4513;
+                background-color: ${nabuColor};
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
@@ -236,7 +231,9 @@ class WildvogelhilfeMap {
         
         // Status-Anzeige nur für inaktive Stationen
         if (station.status && station.status.toLowerCase() === 'inaktiv') {
-            content += `<div class="status" style="background: #808080; color: white; padding: 2px 6px; border-radius: 12px; font-size: 0.8rem; display: inline-block; margin-bottom: 0.5rem;">⚠️ inaktiv</div>`;
+            const inactiveColor = getComputedStyle(document.documentElement)
+                .getPropertyValue('--status-inactive').trim();
+            content += `<div class="status" style="background: ${inactiveColor}; color: white; padding: 2px 6px; border-radius: 12px; font-size: 0.8rem; display: inline-block; margin-bottom: 0.5rem;">⚠️ inaktiv</div>`;
         }
         
         if (station.specialization) {
@@ -257,7 +254,7 @@ class WildvogelhilfeMap {
         }
         content += `</div>`;
         if (station.note) {
-            content += `<div class="note" style="margin-top:6px;font-size:0.85rem;color:#444;line-height:1.2;">${station.note}</div>`;
+            content += `<div class="note" style="margin-top:6px;font-size:0.85rem;color:var(--gray-700);line-height:1.2;">${station.note}</div>`;
         }
         
         content += `</div>`;

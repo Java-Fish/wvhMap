@@ -1,3 +1,59 @@
+/* CSS-Farbvariablen - Zentrale Farbdefinition */
+:root {
+    /* Hauptfarben */
+    --primary-color: #2c5530;
+    --primary-light: #4a7c59;
+    --primary-lighter: #a8d8a8;
+    --primary-bg: #f0f7f0;
+    --primary-bg-light: #f8fdf8;
+    
+    /* Akzentfarben */
+    --success-color: #28a745;
+    --success-light: #20c997;
+    --success-dark: #218838;
+    --success-darker: #1ea885;
+    
+    --danger-color: #dc3545;
+    --danger-dark: #c82333;
+    --danger-darker: #bd2130;
+    
+    --warning-color: #ffc107;
+    --warning-bg: #fff3cd;
+    --warning-text: #856404;
+    
+    --info-color: #0066cc;
+    --info-bg: #e7f3ff;
+    
+    /* Neutrale Farben */
+    --white: #ffffff;
+    --gray-50: #f8f9fa;
+    --gray-100: #f5f5f5;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #e0e0e0;
+    --gray-500: #888888;
+    --gray-600: #666666;
+    --gray-700: #495057;
+    --gray-800: #333333;
+    --gray-900: #000000;
+    
+    /* Spezielle UI-Farben */
+    --border-color: #e0e0e0;
+    --shadow-light: rgba(0,0,0,0.1);
+    --shadow-medium: rgba(0,0,0,0.15);
+    --shadow-dark: rgba(0,0,0,0.2);
+    
+    /* Status-Farben für Karten-Marker */
+    --status-active: #4a7c59;
+    --status-inactive: #808080;
+    --status-nabu: #0068b4;
+    
+    /* Hover-Effekte */
+    --hover-overlay: rgba(255,255,255,0.1);
+    --focus-ring: rgba(74,124,89,0.25);
+    --highlight-ring: rgba(255,193,7,0.7);
+}
+
 /* Reset und Basis-Styling */
 * {
     margin: 0;
@@ -8,8 +64,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
+    color: var(--gray-800);
+    background-color: var(--gray-100);
 }
 
 .container {
@@ -20,11 +76,11 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #2c5530, #4a7c59);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--white);
     padding: 2rem 0;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px var(--shadow-light);
 }
 
 header h1 {
@@ -50,24 +106,25 @@ main {
     align-items: center;
     margin-bottom: 1rem;
     position: relative;
+    margin-left: 3rem;
 }
 
 .search-bar input {
     flex: 1;
     padding: 0.7rem 0.9rem;
-    border: 2px solid #4a7c59;
+    border: 2px solid var(--primary-light);
     border-radius: 6px;
     font-size: 0.95rem;
 }
 
 .search-bar input:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(74,124,89,0.25);
+    box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .search-bar button {
-    background: #4a7c59;
-    color: #fff;
+    background: var(--primary-light);
+    color: var(--white);
     border: none;
     padding: 0.7rem 1rem;
     border-radius: 6px;
@@ -79,7 +136,7 @@ main {
 }
 
 .search-bar button#clear-btn {
-    background: #888;
+    background: var(--gray-500);
     font-weight: bold;
     padding: 0.7rem 0.8rem;
 }
@@ -93,13 +150,13 @@ main {
     top: 100%;
     left: 0;
     right: 0;
-    background: #fff;
-    border: 1px solid #ddd;
+    background: var(--white);
+    border: 1px solid var(--gray-300);
     border-radius: 6px;
     margin-top: 0.4rem;
     max-height: 250px;
     overflow-y: auto;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 18px var(--shadow-medium);
     z-index: 500;
     font-size: 0.9rem;
 }
@@ -108,31 +165,31 @@ main {
 
 .search-results ul { list-style: none; padding: 0; margin: 0; }
 .search-results li { padding: 0.5rem 0.75rem; cursor: pointer; }
-.search-results li:hover, .search-results li.active { background: #f0f7f0; }
+.search-results li:hover, .search-results li.active { background: var(--primary-bg); }
 
-.search-results .meta { color: #666; font-size: 0.75rem; display: block; margin-top: 2px; }
+.search-results .meta { color: var(--gray-600); font-size: 0.75rem; display: block; margin-top: 2px; }
 
 /* Karte */
 #map {
     height: 70vh;
     min-height: 500px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px var(--shadow-light);
     margin-bottom: 2rem;
-    border: 2px solid #e0e0e0;
+    border: 2px solid var(--border-color);
 }
 
 /* Info Panel */
 .info-panel {
-    background: white;
+    background: var(--white);
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px var(--shadow-light);
     margin-bottom: 2rem;
 }
 
 .info-panel h3 {
-    color: #2c5530;
+    color: var(--primary-color);
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -144,10 +201,10 @@ main {
 
 .features {
     margin: 1.5rem 0;
-    background: #f8fdf8;
+    background: var(--primary-bg-light);
     padding: 1rem;
     border-radius: 5px;
-    border-left: 4px solid #4a7c59;
+    border-left: 4px solid var(--primary-light);
 }
 
 .features ul {
@@ -162,23 +219,23 @@ main {
 .note {
     margin-top: 1rem;
     padding: 0.8rem;
-    background: #fff3cd;
-    border-left: 4px solid #ffc107;
+    background: var(--warning-bg);
+    border-left: 4px solid var(--warning-color);
     border-radius: 5px;
 }
 
 .note p {
     margin: 0;
-    color: #856404;
+    color: var(--warning-text);
 }
 
 .stats {
-    background: #f0f7f0;
+    background: var(--primary-bg);
     padding: 1rem;
     border-radius: 5px;
-    border-left: 4px solid #4a7c59;
+    border-left: 4px solid var(--primary-light);
     font-weight: 600;
-    color: #2c5530;
+    color: var(--primary-color);
 }
 
 /* Download Section */
@@ -196,8 +253,8 @@ main {
 }
 
 .download-button {
-    background: linear-gradient(135deg, #28a745, #20c997);
-    color: white;
+    background: linear-gradient(135deg, var(--success-color), var(--success-light));
+    color: var(--white);
     border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
@@ -212,7 +269,7 @@ main {
 }
 
 .download-button:hover {
-    background: linear-gradient(135deg, #218838, #1ea885);
+    background: linear-gradient(135deg, var(--success-dark), var(--success-darker));
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
 }
@@ -223,8 +280,8 @@ main {
 }
 
 .report-button {
-    background: linear-gradient(135deg, #dc3545, #c82333);
-    color: white;
+    background: linear-gradient(135deg, var(--danger-color), var(--danger-dark));
+    color: var(--white);
     border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
@@ -239,7 +296,7 @@ main {
 }
 
 .report-button:hover {
-    background: linear-gradient(135deg, #c82333, #bd2130);
+    background: linear-gradient(135deg, var(--danger-dark), var(--danger-darker));
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
 }
@@ -251,20 +308,20 @@ main {
 
 .download-section p {
     margin: 0.5rem 0 0 0;
-    color: #666;
+    color: var(--gray-600);
 }
 
 /* Footer */
 footer {
-    background: #2c5530;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
     text-align: center;
     padding: 2rem 0;
     margin-top: 3rem;
 }
 
 footer a {
-    color: #a8d8a8;
+    color: var(--primary-lighter);
     text-decoration: none;
 }
 
@@ -282,17 +339,17 @@ footer a:hover {
 }
 
 .popup-content h4 {
-    color: #2c5530;
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
 
 .popup-content .specialization {
-    background: #e8f5e8;
+    background: var(--primary-bg-light);
     padding: 0.3rem 0.6rem;
     border-radius: 15px;
     font-size: 0.8rem;
-    color: #2c5530;
+    color: var(--primary-color);
     display: inline-block;
     margin-bottom: 0.5rem;
     font-weight: 500;
@@ -306,15 +363,15 @@ footer a:hover {
 .popup-content .contact {
     margin-top: 0.5rem;
     padding-top: 0.5rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--gray-200);
 }
 
 .popup-content .contact strong {
-    color: #2c5530;
+    color: var(--primary-color);
 }
 
 .popup-content a {
-    color: #4a7c59;
+    color: var(--primary-light);
     text-decoration: none;
 }
 
@@ -325,14 +382,14 @@ footer a:hover {
 /* Marker Highlight */
 .leaflet-marker-icon.marker-highlight, .marker-highlight > div {
     transform: scale(1.25);
-    box-shadow: 0 0 10px 4px rgba(255,193,7,0.7) !important;
+    box-shadow: 0 0 10px 4px var(--highlight-ring) !important;
     z-index: 1000 !important;
 }
 
 /* Widget-Bereich */
 .widget-section {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    border-top: 3px solid #4a7c59;
+    background: linear-gradient(135deg, var(--gray-50), var(--gray-200));
+    border-top: 3px solid var(--primary-light);
     padding: 2rem 0;
     margin-top: 2rem;
 }
@@ -343,8 +400,8 @@ footer a:hover {
 }
 
 .widget-toggle button {
-    background: linear-gradient(135deg, #4a7c59, #2c5530);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    color: var(--white);
     border: none;
     padding: 1rem 2rem;
     border-radius: 10px;
@@ -352,7 +409,7 @@ footer a:hover {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px var(--shadow-light);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -361,15 +418,15 @@ footer a:hover {
 
 .widget-toggle button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px var(--shadow-medium);
 }
 
 .widget-content {
-    background: white;
+    background: var(--white);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: 1px solid #e9ecef;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    border: 1px solid var(--gray-200);
     animation: slideDown 0.3s ease;
 }
 
@@ -379,7 +436,7 @@ footer a:hover {
 }
 
 .widget-explanation h3 {
-    color: #2c5530;
+    color: var(--primary-color);
     margin-bottom: 1rem;
     font-size: 1.4rem;
 }
@@ -390,9 +447,9 @@ footer a:hover {
     gap: 2rem;
     margin: 2rem 0;
     padding: 1.5rem;
-    background: #f8f9fa;
+    background: var(--gray-50);
     border-radius: 10px;
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--gray-200);
 }
 
 .widget-size-controls label,
@@ -400,7 +457,7 @@ footer a:hover {
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #495057;
+    color: var(--gray-700);
 }
 
 .size-buttons {
@@ -410,8 +467,8 @@ footer a:hover {
 }
 
 .size-btn {
-    background: white;
-    border: 2px solid #dee2e6;
+    background: var(--white);
+    border: 2px solid var(--gray-300);
     padding: 0.5rem 1rem;
     border-radius: 8px;
     cursor: pointer;
@@ -420,14 +477,14 @@ footer a:hover {
 }
 
 .size-btn:hover {
-    border-color: #4a7c59;
-    background: #f8f9fa;
+    border-color: var(--primary-light);
+    background: var(--gray-50);
 }
 
 .size-btn.active {
-    background: #4a7c59;
-    border-color: #4a7c59;
-    color: white;
+    background: var(--primary-light);
+    border-color: var(--primary-light);
+    color: var(--white);
 }
 
 .widget-features {
@@ -448,19 +505,19 @@ footer a:hover {
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #495057;
+    color: var(--gray-700);
 }
 
 #widget-code {
     width: 100%;
     height: 200px;
     padding: 1rem;
-    border: 2px solid #dee2e6;
+    border: 2px solid var(--gray-300);
     border-radius: 8px;
     font-family: 'Courier New', monospace;
     font-size: 0.85rem;
     line-height: 1.4;
-    background: #f8f9fa;
+    background: var(--gray-50);
     resize: vertical;
 }
 
@@ -471,8 +528,8 @@ footer a:hover {
 }
 
 .widget-actions button {
-    background: #4a7c59;
-    color: white;
+    background: var(--primary-light);
+    color: var(--white);
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -482,28 +539,28 @@ footer a:hover {
 }
 
 .widget-actions button:hover {
-    background: #2c5530;
+    background: var(--primary-color);
     transform: translateY(-1px);
 }
 
 .widget-preview-container {
     margin: 2rem 0;
     padding: 1.5rem;
-    background: #f8f9fa;
+    background: var(--gray-50);
     border-radius: 10px;
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--gray-200);
 }
 
 .widget-preview-container h4 {
     margin-bottom: 1rem;
-    color: #495057;
+    color: var(--gray-700);
 }
 
 .preview-frame {
-    border: 2px solid #dee2e6;
+    border: 2px solid var(--gray-300);
     border-radius: 8px;
     overflow: hidden;
-    background: white;
+    background: var(--white);
 }
 
 #widget-preview {
@@ -514,13 +571,13 @@ footer a:hover {
 .widget-info {
     margin-top: 2rem;
     padding: 1.5rem;
-    background: #e7f3ff;
+    background: var(--info-bg);
     border-radius: 10px;
-    border-left: 4px solid #0066cc;
+    border-left: 4px solid var(--info-color);
 }
 
 .widget-info h4 {
-    color: #0066cc;
+    color: var(--info-color);
     margin-bottom: 1rem;
 }
 
