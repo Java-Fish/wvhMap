@@ -1638,18 +1638,18 @@
     "status": "aktiv"
   },
   {
-    "name": "35095 Weimar",
-    "specialization": "info@wildvogelpflege.de, www.wildvogelpflege.de (http://www.wildvogelpflege.de/)",
-    "address": "- Singvögel, Rabenvögel, Greifvögel, Eulen, Kraniche und Störche, Wasservögel, Säugetiere, 35095 Weimar",
+    "name": "Wildvogel Pflegestation Marburg",
+    "specialization": "",
+    "address": "",
     "phone": "06421.79 41 05",
-    "plz": "35095",
+    "plz": "35037",
     "plz_prefix": "3",
     "region": "PLZ 3",
     "country": "Deutschland",
     "email": "info@wildvogelpflege.de",
     "website": "www.wildvogelpflege.de",
-    "latitude": 50.97933,
-    "longitude": 11.329792,
+    "latitude": 50.7982721,
+    "longitude": 8.6604139,
     "status": "aktiv"
   },
   {
