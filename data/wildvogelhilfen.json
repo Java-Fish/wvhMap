@@ -1886,7 +1886,7 @@
   },
   {
     "name": "NABU Vogelschutzzentrum Mössingen",
-    "specialization": "info@nabu-vogelschutzzentrum.de",
+    "specialization": "Alle Wildvogelarten",
     "address": "Ziegelhütte 21, 72116 Mössingen",
     "phone": "07473.1022",
     "plz": "72116",
@@ -1901,15 +1901,17 @@
     "status": "nabu"
   },
   {
-    "name": "Schützengasse 16-18",
+    "name": "Umweltzentrum Dresden",
     "specialization": "Standort Station:",
-    "address": "www.uzdresden.de, Tel. 0172 6454312",
-    "phone": "0172 6454312",
-    "plz": "0172",
-    "plz_prefix": "deutschland",
-    "region": "Unbekannt",
+    "address": "Schützengasse 16-18, 01069 Dresden",
+    "phone": "015142077174",
+    "plz": "01067",
+    "plz_prefix": "0",
+    "region": "PLZ 0",
     "country": "Deutschland",
     "website": "www.uzdresden.de",
+    "email": "uzd@uzdresden.de",
+    "note": "Unsere Hotline ist Montags bis Freitags von 09:00-20:00 Uhr und Samstag und Sonntag von 09:00-18:00 Uhr zu erreichen.",
     "status": "aktiv"
   },
   {
